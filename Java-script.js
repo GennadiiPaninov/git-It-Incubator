@@ -8,7 +8,8 @@ const uniTotal = s => {
     console.log(r)
     return r;
   }
-  uniTotal("sssD");
+  console.log(  uniTotal("sssD"))
+
 
 
 function countdown(n){
@@ -23,3 +24,6 @@ function countdown(n){
 const century = year => Math.ceil(year/100)
 
 century(2357);
+// деление без остатка
+const isDivisible =(n, x, y)=>  n % x == 0 && n % y == 0 ? true : false;
+console.log(isDivisible( 60, 5 , 10))

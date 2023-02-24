@@ -27,3 +27,26 @@ century(2357);
 // деление без остатка
 const isDivisible =(n, x, y)=>  n % x == 0 && n % y == 0 ? true : false;
 console.log(isDivisible( 60, 5 , 10))
+
+
+const nearestSq= n => {
+  
+    let r = Math.sqrt(n)
+    let s = Math.trunc(r)// целое число 
+    if(n == 2){
+      return 1
+    }
+    if(Number.isInteger(r)){
+      return n
+    }  else if(r - s < 0.5){
+      return Math.pow(Math.floor(r), 2)
+      
+    } else {
+      return Math.pow(Math.ceil(r), 2)
+    }
+     
+  }
+
+
+console.log(nearestSq(10))
+console.log(nearestSq(111))

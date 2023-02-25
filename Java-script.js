@@ -50,3 +50,11 @@ const nearestSq= n => {
 
 console.log(nearestSq(10))
 console.log(nearestSq(111))
+
+console.log("Поиск элемента в массиве, возврат индекеса")
+let array1 = [2,3,5,7,11];
+
+const find = (a, e) => a.indexOf(e) == -1 ? "Not found"  : a.indexOf(e);
+
+
+console.log(find(array1, 5))

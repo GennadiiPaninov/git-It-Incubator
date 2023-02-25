@@ -5,7 +5,7 @@ const uniTotal = s => {
        
     r += s[i].charCodeAt(0)
     }
-    console.log(r)
+    
     return r;
   }
   console.log(  uniTotal("sssD"))
@@ -13,7 +13,7 @@ const uniTotal = s => {
 
 
 function countdown(n){
-    console.log(n)
+   
     return n < 1 ? [] : [n].concat(countdown(n - 1));
  }
 
@@ -58,3 +58,14 @@ const find = (a, e) => a.indexOf(e) == -1 ? "Not found"  : a.indexOf(e);
 
 
 console.log(find(array1, 5))
+
+console.log("Конкотенация с терн")
+function describeAge(a) {    
+  return "You're a(n) " + (
+    a > 64 ? "elderly":
+      a > 17 ? "adult":
+        a > 12 ? "teenager":
+          "kid"
+    );
+}
+console.log(describeAge(52))

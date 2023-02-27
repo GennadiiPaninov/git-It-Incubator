@@ -99,9 +99,14 @@ console.log(mango1(6, 3))
 
   console.log("Исходный массив")
   const arrVolume = Array.from({length: 100}, (_, index) => index + 1);
+
   console.log("Перемешали массив")
   const mixArr = arrVolume.sort(() => Math.random() - 0.5);
 
-const arrsort = arrVolume.sort(function(a, b) {
+  console.log(mixArr)
+  console.log("Сортировка массива по значению")
+const arrsort = mixArr.sort(function(a, b) {
   return a - b;
 });
+
+console.log(arrsort)

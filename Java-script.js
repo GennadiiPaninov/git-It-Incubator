@@ -93,7 +93,15 @@ const mango =(q, p)=>{
 }
 const mango1 =(q, p)=> q < 3 ? q * p : q % 3 == 0 ? (q - q / 3) * p : (q - (Math.trunc(q / 3))) * p;
 
-console.log(Prise(1, 6))
-console.log(Prise(16, 5))
-console.log(Prise(3, 3))
-console.log(Prise(6, 3))
+console.log(mango1(16, 5))
+console.log(mango1(3, 3))
+console.log(mango1(6, 3))
+
+  console.log("Исходный массив")
+  const arrVolume = Array.from({length: 100}, (_, index) => index + 1);
+  console.log("Перемешали массив")
+  const mixArr = arrVolume.sort(() => Math.random() - 0.5);
+
+const arrsort = arrVolume.sort(function(a, b) {
+  return a - b;
+});

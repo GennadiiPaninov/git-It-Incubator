@@ -110,3 +110,39 @@ const arrsort = mixArr.sort(function(a, b) {
 });
 
 console.log(arrsort)
+console.log("Предотвращение мутации объекта, Object.freeze для предотвращения изменения данных.")
+function freezeObj() {
+  const MATH_CONSTANTS = {
+    PI: 3.14
+  };
+Object.freeze(MATH_CONSTANTS);
+// объект заморожен
+  try {
+    MATH_CONSTANTS.PI = 99;
+  } catch(ex) {
+    console.log(ex);
+  }
+  return MATH_CONSTANTS.PI;
+}
+console.log("Если одно из props не поступило в функцию, его можно указать дефолтно ")
+const increment = (number, value = 1) => number + value; // если value не поступил оно будет 1
+console.log("Спред оператор ... в случае если много ... props")
+// функция вычисляет сумму всех пропсов
+const sum = (...args) => {
+  let res = 0; 
+console.log(args.length)
+if(args.length == 0){
+  return 0
+} else if(args.length == 1 ){
+  return args[0]
+} else {
+  for(let i =0; i <args.length ; i++){
+    res += args[i]
+  }
+}
+return res
+   
+}
+console.log("Спред оператор расспаковывает массив ")
+const maximus = Math.max(...mixArr);// выводит максимольное значение массива
+console.log(maximus)

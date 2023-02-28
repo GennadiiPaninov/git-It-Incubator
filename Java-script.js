@@ -153,5 +153,8 @@ const HIGH_TEMPERATURES = {
   tomorrow: 80
 };
 
-// Only change code below this line
   const { today: highToday, tomorrow: highTomorrow } = HIGH_TEMPERATURES;
+
+const getStatus = isBusy => ({ status: isBusy ? "busy" : "available" });
+
+            

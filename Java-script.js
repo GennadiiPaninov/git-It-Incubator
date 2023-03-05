@@ -166,10 +166,11 @@ let foods = {
   grapes: 35,
   strawberries: 27
 };
-
 delete foods.oranges;
 delete foods.plums;
-delete foods.strawberries;
-
 console.log(foods);
-            
+
+console.log("проверка наличия свойства у объекты через .hasOwnProperty('Alan'); и ключевое слово in")
+
+console.log(foods.hasOwnProperty("grapes"))// true / false
+console.log("grapes" in foods)

@@ -174,3 +174,21 @@ console.log("проверка наличия свойства у объекты 
 
 console.log(foods.hasOwnProperty("grapes"))// true / false
 console.log("grapes" in foods)
+console.log("перебор объектов через for in ")
+function countOnline(usersObj) {
+  let result = 0;
+  for (let user in usersObj) {
+    if (usersObj[user].online === true) {
+      result++;
+    }
+  }
+  return result;
+
+}
+
+console.log("Генерация ключей в объекте при этом генерируется массив  с ключами")
+function getArrayOfUsers(obj) {
+   return Object.keys(obj)// Сгенерирует ["Alan", "Dzeis", "Derec"]
+ 
+  
+}

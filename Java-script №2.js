@@ -49,7 +49,7 @@ const maxsumArrayEl=(arr,ranges)=>{
   for(let i = 0; i < ranges.length; i++){
     const [start, end]= ranges[i]; // деструктуризация, создаем срозу две переменные
     const sum = sumFrom0toN[end] - (sumFrom0toN[start -1] || 0) //текущая сумма
-    console.log(sum, start, end)
+   
     //[1,3] start end, 
     if(sum > currentMaxResult){
       currentMaxResult = sum
@@ -62,3 +62,35 @@ const maxsumArrayEl=(arr,ranges)=>{
 console.log(maxsumArrayEl([1,-2,3,4,-5,-4,3,2,1], [[1,3],[0,4],[6,8]]))
 console.log(maxsumArrayEl([1,-2,3,4,-5,-4,3,2,1], [[1,3]]))
 console.log(maxsumArrayEl([1,-2,3,4,-5,-4,3,2,1], [[1,4],[2,5]]))
+
+const euros = [29.76, 41.85, 46.5];
+
+const sumReduce = euros.reduce((total, amount) => {
+ 
+  return total + amount 
+}); 
+console.log(sumReduce) 
+// reducer
+const average = euros.reduce((total, amount, index, array) => { 
+  console.log(total)
+  total += amount 
+  return total/array.length }, 0); 
+console.log(average)
+
+const fruitBasket = ['banana', 'cherry', 'orange', 'apple', 'cherry', 'orange', 'apple', 'banana', 'cherry', 'orange', 'fig' ];
+const count15 = fruitBasket.reduce( (tally, fruit) => {
+  tally[fruit] = (tally[fruit] || 0) + 1 ;// fruit - ключ tally[fruit] создается ключ = присваевается значение которое уже есть
+  return tally;
+} , {} )
+console.log(count15) // { banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1 }
+let objFrut = {"виски": 10};
+objFrut["виски"] = objFrut["виски"] + 12; 
+console.log(objFrut)
+// reducer
+const minSum=arr=> {
+  return arr.sort((a,b)=>a-b).slice(0, arr.length/2)
+    .reduce((current, el, ind)=> current += el * arr[arr.length -ind -1], 0 )
+}
+const maxProduct=(numbers, size)=>{
+  return numbers.sort((a,b)=> b-a).splice(0, size).reduce((cur, el)=> cur *= el, 1)
+}

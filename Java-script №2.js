@@ -94,3 +94,27 @@ const minSum=arr=> {
 const maxProduct=(numbers, size)=>{
   return numbers.sort((a,b)=> b-a).splice(0, size).reduce((cur, el)=> cur *= el, 1)
 }
+// reducer + filter + spred
+const arrayLeaders=numbers=>{
+  return numbers.filter((el,index, arr)=>{
+    let sum = [...arr].splice(index + 1, arr.length -1).reduce((cur,el1)=> cur+= el1,0)
+    console.log(el, sum)
+   return el > sum
+  });
+  
+}
+
+// reducer, с изменением элемента в массиве, возврат массива умножения числа, без текущего элемента по индексу
+
+const productArray=n=>{
+  return n.reduce((cur, el, ind, arr)=>{
+    let count = 1
+    for(let i =0; i < arr.length; i++){
+      if(i !== ind){
+        count *= arr[i]
+      }
+    }
+     cur.push(count)
+    return cur
+  },[])
+}

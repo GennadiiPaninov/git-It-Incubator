@@ -118,3 +118,16 @@ const productArray=n=>{
     return cur
   },[])
 }
+function XO(str) {
+  console.log(str)
+  let count = 0
+  for(let i =0; i<str.length; i++){
+    if(str[i].toLowerCase() === "x"){
+      count+=1
+    } else if(str[i].toLowerCase() === "o"){
+      count-=1
+
+    }}
+  console.log(count)
+  return count == 0 ? true : false
+}

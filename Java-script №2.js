@@ -149,3 +149,16 @@ function orderFood1(list) {
   return result
 
 }
+function orderFood(list) {
+  let result = {}
+  list.map(el=>{
+    if(!result.hasOwnProperty(el.meal)){
+      result[el.meal] = 1
+    } else {
+      result[el.meal] += 1
+    }
+  })
+
+  return result
+
+}

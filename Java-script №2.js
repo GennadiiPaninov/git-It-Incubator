@@ -131,3 +131,21 @@ function XO(str) {
   console.log(count)
   return count == 0 ? true : false
 }
+function orderFood1(list) {
+  let result = {}
+  for(let i=0; i<list.length;i++){
+    if(list[i].meal === 'vegetarian'){
+      result.vegetarian ? result.vegetarian +=1 : result.vegetarian = 1
+    } else if(list[i].meal === 'standard'){
+      result.standard ? result.standard +=1 : result.standard = 1
+    }else if(list[i].meal === 'vegan'){
+      result.vegan ? result.vegan +=1 : result.vegan = 1
+    }else if(list[i].meal === 'diabetic'){
+      result.diabetic ? result.diabetic +=1 : result.diabetic = 1
+    }else if(list[i].meal === 'gluten-intolerant'){
+      result["gluten-intolerant"] ? result["gluten-intolerant"] +=1 : result["gluten-intolerant"] = 1
+    }
+  }
+  return result
+
+}

@@ -162,3 +162,16 @@ function orderFood(list) {
   return result
 
 }
+function growingPlant(upSpeed, downSpeed, desiredHeight) {
+  let currentHeight = 0;
+  let days = 0;
+  while (currentHeight < desiredHeight) {
+    days++;
+    currentHeight += upSpeed;
+    if (currentHeight >= desiredHeight) {
+      break;
+    }
+    currentHeight -= downSpeed;
+  }
+  return days;
+}

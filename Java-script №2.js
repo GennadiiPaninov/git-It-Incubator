@@ -175,3 +175,28 @@ function growingPlant(upSpeed, downSpeed, desiredHeight) {
   }
   return days;
 }
+function drawStairs(n) {
+  let result = ""
+  let spase = " "
+  if(n === 1){
+    return "I"
+  }else{
+    for(let i=1; i<n+1; i++){
+      let spaseArr = new Array(i).join(spase)
+      result+=`${spaseArr}I\\n`
+    }
+  }
+  console.log(result.slice(0,-2))
+
+  return result.slice(0,-2)
+}
+function drawStairs(n) {
+  let cnt = 0;
+  let result = '';
+  while(n > cnt){
+    result += ' '.repeat(cnt) + 'I';
+    cnt++;
+    if(n > cnt) result += '\n';
+  }
+  return result;
+}

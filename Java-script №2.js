@@ -203,3 +203,4 @@ function drawStairs(n) {
 function explode(s) {
   return s.split("").map((e) => e.repeat(+e)).join("");
 }
+const maxDiff=list=>list.length<=1?0:Math.max(...list)-Math.min(...list)

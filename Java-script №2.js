@@ -200,3 +200,6 @@ function drawStairs(n) {
   }
   return result;
 }
+function explode(s) {
+  return s.split("").map((e) => e.repeat(+e)).join("");
+}

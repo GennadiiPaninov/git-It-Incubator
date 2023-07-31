@@ -218,3 +218,4 @@ const pipeFix=numbers=> {
   }
   return result
 }
+const solution=nums=> nums ? nums.sort((a,b)=> a-b) : []

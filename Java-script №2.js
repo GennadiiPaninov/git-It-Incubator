@@ -219,3 +219,13 @@ const pipeFix=numbers=> {
   return result
 }
 const solution=nums=> nums ? nums.sort((a,b)=> a-b) : []
+
+var capitals = function (word) {
+  let result =[]
+  for(let i=0; i< word.length ;i++){
+    if(word[i].toLowerCase() !== word[i]){
+      result.push(i)
+    }
+  }
+  return result
+};

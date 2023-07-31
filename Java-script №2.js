@@ -209,3 +209,12 @@ const maxDiff=list=>list.length<=1?0:Math.max(...list)-Math.min(...list)
 const cookPancakes=(n, m)=>{
   return n < m ? 2 :  Math.ceil(n*2 /m)
 }
+const pipeFix=numbers=> {
+  let arr = [1,2,3]
+  console.log(arr.length)
+  let result = []
+  for(let i =numbers[0]; i < numbers[numbers.length-1] +1; i++){
+    result.push(i)
+  }
+  return result
+}

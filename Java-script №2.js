@@ -236,3 +236,24 @@ function binToDec(bin){ let dec = 0;
   }
   return dec;
 }
+// return masked string
+const maskify=cc=>{
+  let grid = new Array(cc.length-4).fill("#").join("")
+
+  return `${grid}${grid}`
+}
+// return masked string
+const maskify=cc=>{
+
+  console.log( cc.replace(cc.substring(0, cc.length-4), new Array(cc.length-4).fill("#").join("")))
+  return cc > 4 ? cc.toString().replace(cc.substring(0, cc.length-4), new Array(cc.length-4).fill("#").join("")) : cc;
+}
+const maskify=cc=>{
+  if (cc.length <= 4) {
+    return cc;
+  } else {
+    const lastFour = cc.slice(-4);
+    const masked = new Array(cc.length - 4).fill("#").join("");
+    return masked + lastFour;
+  }
+}

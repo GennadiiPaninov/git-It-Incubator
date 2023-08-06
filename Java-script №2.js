@@ -266,3 +266,15 @@ function removeEveryOther(arr){
   }
   return result
 }
+function bingo(a) {
+  console.log(a)
+  let bingoNumsArr = [2,9,14,7,15]
+
+  for(let i=0; i<bingoNumsArr.length;i++){
+    if(a.find(el=> el == bingoNumsArr[i]) === undefined) {
+      return "LOSE"
+    }
+  }
+  return "WIN"
+
+}

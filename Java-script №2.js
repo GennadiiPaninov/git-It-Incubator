@@ -278,3 +278,10 @@ function bingo(a) {
   return "WIN"
 
 }
+
+    function theVar(theVariables) {
+      let alphabet = ["0","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+      const first = alphabet.indexOf(theVariables[0])
+      const seconde = alphabet.indexOf(theVariables[2])
+      return first + seconde;
+    }

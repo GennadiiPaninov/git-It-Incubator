@@ -285,3 +285,9 @@ function bingo(a) {
       const seconde = alphabet.indexOf(theVariables[2])
       return first + seconde;
     }
+function greet(name){
+  if(name === "Johnny"){
+    return "Hello, my love!";}
+  return "Hello, " + name + "!";
+
+}

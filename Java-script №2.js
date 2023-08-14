@@ -298,3 +298,6 @@ var filterString = function(value) {
 function sayHello( name, city, state ) {
   return `Hello, ${name.join(" ")}! Welcome to ${city}, ${state}!`
 }
+function printArray(array){
+  return array.join(",")
+}

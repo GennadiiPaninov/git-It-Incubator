@@ -301,3 +301,12 @@ function sayHello( name, city, state ) {
 function printArray(array){
   return array.join(",")
 }
+
+const distinct=a=>{
+
+  const result = []
+  a.map((e)=>{
+    result.find((el)=> el==e) === undefined ? result.push(e) : ""
+  })
+  return result
+}

@@ -310,3 +310,6 @@ const distinct=a=>{
   })
   return result
 }
+function tidyNumber(n){
+  return n.toString().split("").sort((a,b)=>a-b).join("") === `${n}`
+}

@@ -313,3 +313,18 @@ const distinct=a=>{
 function tidyNumber(n){
   return n.toString().split("").sort((a,b)=>a-b).join("") === `${n}`
 }
+function dominator(arr) {
+  const n = arr.length;
+  const count = {};
+
+  for (let i = 0; i < n; i++) {
+    const num = arr[i];
+    count[num] = (count[num] || 0) + 1;
+
+    if (count[num] > n / 2) {
+      return num;
+    }
+  }
+
+  return -1;
+}

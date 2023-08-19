@@ -328,3 +328,14 @@ function dominator(arr) {
 
   return -1;
 }
+function solve(arr){
+  const uniqueIntegers = new Set(arr);// создается объект уникальных значений
+
+  for (const num of uniqueIntegers) { //проверяет естть ли ключ который соответствует
+    if (!uniqueIntegers.has(-num)) {
+      return num;
+    }
+  }
+
+  return null;
+};

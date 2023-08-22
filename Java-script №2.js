@@ -344,3 +344,19 @@ function dropCap(n) {
         return match.charAt(0).toUpperCase() + match.slice(1).toLowerCase();
     });
 }
+function getMean(arr, x, y) {
+  let sum1 = 0
+  let sum2 = 0
+  if(x<=1 || y<=1 || arr.length < x || arr.length < y){
+    return -1
+  }
+  for(let i =0; i < x;i++){
+    sum1+= arr[i]
+  }
+  for(let i = arr.length-y; i < arr.length;i++){
+
+    sum2+= arr[i]
+  }
+  console.log(sum1,sum2)
+  return ((sum1 / x) + (sum2/y)) /2
+}

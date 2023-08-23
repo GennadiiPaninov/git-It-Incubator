@@ -360,3 +360,4 @@ function getMean(arr, x, y) {
   console.log(sum1,sum2)
   return ((sum1 / x) + (sum2/y)) /2
 }
+const flip=(d,a)=>a.sort((b,c)=>d=="R"? b-c:c-b)

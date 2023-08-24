@@ -383,3 +383,18 @@ function boredom(staff){
 
   return score <= 80 ? 'kill me now': score < 100 && score > 80 ? 'i can handle this' : 'party time!!';
 }
+const xMarksTheSpot = (input) => {
+  let score = 0
+  const result = []
+  for(let i = 0; i < input.length; i ++){
+    for(let j =0; j < input[i].length; j++){
+      if(input[i][j]==="x"){
+        console.log(i, j)
+        result.push(i)
+        result.push(j)
+        score++
+      }
+    }
+  }
+  return score === 1 ? result : [];
+}

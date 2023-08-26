@@ -398,3 +398,10 @@ const xMarksTheSpot = (input) => {
   }
   return score === 1 ? result : [];
 }
+function breakChocolate(n,m) {
+  console.log(n,m)
+  if(n<1 || m<1){
+    return 0
+  }
+  return n === 1 && m ===1 ? 0 : n*m-1;
+}

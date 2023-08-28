@@ -409,3 +409,24 @@ function animal(obj){
   return `This ${obj.color} ${obj.name} has ${obj.legs} legs.`
 }
 
+const trueOrFalse=val=> {
+  console.log(val)
+  if(val === true){
+    return "true"
+  } else if(val > 0){
+    return "true"
+  }else if(val === 0){
+    return "false"
+  }else if(val=== null){
+    return "false"
+  }
+  else if(val === undefined){
+    return "false"
+  }else if(val.length >= 1){
+    return "true"
+  }
+
+
+  return val === true ? "true" : "false"
+
+}

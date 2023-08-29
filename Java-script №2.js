@@ -430,3 +430,36 @@ const trueOrFalse=val=> {
   return val === true ? "true" : "false"
 
 }
+function howManydays(month){
+  const a = 31;
+  const b = 30;
+  const c = 28;
+  switch (month){
+    case 1:
+      return a
+    case 2:
+      return c
+    case 3:
+      return a
+    case 4:
+      return b
+    case 5:
+      return a
+    case 6:
+      return b
+    case 7:
+      return a
+    case 8:
+      return a
+    case 9:
+      return b
+    case 10:
+      return a
+    case 11:
+      return b
+    case 12:
+      return a
+      break;
+  }
+
+}

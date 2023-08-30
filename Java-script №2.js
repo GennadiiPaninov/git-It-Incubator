@@ -463,3 +463,16 @@ function howManydays(month){
   }
 
 }
+function padIt(str,n){
+  let res = `${str}`
+  let count = 0
+  while(count <= n-1){
+    if(count%2 === 0){
+      res = "*" + res
+    } else{
+      res = res + "*"
+    }
+    count++
+  }
+  return res
+}

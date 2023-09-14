@@ -549,3 +549,14 @@ function cutIt(arr){
     return resArr
   },[])
 }
+function firstToLast(str,c){
+  const firstIndex = str.indexOf(c);
+  const lastIndex = str.lastIndexOf(c);
+
+  if (firstIndex === -1) {
+    return -1; // If there is no occurrence of 'c' in the string
+  } else if (firstIndex === lastIndex) {
+    return 0; // If there is only one occurrence of 'c' in the string
+  } else {
+    return lastIndex - firstIndex; // Difference between the last and first occurrence of 'c'
+  }}

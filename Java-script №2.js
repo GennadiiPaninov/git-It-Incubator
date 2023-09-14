@@ -536,3 +536,16 @@ function colorOf(r,g,b){
 }
 
 const howManySmaller=(arr,n)=> arr.filter(el=>+el.toFixed(2)<n).length
+
+function cutIt(arr){
+  let count = arr[0].length
+  for(let i = 0 ; i<= arr.length-1; i++){
+    if(count > arr[i].length){
+      count = arr[i].length
+    }
+  }
+  return arr.reduce((resArr, cur)=> {
+    resArr.push(cur.slice(0, count))
+    return resArr
+  },[])
+}

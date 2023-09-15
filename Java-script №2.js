@@ -560,3 +560,10 @@ function firstToLast(str,c){
   } else {
     return lastIndex - firstIndex; // Difference between the last and first occurrence of 'c'
   }}
+function alienLanguage(str){
+  const result = str.split(" ")
+  return result.reduce((arr, curVal)=>{
+    arr.push(curVal.substring(0, curVal.length -1).toUpperCase() + curVal[curVal.length -1].toLowerCase())
+    return arr
+  },[]).join(" ")
+}

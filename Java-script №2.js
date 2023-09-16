@@ -567,3 +567,12 @@ function alienLanguage(str){
     return arr
   },[]).join(" ")
 }
+function shuffleIt(arr,...restProps){
+  for(let i =0; i< restProps.length;i++){
+    let num1 = arr[restProps[i][0]]
+    let num2 = arr[restProps[i][1]]
+    arr[restProps[i][0]] = num2
+    arr[restProps[i][1]] = num1
+  }
+  return arr
+}

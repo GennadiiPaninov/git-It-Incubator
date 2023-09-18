@@ -592,3 +592,12 @@ function infiniteLoop(arr,d,n){
   return arr;
 
 }
+function threeInOne(arr){
+  let resArr = []
+  for(let i = 1; i< arr.length + 1 ; i++){
+    if(i % 3 ===0){
+      resArr.push( arr[i-1]+ arr[i-2]+arr[i-3])
+    }
+  }
+  return resArr
+}

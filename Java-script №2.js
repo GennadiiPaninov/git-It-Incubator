@@ -611,3 +611,23 @@ function sortIt(arr){
   })
 
 }
+function isolateIt(arr){
+  return arr.map((el)=>{
+    if(el.length %2===0){
+      return el.slice(0, el.length/2  ) + "|"  +el.slice(el.length/2)
+    }
+    else{
+      return el.slice(0, el.length/2 -0.5 ) + "|"  +el.slice(el.length/2+0.5)
+    }
+  })
+}
+function isolateIt(arr){
+  return arr.map((el)=>{
+    if(el.length %2===0){
+      return el.slice(0, el.length/2  ) + "|"  +el.slice(el.length/2)
+    }
+    else{
+      return el.slice(0, el.length/2 -0.5 ) + "|"  +el.slice(el.length/2+0.5)
+    }
+  })
+}

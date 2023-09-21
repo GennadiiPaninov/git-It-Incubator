@@ -631,3 +631,23 @@ function isolateIt(arr){
     }
   })
 }
+function countGrade(s){
+  let res = {S:0, A:0, B:0, C:0, D:0, X:0}
+  for(let i=0; i<s.length;i++){
+    let a = s[i]
+    if(a===-1){
+      res.X++
+    }
+    else if(a <60 && a >=0){
+      res.D++
+    }else if(a < 80 && a >=60){
+      res.C++
+    }else if(a <90 && a >=80){
+      res.B++
+    }else if(a <100 && a >=90){
+      res.A++
+    }else if(a===100){
+      res.S++
+    }
+  }
+  return res

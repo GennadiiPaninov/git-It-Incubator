@@ -663,3 +663,4 @@ function mirrorImage(arr){
   }
   return resArr.length ===0 ? [-1,-1] : [resArr[0], resArr[1]]
 }
+const fakeBin=x=> x.split("").map(el=>{ return el < 5 ? 0 : 1 }).join("")

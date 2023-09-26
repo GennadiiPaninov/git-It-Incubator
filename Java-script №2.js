@@ -687,3 +687,4 @@ function points(games) {
     }
   },0)
 }
+const  digitize=n=> `${n}`.split("").map(el=> Number(el)).reverse()

@@ -691,3 +691,6 @@ const  digitize=n=> `${n}`.split("").map(el=> Number(el)).reverse()
 function toCsvText(array) {
   return array.join("\n")
 }
+function isVow(a){
+  return a.map(el=> /[aeiou]/.test(String.fromCharCode(el))? String.fromCharCode(el): el)
+}

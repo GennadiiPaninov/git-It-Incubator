@@ -688,3 +688,6 @@ function points(games) {
   },0)
 }
 const  digitize=n=> `${n}`.split("").map(el=> Number(el)).reverse()
+function toCsvText(array) {
+  return array.join("\n")
+}

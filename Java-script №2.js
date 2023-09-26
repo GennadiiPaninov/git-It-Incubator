@@ -676,3 +676,14 @@ function arrayPlusArray(arr1, arr2) {
     return el+cur
   },0)
 }
+function points(games) {
+  return games.reduce((el,cur)=>{
+    if(cur[0]<cur[2]){
+      return el
+    } else if(cur[0]>cur[2]){
+      return el + 3
+    } else{
+      return el +1
+    }
+  },0)
+}

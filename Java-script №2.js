@@ -668,3 +668,11 @@ const findNeedle=h=> {
   let ind = h.indexOf("needle")
   return ind === -1 ? "Your function didn't return anything" : `found the needle at position ${ind}`
 }
+function arrayPlusArray(arr1, arr2) {
+
+  return arr1.reduce((el,cur)=>{
+    return el+cur
+  },0)  + arr2.reduce((el,cur)=>{
+    return el+cur
+  },0)
+}

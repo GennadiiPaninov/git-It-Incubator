@@ -694,3 +694,13 @@ function toCsvText(array) {
 function isVow(a){
   return a.map(el=> /[aeiou]/.test(String.fromCharCode(el))? String.fromCharCode(el): el)
 }
+function countPositivesSumNegatives(input) {
+  let positiveNums = 0;
+  let negativeNums = 0;
+  if (input === null || input.length === 0) {
+    return [];
+  } else {
+    input.forEach((num) => num > 0 ? positiveNums++ : negativeNums += num);
+  }
+  return [positiveNums , negativeNums];
+}

@@ -704,3 +704,17 @@ function countPositivesSumNegatives(input) {
   }
   return [positiveNums , negativeNums];
 }
+function sumOfDifferences(arr) {
+  const resArr = []
+
+  if(arr.length === 0 || arr.length === 1){
+    return 0
+  }
+  arr.sort((a,b)=> b-a)
+  for(let i = 0; i<arr.length -1; i++){
+    resArr.push(arr[i] - arr[i+1])
+  }
+
+  return resArr.reduce((val,cur)=> {
+    return val + cur},0)
+}

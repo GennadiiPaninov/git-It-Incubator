@@ -718,3 +718,13 @@ function sumOfDifferences(arr) {
   return resArr.reduce((val,cur)=> {
     return val + cur},0)
 }
+function mergeArrays(a, b) {
+  const Arr = [...a,...b].sort((el1,el2)=> el1-el2)
+  const resArr = []
+  for(let i = 0;i< Arr.length;i++){
+    if(!resArr.includes(Arr[i])){
+      resArr.push(Arr[i])
+    }
+  }
+  return resArr
+}

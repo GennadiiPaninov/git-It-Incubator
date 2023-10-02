@@ -728,3 +728,9 @@ function mergeArrays(a, b) {
   }
   return resArr
 }
+function squareOrSquareRoot(array) {
+  return  array.map((el)=>{
+    return  Number.isInteger(Math.sqrt(el)) ? Math.sqrt(el) : el**2
+
+  });
+}

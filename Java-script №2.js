@@ -734,3 +734,11 @@ function squareOrSquareRoot(array) {
 
   });
 }
+function countBy(x, n) {
+  const z = []
+  for(let i = 0;i< n; i++){
+    z.push(z[i-1] === undefined ?  x : z[i-1] + x )
+  }
+  return z
+
+}

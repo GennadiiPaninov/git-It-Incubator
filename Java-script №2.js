@@ -743,3 +743,9 @@ function countBy(x, n) {
 
 }
 const divisibleBy=(n, d)=> n.filter((el)=> el % d === 0)
+
+function sumMix(x){
+  return x.reduce((el,cur)=>{
+    return el + Number(cur)
+  },0)
+}

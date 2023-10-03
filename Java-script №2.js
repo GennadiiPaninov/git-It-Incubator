@@ -742,3 +742,4 @@ function countBy(x, n) {
   return z
 
 }
+const divisibleBy=(n, d)=> n.filter((el)=> el % d === 0)

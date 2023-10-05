@@ -752,3 +752,8 @@ function sumMix(x){
 function mergeArrays(arr1, arr2) {
   return [...new Set([...arr1, ...arr2])].sort((a,b)=>a-b)
 }
+function well(x){
+  let c =0
+  x.forEach(el=> el === "good" ? c++ : "")
+  return c === 0 ? "Fail!" : c >  2  ? 'I smell a series!' : "Publish!"
+}

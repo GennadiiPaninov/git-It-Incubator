@@ -763,3 +763,12 @@ function warnTheSheep(queue) {
   }
   return `Oi! Sheep number ${queue.length - 1 - queue.indexOf("wolf")}! You are about to be eaten by a wolf!`
 }
+function stairsIn20(s){
+  let count = 0
+  for(let i=0; i<s.length;i++){
+    count += s[i].reduce((el,cur)=>{
+      return el+=cur
+    },0)
+  }
+  return count * 20
+}

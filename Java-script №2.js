@@ -779,3 +779,6 @@ function eachCons(array, n) {
   }
   return res.filter(el=> el.length === n)
 }
+function all( arr, fun ){
+  return  arr.every(fun)
+}

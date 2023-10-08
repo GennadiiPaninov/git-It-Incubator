@@ -782,3 +782,6 @@ function eachCons(array, n) {
 function all( arr, fun ){
   return  arr.every(fun)
 }
+function swapValues(arr) {
+  return arr.reverse()
+}

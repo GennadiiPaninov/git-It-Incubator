@@ -789,3 +789,11 @@ function swapValues(arr) {
 function logicalCalc(array, op){
   return !!array.reduce((prev,cur)=>op=='AND'? prev && cur : op =='OR'? prev || cur : prev ^ cur)
 }
+function uefaEuro2016(teams, scores){
+  if(scores[0] > scores[1])
+    return `At match ${teams[0]} - ${teams[1]}, ${teams[0]} won!`;
+  if(scores[0] < scores[1])
+    return `At match ${teams[0]} - ${teams[1]}, ${teams[1]} won!`;
+  if(scores[0] === scores[1])
+    return `At match ${teams[0]} - ${teams[1]}, teams played draw.`;
+}

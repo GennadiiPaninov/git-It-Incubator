@@ -785,3 +785,7 @@ function all( arr, fun ){
 function swapValues(arr) {
   return arr.reverse()
 }
+
+function logicalCalc(array, op){
+  return !!array.reduce((prev,cur)=>op=='AND'? prev && cur : op =='OR'? prev || cur : prev ^ cur)
+}

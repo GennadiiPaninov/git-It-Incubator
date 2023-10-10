@@ -797,3 +797,12 @@ function uefaEuro2016(teams, scores){
   if(scores[0] === scores[1])
     return `At match ${teams[0]} - ${teams[1]}, teams played draw.`;
 }
+function arrayMadness(a, b) {
+  const powA = a.reduce((cur,el)=>{
+    return cur += Math.pow(el,2)
+  },0)
+  const powB = b.reduce((cur,el)=>{
+    return cur += Math.pow(el,3)
+  },0)
+  return powA > powB
+}

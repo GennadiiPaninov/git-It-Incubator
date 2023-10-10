@@ -806,3 +806,6 @@ function arrayMadness(a, b) {
   },0)
   return powA > powB
 }
+function differenceInAges(ages){
+  return [Math.min(...ages), Math.max(...ages),  Math.max(...ages) - Math.min(...ages)]
+}

@@ -809,3 +809,12 @@ function arrayMadness(a, b) {
 function differenceInAges(ages){
   return [Math.min(...ages), Math.max(...ages),  Math.max(...ages) - Math.min(...ages)]
 }
+// Array.prototype.filter = function (func) {
+//   const arr = []
+//   for(let i =0; i< this.length;i++){
+//     if(func(this[i])){
+//       arr.push(this[i])
+//     }
+//   }
+//   return arr
+// }

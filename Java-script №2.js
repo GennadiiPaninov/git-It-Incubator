@@ -825,3 +825,4 @@ var findAverage = function (nums) {
 var ArrowFunc = function(arr) {
   return arr.map( el=> String.fromCharCode(el) ).join(''); //Complete this function
 }
+const duckDuckGoose=(players, goose) =>players[(goose - 1) % players.length].name

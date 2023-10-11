@@ -818,3 +818,7 @@ function differenceInAges(ages){
 //   }
 //   return arr
 // }
+
+var findAverage = function (nums) {
+  return nums.reduce((cur,el)=> cur+el) / nums.length
+}

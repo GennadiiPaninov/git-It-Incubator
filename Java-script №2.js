@@ -822,3 +822,6 @@ function differenceInAges(ages){
 var findAverage = function (nums) {
   return nums.reduce((cur,el)=> cur+el) / nums.length
 }
+var ArrowFunc = function(arr) {
+  return arr.map( el=> String.fromCharCode(el) ).join(''); //Complete this function
+}

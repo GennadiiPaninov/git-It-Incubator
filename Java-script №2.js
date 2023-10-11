@@ -827,3 +827,14 @@ var ArrowFunc = function(arr) {
 }
 const duckDuckGoose=(players, goose) =>players[(goose - 1) % players.length].name
 const  arr2bin= arr => arr.reduce((p,c)=> p + (typeof c === 'number'? c : 0),0).toString(2)
+
+function headSmash(array) {
+  if (array.length === 0){
+    return 'Gym is empty'
+  }
+  if (Array.isArray(array)) {
+    array = array.map(el => el.replace(/O/gi, " "));
+    return array
+  }
+  return 'This isn\'t the gym!!'
+}

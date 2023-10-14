@@ -838,3 +838,16 @@ function headSmash(array) {
   }
   return 'This isn\'t the gym!!'
 }
+function baublesOnTree(baubles, branches){
+  if(branches === 0){
+    return "Grandma, we will have to buy a Christmas tree first!"
+  }
+  const tree = new Array(branches)
+  let count = baubles
+  for(let i =0; i< tree.length;i++){
+    let countBaubles = Math.ceil(count / (branches - i))
+    count -= countBaubles
+    tree[i] = countBaubles
+  }
+  return tree
+}

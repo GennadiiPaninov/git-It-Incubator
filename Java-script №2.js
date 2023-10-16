@@ -871,3 +871,20 @@ var mispelled = function(word1, word2){
   }
   return count<2
 }
+const whosOnline = friends => {
+  if (!friends.length) return {}
+
+  const online = friends
+      .filter(({ status, lastActivity }) => status === 'online' && lastActivity <= 10)
+      .map(({ username }) => username)
+  const away = friends
+      .filter(({ status, lastActivity }) => status === 'online' && lastActivity > 10)
+      .map(({ username }) => username)
+  const offline = friends.filter(({ status }) => status === 'offline').map(({ username }) => username)
+
+  return {
+    ...(online.length && { online }),
+    ...(offline.length && { offline }),
+    ...(away.length && { away }),
+  }
+}

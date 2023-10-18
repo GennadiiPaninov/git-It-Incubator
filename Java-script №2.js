@@ -888,3 +888,24 @@ const whosOnline = friends => {
     ...(away.length && { away }),
   }
 }
+function scoreboard(string) {
+  const arr =[]
+  const objScore={
+    "nil":0,"one": 1,"two": 2,"three": 3,"four":4,"five":5,"six":6,"seven":7,"eight":8,"nine":9,"ten":10
+  }
+  string.split(" ").forEach(el=>{
+    for(let key in objScore){
+      if(el === key){
+        arr.push(objScore[key])
+      }
+    }
+  })
+  console.log(arr)
+  return arr
+}
+function getAges(sum,difference){
+  if(sum < 0 || difference < 0 || sum < difference){
+    return null
+  }
+  return [(sum - difference) / 2 + difference, (sum - difference) / 2 ]
+};

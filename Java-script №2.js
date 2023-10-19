@@ -909,3 +909,6 @@ function getAges(sum,difference){
   }
   return [(sum - difference) / 2 + difference, (sum - difference) / 2 ]
 };
+function sortByLength (array) {
+  return array.sort((a,b)=> a.length-b.length )
+};

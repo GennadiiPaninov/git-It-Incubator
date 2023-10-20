@@ -912,3 +912,4 @@ function getAges(sum,difference){
 function sortByLength (array) {
   return array.sort((a,b)=> a.length-b.length )
 };
+const evenNumbers=(a,n)=>a.filter(e=>e%2===0).slice(-n)

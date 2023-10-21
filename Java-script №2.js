@@ -913,3 +913,13 @@ function sortByLength (array) {
   return array.sort((a,b)=> a.length-b.length )
 };
 const evenNumbers=(a,n)=>a.filter(e=>e%2===0).slice(-n)
+
+function solve(arr) {
+  const resArr = []
+  for(let i=0;i<arr.length;i++){
+    if(arr.slice(i+1).filter(el=> arr[i] <= el).length === 0){
+      resArr.push(arr[i])
+    }
+  }
+  return resArr
+}

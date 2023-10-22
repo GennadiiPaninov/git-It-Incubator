@@ -923,3 +923,14 @@ function solve(arr) {
   }
   return resArr
 }
+function spinAround(turns) {
+  let left = 0, right = 0
+  turns.forEach(el=>el==="left" ? left += 1: right +=1)
+  if(left === right){
+    return 0
+  }else if(left - right < 0){
+    return Math.floor((right-left) / 4)
+  }else if(right-left < 0){
+    return Math.floor((left-right) / 4)
+  }
+}

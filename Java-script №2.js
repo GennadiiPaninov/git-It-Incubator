@@ -943,3 +943,12 @@ function trouble(x, t){
   }
   return x;
 }
+const sumAverage = (arr) => {
+  let result = [];
+  arr.forEach((el, ind)=> result.push(el.reduce((el,cur)=> {
+    return el+cur
+  },0) / el.length))
+  return Math.floor(result.reduce((el, cur)=>{
+    return el+cur
+  },0));
+}

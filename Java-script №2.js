@@ -952,3 +952,14 @@ const sumAverage = (arr) => {
     return el+cur
   },0));
 }
+function counterEffect(hitCount) {
+  const resArr = []
+  hitCount.split("").forEach(el=>{
+    const arr = []
+    for(let i = 0; i <= el;i++){
+      arr.push(i)
+    }
+    resArr.push(arr)
+  })
+  return resArr
+}

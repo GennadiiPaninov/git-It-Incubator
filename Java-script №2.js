@@ -963,3 +963,19 @@ function counterEffect(hitCount) {
   })
   return resArr
 }
+function treePhotography(trees) {
+  const leftArr = trees.reduce((el,cur)=>{
+    if (el.every((ele) => ele < cur)) {
+      el.push(cur);
+    }
+    return el;
+  },[])
+  const rightArr = trees.reverse().reduce((el,cur)=>{
+    if (el.every((ele) => ele < cur)) {
+      el.push(cur);
+    }
+    return el;
+  },[])
+  console.log(leftArr)
+  return leftArr.length >= rightArr.length ? "left":"right"
+}

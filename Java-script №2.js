@@ -979,3 +979,15 @@ function treePhotography(trees) {
   console.log(leftArr)
   return leftArr.length >= rightArr.length ? "left":"right"
 }
+function oddOnesOut(nums) {
+    const resArr = []
+    for(let i = 0; i< nums.length;i++){
+        let a = nums.reduce((el,cur)=> {
+            return cur === nums[i] ? el = el + 1 : el
+        },0)
+        if(a % 2 === 0){
+            resArr.push(nums[i])
+        }
+    }
+    return resArr
+}

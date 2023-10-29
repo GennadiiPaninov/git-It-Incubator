@@ -991,3 +991,13 @@ function oddOnesOut(nums) {
     }
     return resArr
 }
+function findDup( arr ){
+  const numSet = new Set();
+  for (const num of arr) {
+    if (numSet.has(num)) {
+      return num;
+    }
+    numSet.add(num);
+  }
+  return -1;
+}

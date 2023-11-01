@@ -1002,3 +1002,15 @@ function findDup( arr ){
   return -1;
 }
 const getLargerNumbers=(a,b)=>a.map((e,i)=>e<b[i]?b[i]:e)
+function mostFrequentItemCount(collection) {
+  let res = 0
+  const obj={}
+  for(let i=0; i<collection.length;i++){
+    obj[collection[i]] ? obj[collection[i]] +=1 : obj[collection[i]] = 1
+
+  }
+  for(let key  in obj){
+    obj[key] > res ? res = obj[key] : ""
+  }
+  return res
+}

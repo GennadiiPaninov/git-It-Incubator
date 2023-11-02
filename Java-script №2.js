@@ -1014,3 +1014,15 @@ function mostFrequentItemCount(collection) {
   }
   return res
 }
+function findMissing(arr1, arr2) {
+  let num = 0;
+  const sa1 = arr1.sort((a,b)=> a-b)
+  const sa2 = arr2.sort((a,b)=> a-b)
+  for(let i = 0;i< sa1.length;i++){
+    if(sa1[i] !== sa2[i]){
+      num = sa1[i]
+      break;
+    }
+  }
+  return num
+}

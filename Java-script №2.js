@@ -1026,3 +1026,19 @@ function findMissing(arr1, arr2) {
   }
   return num
 }
+function checkThreeAndTwo(array) {
+  const arr = []
+  let obj = {}
+  for(let i =0; i< array.length;i++){
+    obj[array[i]] ? obj[array[i]] += 1 : obj[array[i]] = 1
+  }
+  for(let key in obj){
+    if(obj[key] === 3){
+      arr.push(3)
+    }
+    if(obj[key] === 2 ){
+      arr.push(2)
+    }
+  }
+  return arr[0] === 3 && arr[1] === 2 ? true :  arr[1] === 3 && arr[0] === 2 ? true :false
+}

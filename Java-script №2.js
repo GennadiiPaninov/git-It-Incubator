@@ -1042,3 +1042,14 @@ function checkThreeAndTwo(array) {
   }
   return arr[0] === 3 && arr[1] === 2 ? true :  arr[1] === 3 && arr[0] === 2 ? true :false
 }
+function filterHomogenous(arrays) {
+  const resArray = []
+  for(let i = 0; i< arrays.length;i++){
+    if(arrays[i].length === 0){
+      ""
+    } else {
+      arrays[i].every(el=> typeof arrays[i][0]  === typeof el) ? resArray.push(arrays[i]) : ""
+    }
+  }
+  return resArray;
+}

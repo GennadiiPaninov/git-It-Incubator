@@ -1053,3 +1053,14 @@ function filterHomogenous(arrays) {
   }
   return resArray;
 }
+function uniteUnique(...array) {
+  const arr = [...array]
+  const resArr = []
+  const setObj = new Set()
+  for(let i = 0; i < arr.length; i++){
+    arr[i].forEach(el=> setObj.add(el, 0))
+
+  }
+  setObj.forEach(el=> resArr.push(el))
+  return resArr
+}

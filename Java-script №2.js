@@ -1064,3 +1064,6 @@ function uniteUnique(...array) {
   setObj.forEach(el=> resArr.push(el))
   return resArr
 }
+function isFlush(cards) {
+  return cards.every((el)=> el[el.length - 1] === cards[0][cards[0].length-1])
+}

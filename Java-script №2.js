@@ -1067,3 +1067,8 @@ function uniteUnique(...array) {
 function isFlush(cards) {
   return cards.every((el)=> el[el.length - 1] === cards[0][cards[0].length-1])
 }
+function pluck(objs, name) {
+  const resArr = []
+  objs.forEach(el=> resArr.push(el[name]))
+  return resArr
+}

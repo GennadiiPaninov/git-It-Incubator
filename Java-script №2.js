@@ -1078,3 +1078,8 @@ function fire(x,y) {
     'bottom left', 'bottom middle', 'bottom right']
   return grid[y*3+x]
 }
+function oddOrEven(array) {
+  return array.reduce((el,cur)=>{
+    return el + cur
+  },0) %2 === 0 ? 'even' : 'odd'
+}

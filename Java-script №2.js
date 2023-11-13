@@ -1083,3 +1083,12 @@ function oddOrEven(array) {
     return el + cur
   },0) %2 === 0 ? 'even' : 'odd'
 }
+const fizzbuzz=n=>{
+  console.log(n)
+  const arr = []
+  for(let i=1;i<n+1;i++){
+    i %3 === 0  &&  i%5===0 ? arr.push('FizzBuzz') : i%3===0 ? arr.push('Fizz') : i%5===0 ? arr.push('Buzz') : arr.push(i)
+  }
+  return arr
+}
+

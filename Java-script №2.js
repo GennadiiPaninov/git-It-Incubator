@@ -1091,4 +1091,12 @@ const fizzbuzz=n=>{
   }
   return arr
 }
+function pendulum(values) {
 
+  values.sort((a,b)=> a-b)
+  const arr =[values[0]]
+  for(let i = 1; i<values.length;i++){
+    i%2===0 ? arr.unshift(values[i]) : arr.push(values[i])
+  }
+  return arr
+}

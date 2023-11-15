@@ -1100,3 +1100,8 @@ function pendulum(values) {
   }
   return arr
 }
+function arrayMash (array1, array2) {
+  const arr = []
+  array1.forEach((el,ind)=> arr.push(el, array2[ind]))
+  return arr
+}

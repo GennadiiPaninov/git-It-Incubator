@@ -1105,3 +1105,8 @@ function arrayMash (array1, array2) {
   array1.forEach((el,ind)=> arr.push(el, array2[ind]))
   return arr
 }
+var number=function(array){
+  const arr = []
+  array.forEach((el, ind)=> arr.push(`${ind+1}: ${el}`))
+  return arr
+}

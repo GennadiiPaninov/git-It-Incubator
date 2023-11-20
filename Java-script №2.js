@@ -1110,3 +1110,11 @@ var number=function(array){
   array.forEach((el, ind)=> arr.push(`${ind+1}: ${el}`))
   return arr
 }
+var seqlist = function(first,c,l){
+  console.log(first,c,l)
+  const arr = []
+  for(let i = first; arr.length<l;i+=c){
+    arr.push(i)
+  }
+  return arr
+}

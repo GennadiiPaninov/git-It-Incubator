@@ -1123,3 +1123,18 @@ function calculateTotal(team1, team2) {
   var t2s = team2.reduce((t, c, i) => t+=c,0);
   return t1s > t2s;
 }
+
+function spoonerize(words) {
+  const arr = words.split(" ")
+  const arr2 = arr.map((el,ind)=>{
+    if(ind === 0){
+      return `${arr[arr.length-1][0]}${el.substring(1)}`
+      console.log(el[0], arr[arr.length-1][0])
+    }
+    if(ind === arr.length -1){
+      return `${arr[0][0]}${el.substring(1)}`
+    }
+    return el
+  })
+  return arr2.join(" ")
+}

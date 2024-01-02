@@ -1138,3 +1138,12 @@ function spoonerize(words) {
   })
   return arr2.join(" ")
 }
+const arrCheck = value =>{
+  if(value.length === 0){
+    return true
+  }
+  return value.every((el)=>{
+    return Array.isArray(el)
+
+  })
+}

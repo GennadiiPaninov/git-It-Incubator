@@ -1147,3 +1147,11 @@ const arrCheck = value =>{
 
   })
 }
+function cantBeatSoJoin(numbers) {
+  const sum = (el)=>{
+    return el.reduce((val,cur)=>{
+      return val+cur
+    },0)
+  }
+  return numbers.sort((a,b)=>sum(b)-sum(a)).flat()
+}

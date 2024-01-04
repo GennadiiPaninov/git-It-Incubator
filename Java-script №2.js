@@ -1169,3 +1169,17 @@ const howMuchCoffee=events=> {
     }})
   return count <= 3 ? count : 'You need extra sleep'
 }
+function getLosAngelesPoints(results) {
+  const isName = (name)=>{
+    return /^[A-Z]/.test(name)
+  }
+
+  const LosAngelesTeam = results.reduce((arr,cur)=>{
+    cur[0].startsWith('Los Angeles') && isName(cur[0].split(" ")[2]) ? arr.push(cur) : ''
+    return arr
+  },[])
+  console.log(results,"asdsad", LosAngelesTeam)
+  return LosAngelesTeam.reduce((score,curr)=>{
+
+    return score + Number(curr[1].split(":")[0])
+  },0)

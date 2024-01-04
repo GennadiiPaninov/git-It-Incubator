@@ -1182,4 +1182,12 @@ function getLosAngelesPoints(results) {
   return LosAngelesTeam.reduce((score,curr)=>{
 
     return score + Number(curr[1].split(":")[0])
-  },0)
+  },0)}
+function findMissingNumbers(arr){
+  const resArr = []
+  const value = arr.sort((a,b)=> a-b)
+  for (let i = value[0]; i <= value[value.length-1];i++){
+    arr.includes(i) ? "" : resArr.push(i)
+  }
+  return resArr
+}

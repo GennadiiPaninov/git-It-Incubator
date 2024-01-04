@@ -1155,3 +1155,17 @@ function cantBeatSoJoin(numbers) {
   }
   return numbers.sort((a,b)=>sum(b)-sum(a)).flat()
 }
+const howMuchCoffee=events=> {
+  let count = 0
+  if(events.length ===0){
+    return 0
+  }
+  events.map(el=> {
+    if(el.toLowerCase() === 'cw' ||
+        el.toLowerCase() === 'cat' ||
+        el.toLowerCase() === 'dog'||
+        el.toLowerCase() === 'movie'){
+      el ===  el.toLowerCase() ? count++ : count += 2
+    }})
+  return count <= 3 ? count : 'You need extra sleep'
+}

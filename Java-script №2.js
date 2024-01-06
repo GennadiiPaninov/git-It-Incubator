@@ -1191,3 +1191,10 @@ function findMissingNumbers(arr){
   }
   return resArr
 }
+function countWins(winnerList, country) {
+  let winCount = 0
+  winnerList.forEach(el=>{
+    el.country === country ? winCount++ : ''
+  })
+  return winCount
+}

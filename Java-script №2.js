@@ -1198,3 +1198,9 @@ function countWins(winnerList, country) {
   })
   return winCount
 }
+function switcher(x){
+  let word = ''
+  const alphabet= " ?!ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").reverse()
+  x.forEach(el=> word += alphabet[el-1])
+  return word.toLowerCase()
+}

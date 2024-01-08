@@ -1204,3 +1204,7 @@ function switcher(x){
   x.forEach(el=> word += alphabet[el-1])
   return word.toLowerCase()
 }
+function min(arr, toReturn) {
+  const res = [...arr].sort((a,b)=> a-b)[0]
+  return toReturn === 'value' ? res :  arr.indexOf(res)
+}

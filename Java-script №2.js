@@ -1208,3 +1208,11 @@ function min(arr, toReturn) {
   const res = [...arr].sort((a,b)=> a-b)[0]
   return toReturn === 'value' ? res :  arr.indexOf(res)
 }
+function getMissingElement(arr){
+  let missNum= 0
+  const numArr =[ 0, 1, 2, 3, 4, 5, 6, 7,8,9]
+  for (let i=0;i<numArr.length;i++){
+    arr.includes(numArr[i]) ? "" : missNum = numArr[i]
+  }
+  return missNum
+}

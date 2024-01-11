@@ -1216,3 +1216,17 @@ function getMissingElement(arr){
   }
   return missNum
 }
+function calc(x){
+  const sum=(s)=>{
+    return s.split("").reduce((n, cur )=>{
+      return n += Number(cur)
+    },0)
+  }
+  let score = x.split("").reduce((s,cur)=>{
+    return `${s}${cur.charCodeAt()}`
+  },"")
+  let score1 = score.split("").reduce((s,cur)=>{
+    return `${s}${cur ==="7"? "1": cur}`
+  },"")
+  return sum(score) - sum(score1)
+}

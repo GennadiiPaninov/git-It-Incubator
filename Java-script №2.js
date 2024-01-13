@@ -1230,3 +1230,20 @@ function calc(x){
   },"")
   return sum(score) - sum(score1)
 }
+// сортировка строк
+function sorter(textbooks) {
+  textbooks.sort((a, b) => {
+    const subjectA = a.toLowerCase();
+    const subjectB = b.toLowerCase();
+
+    if (subjectA < subjectB) {
+      return -1;
+    }
+    if (subjectA > subjectB) {
+      return 1;
+    }
+    return 0;
+  });
+
+  return textbooks;
+}

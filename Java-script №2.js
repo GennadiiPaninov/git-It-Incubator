@@ -1247,3 +1247,16 @@ function sorter(textbooks) {
 
   return textbooks;
 }
+function adjacentElementsProduct(array) {
+  let maxValue = NaN
+  array.forEach((el,ind)=>{
+    if(ind === 0){
+      maxValue = el * array[ind+1]
+    } else{
+      if(array[ind + 1]){
+        el * array[ind+1] > maxValue ? maxValue =  el * array[ind+1] : ''
+      }
+    }
+  })
+  return maxValue
+}

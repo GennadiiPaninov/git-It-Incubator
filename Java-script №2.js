@@ -1275,3 +1275,16 @@ function possiblyPerfect(key,answers) {
   if(answers.length - arr.length  - underscoreCount === 0) return true
   return  false
 }
+function insertDash(num) {
+  const arrNum = String(num).split("")
+  let resStr = ''
+  arrNum.forEach((el,ind)=>{
+    resStr = resStr + el
+    if(el%2!==0 && arrNum[ind+1]%2!==0){
+      resStr = `${resStr}-`
+    }
+  })
+  if(resStr[resStr.length-1] === '-') return resStr.substring(0,resStr.length-1)
+  return resStr
+}
+

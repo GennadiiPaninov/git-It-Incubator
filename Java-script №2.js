@@ -1260,3 +1260,18 @@ function adjacentElementsProduct(array) {
   })
   return maxValue
 }
+function possiblyPerfect(key,answers) {
+  let underscoreCount = 0
+  const arr = []
+  key.forEach((el,ind)=>{
+    if(el === "_"){
+      underscoreCount++
+    }
+    if(el === answers[ind]){
+      arr.push(el)
+    }
+  })
+  if(arr.length === 0) return true
+  if(answers.length - arr.length  - underscoreCount === 0) return true
+  return  false
+}

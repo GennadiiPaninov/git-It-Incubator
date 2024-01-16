@@ -1301,3 +1301,17 @@ function bald(x){
   if(count > 5) result = 'Hobo!'
   return [str, result]
 }
+function cubeOdd(arr) {
+
+  if(!arr.every(el=> {
+    return typeof el == typeof 1
+  })){
+    return undefined
+  }
+
+
+  return arr.reduce((el,cur)=>{
+    if(cur%2!==0) return el + Math.pow(cur, 3)
+    return el
+  },0)
+}

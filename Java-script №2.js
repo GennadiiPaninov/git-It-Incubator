@@ -1287,4 +1287,17 @@ function insertDash(num) {
   if(resStr[resStr.length-1] === '-') return resStr.substring(0,resStr.length-1)
   return resStr
 }
-
+function bald(x){
+  let count = 0
+  const str = x.split('').map((el)=>{
+    el === "/" ? count++ : ''
+    return '-'
+  }).join("")
+  let result = ''
+  if(count == 0) result = 'Clean!'
+  if(count == 1) result = 'Unicorn!'
+  if(count == 2) result = 'Homer!'
+  if(count <= 5 && count >= 3) result = 'Careless!'
+  if(count > 5) result = 'Hobo!'
+  return [str, result]
+}

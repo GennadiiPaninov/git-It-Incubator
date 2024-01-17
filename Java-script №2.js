@@ -1315,3 +1315,8 @@ function cubeOdd(arr) {
     return el
   },0)
 }
+function flyBy(lamps, drone){
+  return lamps.split('').reduce((el,cur,ind)=>{
+    return el + (ind < drone.length ? 'o' : cur )
+  },'')
+}

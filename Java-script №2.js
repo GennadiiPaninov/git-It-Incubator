@@ -1320,3 +1320,9 @@ function flyBy(lamps, drone){
     return el + (ind < drone.length ? 'o' : cur )
   },'')
 }
+function getNewNotes(salary,bills){
+  let res = bills.reduce((el,cur)=> {
+    return el- cur
+  },salary)
+  return res / 5 <= 0 ? 0 : Math.floor(res / 5)
+}

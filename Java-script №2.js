@@ -1326,3 +1326,4 @@ function getNewNotes(salary,bills){
   },salary)
   return res / 5 <= 0 ? 0 : Math.floor(res / 5)
 }
+const noOdds =values => values.reduce((arr, cur) => cur % 2 === 0 ? arr.concat(cur) : arr, []);

@@ -1327,3 +1327,12 @@ function getNewNotes(salary,bills){
   return res / 5 <= 0 ? 0 : Math.floor(res / 5)
 }
 const noOdds =values => values.reduce((arr, cur) => cur % 2 === 0 ? arr.concat(cur) : arr, []);
+function validateSequence(x) {
+  let step = x[1] - x[0]
+  for(let i=0;i<x.length-1;i++){
+    if(x[i]+step !== x[i+1]){
+      return false
+    }
+  }
+  return true
+}

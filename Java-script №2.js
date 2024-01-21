@@ -1336,3 +1336,9 @@ function validateSequence(x) {
   }
   return true
 }
+function swapHeadAndTail(arr) {
+  if(arr.length %2===0){
+    return [...arr.slice(arr.length/2),...arr.slice(0, arr.length/2)]
+  }
+  return [...arr.slice(arr.length/2+0.5),arr[arr.length/2-0.5],...arr.slice(0, arr.length/2-0.5)]
+}

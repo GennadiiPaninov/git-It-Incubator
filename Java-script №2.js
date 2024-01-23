@@ -1342,3 +1342,8 @@ function swapHeadAndTail(arr) {
   }
   return [...arr.slice(arr.length/2+0.5),arr[arr.length/2-0.5],...arr.slice(0, arr.length/2-0.5)]
 }
+function nthChar(words){
+  return words.reduce((el,cur, ind)=>{
+    return el + cur[ind]
+  },'')
+}

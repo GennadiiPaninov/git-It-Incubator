@@ -1347,3 +1347,11 @@ function nthChar(words){
     return el + cur[ind]
   },'')
 }
+var calc = function(a) {
+  return a.reduce((el,cur,ind)=>{
+    if(cur>0) cur = Math.pow(cur,2)
+    if((ind+1)%3===0) cur = cur * 3
+    if((ind+1)%5===0) cur = cur * -1
+    return cur+el
+  },0);
+}

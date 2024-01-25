@@ -1355,3 +1355,13 @@ var calc = function(a) {
     return cur+el
   },0);
 }
+function pairs(ar){
+  console.log(ar)
+  let count =0
+  ar.forEach((el,ind)=>{
+    if(ind%2!==0){
+      if((ar[ind-1] + 1) === el || (ar[ind-1] - 1) === el)count++
+    }
+  })
+  return count
+};

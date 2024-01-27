@@ -1365,3 +1365,11 @@ function pairs(ar){
   })
   return count
 };
+function outed(meet, boss){
+  let score = 0
+  for(let key in meet){
+    key === boss ? score += (meet[key] * 2) : score += meet[key]
+  }
+  let result = score / Object.keys(meet).length
+  return result <= 5 ?  'Get Out Now!' : 'Nice Work Champ!'
+}

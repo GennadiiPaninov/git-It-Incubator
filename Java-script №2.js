@@ -1373,3 +1373,27 @@ function outed(meet, boss){
   let result = score / Object.keys(meet).length
   return result <= 5 ?  'Get Out Now!' : 'Nice Work Champ!'
 }
+function likeOrDislike(buttons) {
+  let like = 0
+  let dislike = 0
+  buttons.forEach((el)=>{
+    if(el === 'Dislike'){
+      dislike === 0 ? dislike++ : dislike--
+      like === 1 ? like-- : ''
+    }
+    if(el === 'Like'){
+      like === 0 ? like++ : like--
+      dislike === 1 ? dislike-- : ''
+    }
+  })
+  if(like === 0 && dislike === 0){
+    return 'Nothing'
+  }
+  if(like === 1 && dislike === 1){
+    return 'Nothing'
+  }
+  if(like === 1){
+    return 'Like'
+  }
+  return 'Dislike'
+}

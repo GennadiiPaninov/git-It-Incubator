@@ -1413,3 +1413,15 @@ function scrollingText(text){
   }
   return arr
 }
+function paul(x){
+  let score = 0
+  x.forEach((el)=>{
+    if(el==='kata') score += 5
+    if(el==='Petes kata') score += 10
+    if(el==='eating') score += 1
+  })
+  if(score < 40 ) return 'Super happy!'
+  if(score < 70 ) return 'Happy!'
+  if(score < 100 ) return 'Sad!'
+  return 'Miserable!'
+}

@@ -1397,3 +1397,11 @@ function likeOrDislike(buttons) {
   }
   return 'Dislike'
 }
+function removeRotten(bagOfFruits){
+  if(bagOfFruits === null || bagOfFruits === undefined) return []
+  return  bagOfFruits.map(el=>{
+
+    return el.indexOf('rotten') ? el : `${el[6].toLowerCase()}${el.substring(7)}`
+
+  })
+}

@@ -1405,3 +1405,11 @@ function removeRotten(bagOfFruits){
 
   })
 }
+function scrollingText(text){
+  let textUp = text.toUpperCase()
+  const arr = []
+  for(let i =0; i<= text.length -1;i++){
+    arr.push(`${textUp.substring(i)}${i===0 ? '': textUp.substring(0, i)}`)
+  }
+  return arr
+}

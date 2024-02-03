@@ -1425,3 +1425,20 @@ function paul(x){
   if(score < 100 ) return 'Sad!'
   return 'Miserable!'
 }
+function gordon(a){
+  const vowel = ['e', 'i', "o", 'u']
+  const arr = a.split(' ')
+  return arr.map(el=>{
+    const word = [...el].map((sumbl, ind)=>{
+      if(vowel.includes(sumbl)){
+
+        return '*'
+      }
+      if(sumbl === 'A' || sumbl === 'a'){
+        return '@'
+      }
+      return sumbl.toUpperCase()
+    }).join('')
+    return `${word}!!!!`
+  }).join(' ')
+}

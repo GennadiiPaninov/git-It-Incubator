@@ -1442,3 +1442,18 @@ function gordon(a){
     return `${word}!!!!`
   }).join(' ')
 }
+function squareUp(n) {
+  const arr = new Array(n).fill(0);
+  const result = arr.map((el, ind) => {
+    const array = [];
+    for (let i = 0; i < n; i++) {
+      if (i < ind + 1) {
+        array.push(i + 1);
+      } else {
+        array.push(0);
+      }
+    }
+    return array.reverse();
+  });
+  return result.flatMap(array => array);
+}

@@ -1457,3 +1457,28 @@ function squareUp(n) {
   });
   return result.flatMap(array => array);
 }
+function setReducer(arr) {
+  const result = [];
+
+  let i = 0;
+  while (i < arr.length) {
+    let count = 1;
+    while (i + count < arr.length && arr[i + count] === arr[i]) {
+      count++;
+    }
+
+    if (count === 1) {
+      result.push(1);
+    } else {
+      result.push(count);
+    }
+
+    i += count;
+  }
+
+  if (result.length === 1) {
+    return result[0];
+  } else {
+    return setReducer(result);
+  }
+}

@@ -1482,3 +1482,18 @@ function setReducer(arr) {
     return setReducer(result);
   }
 }
+function balancedNum(number){
+  if(`${number}`.length <= 2) return "Balanced"
+  let left = 0;
+  let right =0;
+  if(`${number}`.length%2!==0){
+    left = `${number}`.substring(0, Math.ceil(`${number}`.length / 2) -1).split('').reduce((el,cur)=> el + Number(cur),0)
+    right = `${number}`.substring( Math.ceil(`${number}`.length / 2)).split('').reduce((el,cur)=> el + Number(cur),0)
+  }
+  if(`${number}`.length %2===0){
+
+    left =`${number}`.substring(0, `${number}`.length / 2 -1).split('').reduce((el,cur)=> el + Number(cur),0)
+    right =`${number}`.substring(`${number}`.length / 2 + 1).split('').reduce((el,cur)=> el + Number(cur),0)
+  }
+  return left === right ? "Balanced" : "Not Balanced"
+}

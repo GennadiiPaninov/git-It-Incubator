@@ -1497,3 +1497,7 @@ function balancedNum(number){
   }
   return left === right ? "Balanced" : "Not Balanced"
 }
+function gimme (triplet) {
+  const sor = [...triplet].sort((a,b)=>a-b)
+  return triplet.indexOf(sor[1])
+}

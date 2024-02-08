@@ -1501,3 +1501,6 @@ function gimme (triplet) {
   const sor = [...triplet].sort((a,b)=>a-b)
   return triplet.indexOf(sor[1])
 }
+function spacify(str) {
+  return str.split("").join(" ")
+}

@@ -1504,3 +1504,6 @@ function gimme (triplet) {
 function spacify(str) {
   return str.split("").join(" ")
 }
+function toNumberArray(stringarray){
+  return stringarray.map(el=>Number(el))
+}

@@ -1521,3 +1521,13 @@ function arrange(arr){
     return toNum(a) - toNum(b);
   });
 }
+
+function map(arr, somefunction){
+  if(typeof somefunction !== "function"){
+    return 'given argument is not a function'
+  }
+  if(arr.some(el=>  isNaN(Number(el)))){
+    return 'array should contain only numbers'
+  }
+  return somefunction(arr)
+}

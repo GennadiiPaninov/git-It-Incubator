@@ -1531,3 +1531,19 @@ function map(arr, somefunction){
   }
   return somefunction(arr)
 }
+function solve(a, b) {
+  let AliceScore = 0;
+  let BobScore = 0;
+  a.forEach((el,ind)=>{
+    if(el > b[ind]){
+      AliceScore++
+    }
+    if(el < b[ind]){
+      BobScore++
+    }
+  })
+  let tie = `${AliceScore}, ${BobScore}: that looks like a "draw"! Rock on!`
+  let AliceWin = `${AliceScore}, ${BobScore}: Alice made "Kurt" proud!`
+  let BobWin= `${AliceScore}, ${BobScore}: Bob made "Jeff" proud!`
+  return  AliceScore === BobScore ? tie : AliceScore > BobScore ? AliceWin : BobWin
+}

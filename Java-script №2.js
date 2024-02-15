@@ -1547,3 +1547,6 @@ function solve(a, b) {
   let BobWin= `${AliceScore}, ${BobScore}: Bob made "Jeff" proud!`
   return  AliceScore === BobScore ? tie : AliceScore > BobScore ? AliceWin : BobWin
 }
+function flattenAndSort(array) {
+  return array.flatMap(ar=>ar).sort((a,b)=>a-b)
+}

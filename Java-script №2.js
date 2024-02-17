@@ -1550,3 +1550,6 @@ function solve(a, b) {
 function flattenAndSort(array) {
   return array.flatMap(ar=>ar).sort((a,b)=>a-b)
 }
+function twoOldestAges(ages){
+  return ages.sort((a,b)=>a-b).slice(ages.length-2)
+}

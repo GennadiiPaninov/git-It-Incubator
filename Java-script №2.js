@@ -1553,3 +1553,13 @@ function flattenAndSort(array) {
 function twoOldestAges(ages){
   return ages.sort((a,b)=>a-b).slice(ages.length-2)
 }
+function alan(x){
+  const listStops = [
+    'Rejection',
+    'Disappointment',
+    'Backstabbing Central',
+    'Shattered Dreams Parkway'
+  ]
+  return listStops.every((el)=> x.includes(el)) ? 'Smell my cheese you mother!' : 'No, seriously, run. You will miss it.'
+
+}

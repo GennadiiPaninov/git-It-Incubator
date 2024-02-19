@@ -1563,3 +1563,9 @@ function alan(x){
   return listStops.every((el)=> x.includes(el)) ? 'Smell my cheese you mother!' : 'No, seriously, run. You will miss it.'
 
 }
+function removeSmallest(numbers) {
+  const min = Math.min(...numbers);
+  const index = numbers.indexOf(min);
+  const result = numbers.slice(0, index).concat(numbers.slice(index + 1));
+  return result;
+}

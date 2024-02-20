@@ -1569,3 +1569,6 @@ function removeSmallest(numbers) {
   const result = numbers.slice(0, index).concat(numbers.slice(index + 1));
   return result;
 }
+function meeting(x){
+  return x.indexOf('O') !== -1 ? x.indexOf('O') : 'None available!'
+}

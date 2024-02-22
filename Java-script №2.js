@@ -1572,3 +1572,6 @@ function removeSmallest(numbers) {
 function meeting(x){
   return x.indexOf('O') !== -1 ? x.indexOf('O') : 'None available!'
 }
+function minMax(arr){
+  return [Math.min(...arr),Math.max(...arr)];
+}

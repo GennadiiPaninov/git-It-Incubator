@@ -1575,3 +1575,6 @@ function meeting(x){
 function minMax(arr){
   return [Math.min(...arr),Math.max(...arr)];
 }
+function smallEnough(a, limit){
+  return a.every(el=> el <= limit)
+}

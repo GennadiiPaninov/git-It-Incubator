@@ -1578,3 +1578,17 @@ function minMax(arr){
 function smallEnough(a, limit){
   return a.every(el=> el <= limit)
 }
+function isAllPossibilities(x){
+  const n = x.length;
+  const set = new Set(x);
+
+  if (x.length !== n || set.size !== n) {
+    return false;
+  }
+  for (let i = 0; i < n; i++) {
+    if (!set.has(i)) {
+      return false;
+    }
+  }
+  return true;
+}

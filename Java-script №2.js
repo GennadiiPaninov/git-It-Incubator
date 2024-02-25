@@ -1592,3 +1592,11 @@ function isAllPossibilities(x){
   }
   return true;
 }
+function filter_list(l) {
+  return l.reduce((cur,el)=>{
+    if (typeof el === 'number') {
+      cur.push(el);
+    }
+    return cur
+  }, [])
+}

@@ -1600,3 +1600,6 @@ function filter_list(l) {
     return cur
   }, [])
 }
+function logs(x , a, b){
+  return Math.log(a * b) / Math.log(x)
+}

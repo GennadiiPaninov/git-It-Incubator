@@ -1620,3 +1620,4 @@ function rounders(value) {
 }
 const rounders = value =>
     value < 10 ? value : 10 * rounders(Math.round(value / 10));
+const rounders = n => n < 10 ? n : rounders(Math.round(n / 10)) * 10

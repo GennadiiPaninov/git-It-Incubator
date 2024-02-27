@@ -1603,3 +1603,18 @@ function filter_list(l) {
 function logs(x , a, b){
   return Math.log(a * b) / Math.log(x)
 }
+function rounders(value) {
+  let arr = `${value}`.split("").reverse()
+  for(let i =0; i<=arr.length-1;i++){
+    if(arr[i+1]){
+      if(arr[i] < 5){
+        arr[i] = '0'
+      } else{
+        arr[i+1]++
+        arr[i] = 0
+      }
+    }
+  }
+  arr.reverse()
+  return +arr.join('')
+}

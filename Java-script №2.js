@@ -1618,3 +1618,5 @@ function rounders(value) {
   arr.reverse()
   return +arr.join('')
 }
+const rounders = value =>
+    value < 10 ? value : 10 * rounders(Math.round(value / 10));

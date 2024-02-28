@@ -1621,3 +1621,23 @@ function rounders(value) {
 const rounders = value =>
     value < 10 ? value : 10 * rounders(Math.round(value / 10));
 const rounders = n => n < 10 ? n : rounders(Math.round(n / 10)) * 10
+function sumArray(array) {
+  if (array === null) {
+    return 0;
+  }
+  if (array.length < 3) {
+    return 0;
+  }
+
+  const highest = Math.max(...array);
+  const lowest = Math.min(...array);
+
+  let sum = 0;
+  for (let num of array) {
+    if (num !== highest && num !== lowest) {
+      sum += num;
+    }
+  }
+
+  return sum;
+}

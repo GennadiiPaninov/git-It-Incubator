@@ -1641,3 +1641,30 @@ function sumArray(array) {
 
   return sum;
 }
+function naughtyOrNice(data) {
+  let Nice = 0
+  let Naughty = 0
+  const arr = []
+
+  for (let key in data) {
+    arr.push(key)
+  }
+
+  for (let i = 0; i <= arr.length - 1; i++) {
+    const arr2 = []
+
+    for (let key in data[arr[i]]) {
+      arr2.push(key)
+    }
+
+    arr2.forEach((el) => {
+      if (data[arr[i]][el] === "Naughty") {
+        Naughty++
+      }
+      if (data[arr[i]][el] === "Nice") {
+        Nice++
+      }
+    })
+  }
+  return Naughty <= Nice ? "Nice!" : "Naughty!"
+}

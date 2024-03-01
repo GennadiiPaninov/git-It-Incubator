@@ -1679,3 +1679,26 @@ const naughtyOrNice2 = (data) => {
 
   return naughtyMeter < 0 ? "Naughty!" : "Nice!"
 }
+function bubble(l) {
+  let snapshots = []
+  let len = l.length
+  let swapped
+
+  do {
+    swapped = false
+
+    for (let i = 0; i < len - 1; i++) {
+      if (l[i] > l[i + 1]) {
+        let temp = l[i]
+        l[i] = l[i + 1]
+        l[i + 1] = temp
+        snapshots.push([...l])
+
+        swapped = true
+      }
+    }
+
+    len--
+  } while (swapped)
+  return snapshots
+}

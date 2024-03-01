@@ -1702,3 +1702,15 @@ function bubble(l) {
   } while (swapped)
   return snapshots
 }
+const bubble2 = ([...arr]) => {
+  const log = [];
+
+  let swapped;
+  do {
+    swapped = false;
+    for (let i = 0; i < arr.length - 1; i++)
+      arr[i] > arr[i+1] && ([arr[i], arr[i+1]] = [arr[i+1], arr[i]]) && (swapped = log.push([...arr]));
+  } while (swapped);
+
+  return log;
+}

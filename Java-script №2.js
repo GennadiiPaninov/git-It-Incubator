@@ -1726,3 +1726,13 @@ function learnCharitableGame2(arr) {
   if(arr.every(a => a == 0)) return false;
   return arr.reduce((a,b) => a+b) % arr.length == 0;
 }
+function partlist(arr) {
+  const resArr = []
+  arr.forEach((el,ind)=>{
+    if(ind !== arr.length-1){
+      const firstVal = `${arr.slice(0, ind+1)}`.replace(/,/g, " ")
+      const secondeVal = `${arr.slice(ind+1)}`.replace(/,/g, " ")
+      resArr.push([firstVal, secondeVal])}
+  })
+  return resArr
+}

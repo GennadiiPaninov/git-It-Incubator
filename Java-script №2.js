@@ -1722,3 +1722,7 @@ function learnCharitableGame(arr) {
   if(!Number.isInteger(val) || val === 0 ) return false
   return true
 }
+function learnCharitableGame2(arr) {
+  if(arr.every(a => a == 0)) return false;
+  return arr.reduce((a,b) => a+b) % arr.length == 0;
+}

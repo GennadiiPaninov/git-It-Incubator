@@ -1714,3 +1714,11 @@ const bubble2 = ([...arr]) => {
 
   return log;
 }
+function learnCharitableGame(arr) {
+  if(arr.length === 1) return true
+  let val = arr.reduce((cur,el)=>{
+    return cur + el
+  },0) / arr.length
+  if(!Number.isInteger(val) || val === 0 ) return false
+  return true
+}

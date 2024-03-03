@@ -1731,8 +1731,15 @@ function partlist(arr) {
   arr.forEach((el,ind)=>{
     if(ind !== arr.length-1){
       const firstVal = `${arr.slice(0, ind+1)}`.replace(/,/g, " ")
-      const secondeVal = `${arr.slice(ind+1)}`.replace(/,/g, " ")
+      const secondVal = `${arr.slice(ind+1)}`.replace(/,/g, " ")
       resArr.push([firstVal, secondeVal])}
   })
   return resArr
+}
+function consecutive(arr, a, b) {
+  const ind1 = arr.indexOf(a)
+  const ind2 = arr.indexOf(b)
+  if(arr[ind1 + 1 ]===b) return true
+  if(arr[ind2 + 1 ]===a) return true
+  return false
 }

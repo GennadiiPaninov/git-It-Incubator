@@ -1746,3 +1746,8 @@ function consecutive(arr, a, b) {
 function consecutive1(arr, a, b) {
   return Math.abs(arr.indexOf(a) - arr.indexOf(b)) == 1;
 }
+function multiply(number){
+  const digits = Math.abs(number).toString().length
+  return number * Math.pow(5, digits)
+
+}

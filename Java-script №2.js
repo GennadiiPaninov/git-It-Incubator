@@ -1743,3 +1743,6 @@ function consecutive(arr, a, b) {
   if(arr[ind2 + 1 ]===a) return true
   return false
 }
+function consecutive1(arr, a, b) {
+  return Math.abs(arr.indexOf(a) - arr.indexOf(b)) == 1;
+}

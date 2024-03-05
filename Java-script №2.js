@@ -1760,3 +1760,6 @@ function sliding(nums, k) {
   })
   return resArr;
 }
+function sliding2(a, k) {
+  return a.length ? Array.from({length: a.length - k + 1}, (x, i) => Math.max(...a.slice(i, i + k))) : [];
+}

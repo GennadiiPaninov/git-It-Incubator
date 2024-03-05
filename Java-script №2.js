@@ -1751,3 +1751,12 @@ function multiply(number){
   return number * Math.pow(5, digits)
 
 }
+function sliding(nums, k) {
+  const resArr = []
+  nums.forEach((el,i)=>{
+    if(i<nums.length - k + 1){
+      resArr.push(Math.max(...[...nums].slice(i, i + k)))
+    }
+  })
+  return resArr;
+}

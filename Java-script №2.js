@@ -1783,3 +1783,28 @@ function sumArray(array) {
 
   return sum;
 }
+
+function gimmeTheLetters(sp) {
+  const first = sp[0]
+  const second = sp[2]
+  const uppercaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ''];
+  const lowercaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ''];
+  if(first.toUpperCase() === first){
+    if(first === second){
+      return `${first}`
+    }
+    const index = uppercaseLetters.indexOf(first)
+    const index2 = uppercaseLetters.indexOf(second) + 1
+    console.log(index, index2)
+    return uppercaseLetters.slice(index, index2).join('')
+
+  } else{
+    if(first === second){
+      return `${first}`
+    }
+    const index = lowercaseLetters.indexOf(first)
+    const index2 = lowercaseLetters.indexOf(second) + 1
+    return lowercaseLetters.slice(index, index2).join('')
+
+  }
+}

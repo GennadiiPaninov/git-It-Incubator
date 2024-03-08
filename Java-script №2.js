@@ -1813,3 +1813,18 @@ function gimmeTheLetters2(sp) {
   for(let i = sp[0].charCodeAt(); i <= sp[2].charCodeAt(); i++) s += String.fromCharCode(i)
   return s
 }
+function stonePick(arr) {
+  let Sticks = 0
+  let Cobblestone = 0
+  let Wood = 0
+  arr.forEach(el=>{
+    if(el === 'Sticks') Sticks++
+    if(el === 'Cobblestone') Cobblestone++
+    if(el === 'Wood') Wood++
+
+  })
+  Sticks += Wood*4
+  Sticks = Math.floor(Sticks/2)
+  Cobblestone = Math.floor(Cobblestone/3)
+  return Sticks <= Cobblestone ? Sticks : Cobblestone
+}

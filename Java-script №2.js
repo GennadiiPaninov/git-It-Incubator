@@ -1831,3 +1831,14 @@ function stonePick(arr) {
 function stonePick2(arr) {
   return Math.min(Math.floor(arr.filter(e=>e=="Cobblestone").length/3), (Math.floor(arr.filter(e=>e=="Sticks").length /2) + Math.floor(arr.filter(e=>e=="Wood").length*4/2)));
 }
+function reverseAndMirror(s1,s2) {
+  const func =(el)=>{
+    return el.split("").map((el)=>{
+      if(el.toLowerCase() === el) return el.toUpperCase()
+      if(el.toLowerCase() !== el) return el.toLowerCase()
+    })
+  }
+  const ResS1 = func(s1)
+  const ResS2 = func(s2).reverse().join("")
+  return `${ResS2}@@@${ResS1.reverse().join("")}${ResS1.reverse().join("")}`;
+}

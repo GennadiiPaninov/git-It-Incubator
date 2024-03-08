@@ -1828,3 +1828,6 @@ function stonePick(arr) {
   Cobblestone = Math.floor(Cobblestone/3)
   return Sticks <= Cobblestone ? Sticks : Cobblestone
 }
+function stonePick2(arr) {
+  return Math.min(Math.floor(arr.filter(e=>e=="Cobblestone").length/3), (Math.floor(arr.filter(e=>e=="Sticks").length /2) + Math.floor(arr.filter(e=>e=="Wood").length*4/2)));
+}

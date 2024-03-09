@@ -1842,3 +1842,8 @@ function reverseAndMirror(s1,s2) {
   const ResS2 = func(s2).reverse().join("")
   return `${ResS2}@@@${ResS1.reverse().join("")}${ResS1.reverse().join("")}`;
 }
+function yearDays(year){
+  if(year%100===0 && year%400 !== 0) return  `${year} has 365 days`
+  if(year %4 ===0) return `${year} has 366 days`
+  return `${year} has 365 days`
+}

@@ -1860,3 +1860,7 @@ function countCorrectCharacters(c, g){
   })
   return count
 }
+function countCorrectCharacters(correctWord, guess){
+  if(correctWord.length-guess.length) throw new Error('you\'re not even trying');
+  return [...correctWord].filter((c,i)=>c===guess[i]).length;
+}

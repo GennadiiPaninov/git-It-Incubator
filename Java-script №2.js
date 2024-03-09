@@ -1850,3 +1850,13 @@ function yearDays(year){
 function yearDays2(year) {
   return year + ' has ' + (!(year % 100) && year % 400 || year % 4 ? '365' : '366') + ' days';
 }
+function countCorrectCharacters(c, g){
+  let count = 0
+  const arr1 = c.split("")
+  const arr2 = g.split("")
+  if(c.length !== g.length)  throw new Error('Unspecified AssertionError: Lengths of the two strings are not the same');
+  arr1.forEach((el,ind)=>{
+    if(el === arr2[ind]) count++
+  })
+  return count
+}

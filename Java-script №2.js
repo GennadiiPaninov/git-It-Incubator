@@ -1864,3 +1864,9 @@ function countCorrectCharacters(correctWord, guess){
   if(correctWord.length-guess.length) throw new Error('you\'re not even trying');
   return [...correctWord].filter((c,i)=>c===guess[i]).length;
 }
+function validateNumber(str1){
+  const str = str1.replace(/-/g, "")
+  if(str[0] === '0' && str[1] === "7" && str.length === 11) return 'In with a chance'
+  if(str[0] === '+' && str[1] === "4" && str[2] === "4" && str[3] === "7" && str.length === 13) return 'In with a chance'
+  return 'Plenty more fish in the sea'
+}

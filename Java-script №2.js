@@ -1873,3 +1873,13 @@ function validateNumber(str1){
 function validateNumber1(str){
   return /^(\+44|0)7\d{9}$/.test(str.replace(/-/g,'')) ? 'In with a chance' : 'Plenty more fish in the sea';
 }
+function findShort(s){
+  const arr =  s.split(" ")
+  let word = arr[0]
+  for(let i =0; i<=arr.length -1;i++){
+    if(arr[i].length < word.length){
+      word = arr[i]
+    }
+  }
+  return word.length
+}

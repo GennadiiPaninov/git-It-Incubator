@@ -1870,3 +1870,6 @@ function validateNumber(str1){
   if(str[0] === '+' && str[1] === "4" && str[2] === "4" && str[3] === "7" && str.length === 13) return 'In with a chance'
   return 'Plenty more fish in the sea'
 }
+function validateNumber1(str){
+  return /^(\+44|0)7\d{9}$/.test(str.replace(/-/g,'')) ? 'In with a chance' : 'Plenty more fish in the sea';
+}

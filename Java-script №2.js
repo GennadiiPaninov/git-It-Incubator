@@ -1883,3 +1883,6 @@ function findShort(s){
   }
   return word.length
 }
+function findShort1(s){
+  return Math.min(...s.split(" ").map (s => s.length));
+}

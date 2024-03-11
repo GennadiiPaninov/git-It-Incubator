@@ -1886,3 +1886,19 @@ function findShort(s){
 function findShort1(s){
   return Math.min(...s.split(" ").map (s => s.length));
 }
+    function totalLicks(env) {
+      let licks = 252
+      let challenge = ''
+      const arr = []
+      for(let key in env){
+        arr.push(env[key])
+        if(env[key] > 0){
+          challenge.length === 0 ? challenge = key : env[key] > env[challenge] ? challenge = key : ''
+        }
+      }
+      arr.forEach((el)=>{
+        licks += el
+      })
+      const withChallenge = ` The toughest challenge was ${challenge}.`
+      return `It took ${licks} licks to get to the tootsie roll center of a tootsie pop.${challenge && withChallenge}`
+    }

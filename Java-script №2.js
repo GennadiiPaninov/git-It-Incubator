@@ -1886,8 +1886,8 @@ function findShort(s){
 function findShort1(s){
   return Math.min(...s.split(" ").map (s => s.length));
 }
-    function totalLicks(env) {
-      let licks = 252
+function totalLicks(env) {
+ let licks = 252
       let challenge = ''
       const arr = []
       for(let key in env){
@@ -1902,3 +1902,6 @@ function findShort1(s){
       const withChallenge = ` The toughest challenge was ${challenge}.`
       return `It took ${licks} licks to get to the tootsie roll center of a tootsie pop.${challenge && withChallenge}`
     }
+const totalLicks2 = env =>
+    `It took ${Object.values(env).reduce((pre, val) => pre + val, 252)} licks to get to the tootsie roll center of a tootsie pop.` +
+    (Object.values(env).some(val => val > 0) ? ` The toughest challenge was ${Object.entries(env).sort((a, b) => b[1] - a[1])[0][0]}.` : ``);

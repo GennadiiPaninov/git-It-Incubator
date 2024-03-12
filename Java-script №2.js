@@ -1916,3 +1916,4 @@ function flipNumber(n){
   }
   return resArr.join("")
 }
+const flipNumber2 = n => n.length < 2 ? n : n.slice(-1) + n[0] + flipNumber(n.slice(1, -1));

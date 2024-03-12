@@ -1905,3 +1905,14 @@ function totalLicks(env) {
 const totalLicks2 = env =>
     `It took ${Object.values(env).reduce((pre, val) => pre + val, 252)} licks to get to the tootsie roll center of a tootsie pop.` +
     (Object.values(env).some(val => val > 0) ? ` The toughest challenge was ${Object.entries(env).sort((a, b) => b[1] - a[1])[0][0]}.` : ``);
+function flipNumber(n){
+  const resArr = []
+  const arr = n.split("")
+  const fPath = [...arr.slice(0, Math.floor(n.length/2))]
+  const sPath = [...arr.slice(Math.floor(n.length/2))].reverse()
+  for(let i =0; i<=sPath.length;i++){
+    resArr.push(sPath[i])
+    fPath[i] !== undefined ? resArr.push(fPath[i]) : ''
+  }
+  return resArr.join("")
+}

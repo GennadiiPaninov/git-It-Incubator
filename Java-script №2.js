@@ -1917,3 +1917,12 @@ function flipNumber(n){
   return resArr.join("")
 }
 const flipNumber2 = n => n.length < 2 ? n : n.slice(-1) + n[0] + flipNumber(n.slice(1, -1));
+function startSmoking(bars,boxes){
+  let sigarets = (bars * 10 * 18) + (boxes * 18)
+  let score = sigarets
+  while(sigarets >=5){
+    score +=  Math.floor(sigarets / 5)
+    sigarets = sigarets - (5 * Math.floor(sigarets / 5)) + Math.floor(sigarets / 5)
+  }
+  return score
+}

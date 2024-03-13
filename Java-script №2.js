@@ -1926,3 +1926,6 @@ function startSmoking(bars,boxes){
   }
   return score
 }
+function startSmoking2(bars, boxes) {
+  return 22.5 * (10 * bars + boxes) - 0.5 | 0;
+}

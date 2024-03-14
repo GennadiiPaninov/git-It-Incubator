@@ -1929,3 +1929,15 @@ function startSmoking(bars,boxes){
 function startSmoking2(bars, boxes) {
   return 22.5 * (10 * bars + boxes) - 0.5 | 0;
 }
+function getSectionIdFromScroll(scrollY,sizes){
+  let index = 0;
+  let high = 0;
+  sizes.forEach((el)=> {
+    if(high + el <= scrollY){
+      index++
+    }
+    high += el
+  })
+  if(high <= scrollY) return -1
+  return index
+}

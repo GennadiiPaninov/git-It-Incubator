@@ -1941,3 +1941,7 @@ function getSectionIdFromScroll(scrollY,sizes){
   if(high <= scrollY) return -1
   return index
 }
+function getSectionIdFromScroll2(y, s){
+  var t=0;
+  return s.findIndex(e=>(t+=e)>y);
+}

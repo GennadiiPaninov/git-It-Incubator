@@ -1959,3 +1959,12 @@ function getDivisorsCnt(n){
 
   return divisors
 }
+function getDivisorsCnt2(n){
+  let count=0;
+  for(let i=1;i<=n;i++){
+    if(n%i===0){
+      count++;
+    }
+  }
+  return count;
+}

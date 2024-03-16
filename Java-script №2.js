@@ -1945,3 +1945,17 @@ function getSectionIdFromScroll2(y, s){
   var t=0;
   return s.findIndex(e=>(t+=e)>y);
 }
+function getDivisorsCnt(n){
+  let divisors = 0
+  let sqrt = Math.floor(Math.sqrt(n))
+  for (let i = 1; i <= sqrt; i++) {
+    if (n % i === 0) {
+      divisors += 2
+    }
+  }
+  if (sqrt * sqrt === n) {
+    divisors--
+  }
+
+  return divisors
+}

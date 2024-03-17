@@ -1978,3 +1978,6 @@ function addLetters(...letters) {
   count = (count - 1) % 26
   return englishLettersLowercase[count]
 }
+function addLetters2(...letters) {
+  return String.fromCharCode((letters.reduce( (a,b) => a+b.charCodeAt(0)-96, 0)+25)%26+97);
+}

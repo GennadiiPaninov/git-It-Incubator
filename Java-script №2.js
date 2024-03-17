@@ -1968,3 +1968,13 @@ function getDivisorsCnt2(n){
   }
   return count;
 }
+function addLetters(...letters) {
+  if (letters.length === 0) return 'z'
+  let count = 0
+  const englishLettersLowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  letters.forEach((el) => {
+    count += englishLettersLowercase.indexOf(el) + 1;
+  })
+  count = (count - 1) % 26
+  return englishLettersLowercase[count]
+}

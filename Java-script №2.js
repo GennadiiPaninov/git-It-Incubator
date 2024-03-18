@@ -1981,3 +1981,12 @@ function addLetters(...letters) {
 function addLetters2(...letters) {
   return String.fromCharCode((letters.reduce( (a,b) => a+b.charCodeAt(0)-96, 0)+25)%26+97);
 }
+function spacey(arr) {
+  return arr.map((el,ind)=>{
+    let resStr = ''
+    for(let i = 0; i <=ind ; i++){
+      resStr += arr[i]
+    }
+    return resStr
+  })
+}

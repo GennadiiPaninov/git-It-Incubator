@@ -1990,3 +1990,7 @@ function spacey(arr) {
     return resStr
   })
 }
+function spacey1(array){
+  let string = ''
+  return array.map( (e) => string += e )
+}

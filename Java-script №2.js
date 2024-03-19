@@ -2009,3 +2009,7 @@ function findTheMissingTree(trees) {
   }
   return Number(minKey)
 }
+function findTheMissingTree2(ar){
+  let ix = ar.reduce((a,e) => (a[e] ? a[e]++ : a[e] = 1, a),{});
+  return Number(Object.keys(ix).reduce((a,e) => ix[e] < ix[a] ? e : a));
+}

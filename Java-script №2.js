@@ -1994,3 +1994,18 @@ function spacey1(array){
   let string = ''
   return array.map( (e) => string += e )
 }
+function findTheMissingTree(trees) {
+  let minValue = Infinity
+  let minKey = null
+  const obj={}
+  trees.forEach((el)=>{
+    obj[el] ? obj[el]++ : obj[el] = 1
+  })
+  for (let key in obj) {
+    if (obj[key] < minValue) {
+      minValue = obj[key]
+      minKey = key
+    }
+  }
+  return Number(minKey)
+}

@@ -2014,3 +2014,6 @@ function findTheMissingTree2(ar){
   return Number(Object.keys(ix).reduce((a,e) => ix[e] < ix[a] ? e : a));
 }
 const isLeapYear3=y=>y%100===0&&y%400!==0?false:y%4===0?true:false
+function isLeapYear4(year) {
+  return (year % 100 !== 0 && year % 4 === 0) || year % 400 === 0;
+}

@@ -2017,3 +2017,6 @@ const isLeapYear3=y=>y%100===0&&y%400!==0?false:y%4===0?true:false
 function isLeapYear4(year) {
   return (year % 100 !== 0 && year % 4 === 0) || year % 400 === 0;
 }
+function vaporcode(string) {
+  return string.toUpperCase().split('').filter(e=> e!== " ").join("  ")
+}

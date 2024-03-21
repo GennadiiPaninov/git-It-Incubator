@@ -2020,3 +2020,6 @@ function isLeapYear4(year) {
 function vaporcode(string) {
   return string.toUpperCase().split('').filter(e=> e!== " ").join("  ")
 }
+function vaporcode2(string) {
+  return Array.from(string.replace(/\s+/g, "").toUpperCase()).join("  ")
+}

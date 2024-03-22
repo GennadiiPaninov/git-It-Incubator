@@ -2023,3 +2023,4 @@ function vaporcode(string) {
 function vaporcode2(string) {
   return Array.from(string.replace(/\s+/g, "").toUpperCase()).join("  ")
 }
+const combineNames = (f,l) => f + " " + l

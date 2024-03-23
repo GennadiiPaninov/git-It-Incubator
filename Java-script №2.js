@@ -2041,3 +2041,11 @@ class List2 {
   }
 
 }
+var findDup=function(arr){
+  const obj= {}
+  let number = 0;
+  arr.forEach((el)=>{
+    obj[el] ? number = el : obj[el] = 1
+  })
+  return number
+}

@@ -2054,3 +2054,6 @@ var findDup2=function(arr){
   while( !found[arr[a]] ) found[arr[a++]]=true
   return arr[a]
 }
+function isItLetter(character) {
+  return /^[a-zA-Z]$/.test(character)
+}

@@ -2057,3 +2057,11 @@ var findDup2=function(arr){
 function isItLetter(character) {
   return /^[a-zA-Z]$/.test(character)
 }
+function withoutLast(arr) {
+  return arr.slice(0, arr.length - 1)
+}
+function withoutLast2(arr) {
+  arr = [...arr]
+  arr.pop();
+  return arr;
+}

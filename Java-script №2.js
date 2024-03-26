@@ -2065,3 +2065,15 @@ function withoutLast2(arr) {
   arr.pop();
   return arr;
 }
+function sortMyString(S) {
+  let firstW = ''
+  let secondW = ''
+  S.split("").forEach((el,ind)=>{
+    if(ind%2===0){
+      firstW += el
+    } else {
+      secondW += el
+    }
+  })
+  return `${firstW} ${secondW}`;
+}

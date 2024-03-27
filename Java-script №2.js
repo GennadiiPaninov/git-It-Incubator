@@ -2082,3 +2082,11 @@ const sortMyString2 = s => {
   let odd = s.split('').filter((v, i) => i % 2 !== 0).join('')
   return even + ' ' + odd
 }
+function canIPlay(now,start,end) {
+  if(end < start){
+    if(now >= start) return true
+    if(now < end) return true
+    return false
+  }
+  return now >= start && now < end
+}

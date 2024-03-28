@@ -2111,3 +2111,8 @@ function calculateSpeed(distance, time) {
   }
   return `${Math.round(distanceM /timeS  * 3.6 * 0.62137119)}mph`
 }
+function calculateSpeed2(distance, time) {
+  let meters = parseInt(distance, 10) * (distance.match(/km$/) ? 1000 : 1);
+  let seconds = parseInt(time, 10) * (time.match(/min$/) ? 60 : 1);
+  return Math.round(meters / seconds * 2.23694) + 'mph';
+}

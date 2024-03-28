@@ -2094,3 +2094,20 @@ function canIPlay2(now,start,end) {
   for(let i = start; i != end; i = (i + 1) % 24) if(i === now) return true
   return false
 }
+function calculateSpeed(distance, time) {
+  const hour = 3600
+  let distanceM = 0
+  let timeS = 0
+  let mInSec = 0
+  if(distance.includes("km")){
+    distanceM += Number(distance.slice(0, distance.length-2)) * 1000
+  } else {
+    distanceM += Number(distance.slice(0, distance.length-1))
+  }
+  if(time.includes("min")){
+    timeS += Number(time.slice(0, time.length-3)) * 60
+  } else {
+    timeS += Number(time.slice(0, time.length-1))
+  }
+  return `${Math.round(distanceM /timeS  * 3.6 * 0.62137119)}mph`
+}

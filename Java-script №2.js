@@ -2122,3 +2122,6 @@ function getCount(str) {
     return cur
   },0)
 }
+function getCount2(str) {
+  return (str.match(/[aeiou]/ig)||[]).length;
+}

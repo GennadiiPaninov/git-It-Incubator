@@ -2116,3 +2116,9 @@ function calculateSpeed2(distance, time) {
   let seconds = parseInt(time, 10) * (time.match(/min$/) ? 60 : 1);
   return Math.round(meters / seconds * 2.23694) + 'mph';
 }
+function getCount(str) {
+  return  str.split("").reduce((cur,el)=>{
+    if(/[aeiou]/gi.test(el)) cur++
+    return cur
+  },0)
+}

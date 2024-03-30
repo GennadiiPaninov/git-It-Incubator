@@ -2136,3 +2136,6 @@ function accum(s) {
   }
   return res.slice(0, res.length - 1)
 }
+function accum(s) {
+  return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+}

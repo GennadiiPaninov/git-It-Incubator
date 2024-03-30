@@ -2125,3 +2125,14 @@ function getCount(str) {
 function getCount2(str) {
   return (str.match(/[aeiou]/ig)||[]).length;
 }
+function accum(s) {
+  let res = ''
+  for(let i = 0; i< s.length;i++){
+    let string = `${s[i].toUpperCase()}`
+    for(let j =0; j< i;j++){
+      string = string + s[i].toLowerCase()
+    }
+    res = `${res}${string}-`
+  }
+  return res.slice(0, res.length - 1)
+}

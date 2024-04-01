@@ -2155,3 +2155,6 @@ function isIsogram(str){
   })
   return res
 }
+function isIsogram2(str){
+  return new Set(str.toUpperCase()).size == str.length;
+}

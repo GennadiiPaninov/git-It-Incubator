@@ -2144,3 +2144,14 @@ var isSquare = function(n){
   if(Math.floor(Math.sqrt(n)) === Math.sqrt(n)) return true
   return false
 }
+function isIsogram(str){
+  let res = true
+  const obj ={}
+  str.split("").forEach(el=>{
+    if(obj[el.toLowerCase()]) {
+      res = false
+    }
+    obj[el.toLowerCase()] = 1
+  })
+  return res
+}

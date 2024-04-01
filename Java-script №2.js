@@ -2140,3 +2140,7 @@ function accum(s) {
   return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
 }
 const descendingOrder=n=> Number(`${n}`.split("").sort((a,b)=> b-a).join(""))
+var isSquare = function(n){
+  if(Math.floor(Math.sqrt(n)) === Math.sqrt(n)) return true
+  return false
+}

@@ -2158,3 +2158,6 @@ function isIsogram(str){
 function isIsogram2(str){
   return new Set(str.toUpperCase()).size == str.length;
 }
+const fff = function () {
+  return this.split(" ").map(el=> `${el[0].toUpperCase()}${el.slice(1)}`).join(" ")
+};

@@ -2169,3 +2169,7 @@ function dnaStrand(dna){
     if(el === 'C') return "G"
   }).join('')
 }
+function sumTwoSmallestNumbers(n) {
+  n.sort((a,b)=> a-b)
+  return n[0]+n[1]
+}

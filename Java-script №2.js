@@ -2190,3 +2190,15 @@ function getSum(a, b){
     return cur+el
   },0)
 }
+function longest(s1, s2) {
+  const maxObj = new Set(s1).size < new Set(s2).size ? new Set(s2) : new Set(s1)
+
+  return [...maxObj].sort().join("")
+}
+function longest2(s1, s2) {
+  const combinedString = s1 + s2
+  const distinctLetters = Array.from(new Set(combinedString))
+  const sortedString = distinctLetters.sort().join("")
+
+  return sortedString
+}

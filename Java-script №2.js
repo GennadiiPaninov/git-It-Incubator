@@ -2173,3 +2173,20 @@ function sumTwoSmallestNumbers(n) {
   n.sort((a,b)=> a-b)
   return n[0]+n[1]
 }
+function getSum(a, b){
+  let c = a
+  let d = b
+  if(a === b) return a
+  if(a>b){
+    c = b
+    d = a
+  }
+  const arr = []
+  for(let i = c; i < d; i++ ){
+    arr.push(i)
+  }
+  arr.push(d)
+  return arr.reduce((cur,el)=>{
+    return cur+el
+  },0)
+}

@@ -2161,3 +2161,11 @@ function isIsogram2(str){
 const fff = function () {
   return this.split(" ").map(el=> `${el[0].toUpperCase()}${el.slice(1)}`).join(" ")
 };
+function dnaStrand(dna){
+  return dna.split("").map(el=>{
+    if(el === 'A') return "T"
+    if(el === 'T') return "A"
+    if(el === "G") return "C"
+    if(el === 'C') return "G"
+  }).join('')
+}

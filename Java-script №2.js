@@ -2207,3 +2207,7 @@ function squareDigits(num){
     return Math.pow(Number(el), 2)
   }).join(``))
 }
+function squareDigits2(num){
+  return Number(('' + num).split('').map(function (val) { return val * val;}).join(''));
+
+}

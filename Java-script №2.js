@@ -2202,3 +2202,8 @@ function longest2(s1, s2) {
 
   return sortedString
 }
+function squareDigits(num){
+  return Number([...`${num}`].map((el)=>{
+    return Math.pow(Number(el), 2)
+  }).join(``))
+}

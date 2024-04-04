@@ -2211,3 +2211,6 @@ function squareDigits2(num){
   return Number(('' + num).split('').map(function (val) { return val * val;}).join(''));
 
 }
+function reverseWords(str) {
+  return str.split(" ").map(el => el.split("").reverse().join("")).join(" ")
+}

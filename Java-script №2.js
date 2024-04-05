@@ -2214,3 +2214,10 @@ function squareDigits2(num){
 function reverseWords(str) {
   return str.split(" ").map(el => el.split("").reverse().join("")).join(" ")
 }
+function stray(numbers) {
+  let result = 0
+  for (let num of numbers) {
+    result ^= num
+  }
+  return result
+}

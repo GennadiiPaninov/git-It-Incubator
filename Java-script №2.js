@@ -2232,9 +2232,13 @@ function arithmetic(a, b, o){
   if(o === "multiply") return a * b
   if(o ==="divide") return a / b
 }
-const arithmetic = (a, b, operator) => ({
+const arithmetic2 = (a, b, operator) => ({
   'add'     : a + b,
   'subtract': a - b,
   'multiply': a * b,
   'divide'  : a / b
 }[operator]);
+
+function friend(friends){
+  return friends.filter(el=> el.length === 4)
+}

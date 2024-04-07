@@ -2257,3 +2257,8 @@ function solution(number){
   }
   return result
 }
+function spinWords(string){
+  return string.split(' ').map((el)=>{
+    return el.length >= 5 ? el.split("").reverse().join("") : el
+  }).join(' ')
+}

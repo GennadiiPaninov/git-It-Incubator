@@ -2262,3 +2262,16 @@ function spinWords(string){
     return el.length >= 5 ? el.split("").reverse().join("") : el
   }).join(' ')
 }
+function findOdd(A) {
+  let count = {}
+  for (let i = 0; i < A.length; i++) {
+    const num = A[i]
+    count[num] = (count[num] || 0) + 1;
+  }
+  for (const key in count) {
+    if (count.hasOwnProperty(key) && count[key] % 2 !== 0) {
+      return parseInt(key)
+    }
+  }
+  return null
+}

@@ -2242,3 +2242,8 @@ const arithmetic2 = (a, b, operator) => ({
 function friend(friends){
   return friends.filter(el=> el.length === 4)
 }
+function openOrSenior(data){
+  return data.map((el)=>{
+    return el[0] >= 55 && el[1] > 7 ? 'Senior' : 'Open'
+  })
+}

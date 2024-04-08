@@ -2290,3 +2290,6 @@ function validNumber2(num){
   if(arr.length !== 2) return false
   return true
 }
+function validNumber(num) {
+  return /^[+-]?\d*\.\d\d$/.test(num)
+}

@@ -2275,4 +2275,18 @@ function findOdd(A) {
   }
   return null
 }
-const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
+const findOdd2 = (xs) => xs.reduce((a, b) => a ^ b);
+
+function validNumber2(num){
+  const reg = /[a-zA-Z]/g
+  const regSumb = /[+-]/g
+  if(reg.test(num)) return false
+  const arr = num.split(".").map((el,ind)=> {
+    if(ind == 1 && el.length !==2 ) return "A"
+    if(ind == 1 && regSumb.test(el)) return "A"
+    return Number(el)
+  })
+  if(arr[1] === "A" ) return false
+  if(arr.length !== 2) return false
+  return true
+}

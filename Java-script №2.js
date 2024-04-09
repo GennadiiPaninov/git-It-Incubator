@@ -2305,3 +2305,6 @@ String.prototype.toCents=function(){
   if(arr[1].length !== 2) return null
   return Number(`${arr[0].substring(1)}${arr[1]}`)
 }
+String.prototype.toCents = function () {
+  return /^\$\d+\.\d\d$/.test(this) ? +this.replace(/[$.]/g, '') : null;
+};

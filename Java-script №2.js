@@ -2293,3 +2293,15 @@ function validNumber2(num){
 function validNumber(num) {
   return /^[+-]?\d*\.\d\d$/.test(num)
 }
+String.prototype.toCents=function(){
+  const reg = /[$]/g
+  const regex = /\n/
+  const regA = /[a-zA-Z]/
+  if(regex.test(this)) return null
+  if(regA.test(this)) return null
+  if(!reg.test(this)) return null
+  const arr = this.split('.')
+  if(arr.length !== 2) return null
+  if(arr[1].length !== 2) return null
+  return Number(`${arr[0].substring(1)}${arr[1]}`)
+}

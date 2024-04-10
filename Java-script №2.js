@@ -2308,3 +2308,11 @@ String.prototype.toCents=function(){
 String.prototype.toCents = function () {
   return /^\$\d+\.\d\d$/.test(this) ? +this.replace(/[$.]/g, '') : null;
 };
+function likes(n) {
+  const len = n.length
+  if(len === 0) return `no one likes this`
+  if(len === 1) return `${n[0]} likes this`
+  if(len === 2) return `${n[0]} and ${n[1]} like this`
+  if(len === 3) return `${n[0]}, ${n[1]} and ${n[2]} like this`
+  return  `${n[0]}, ${n[1]} and ${len-2} others like this`
+}

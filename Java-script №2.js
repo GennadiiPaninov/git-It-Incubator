@@ -2316,3 +2316,11 @@ function likes(n) {
   if(len === 3) return `${n[0]}, ${n[1]} and ${n[2]} like this`
   return  `${n[0]}, ${n[1]} and ${len-2} others like this`
 }
+function digitalRoot(n) {
+  if(`${n}`.length === 1){
+    return n
+  }
+  let a = 0;
+  `${n}`.split("").forEach(el=> a += Number(el))
+  return digitalRoot(a)
+}

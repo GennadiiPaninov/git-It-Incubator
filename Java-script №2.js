@@ -2324,3 +2324,6 @@ function digitalRoot(n) {
   `${n}`.split("").forEach(el=> a += Number(el))
   return digitalRoot(a)
 }
+function digital_root2(n) {
+  return (n - 1) % 9 + 1;
+}

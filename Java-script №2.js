@@ -2327,3 +2327,10 @@ function digitalRoot(n) {
 function digital_root2(n) {
   return (n - 1) % 9 + 1;
 }
+function basicOp(operation, value1, value2){
+  if(operation === '+') return value1+value2
+  if(operation === '*') return value1*value2
+  if(operation === '-') return value1-value2
+  if(operation === '/') return value1/value2
+
+}

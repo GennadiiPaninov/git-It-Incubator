@@ -2337,3 +2337,6 @@ function basicOp(operation, value1, value2){
 function disemvowel(str) {
   return str.split("").filter(el=> !/[aeiouAEIOU]/g.test(el)).join("")
 }
+function disemvowel2(str) {
+  return str.replace(/[aeiou]/gi, '');
+}

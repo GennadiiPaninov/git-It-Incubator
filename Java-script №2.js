@@ -2334,3 +2334,6 @@ function basicOp(operation, value1, value2){
   if(operation === '/') return value1/value2
 
 }
+function disemvowel(str) {
+  return str.split("").filter(el=> !/[aeiouAEIOU]/g.test(el)).join("")
+}

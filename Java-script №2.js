@@ -2346,3 +2346,6 @@ function createPhoneNumber(n){
   }
   return`(${hanCut(n,0,3)}) ${hanCut(n,3,6)}-${hanCut(n,6)}`
 }
+function createPhoneNumber2(numbers){
+  return numbers.join('').replace(/(\d{3})(\d{3})(\d{4})/,'($1) $2-$3');
+}

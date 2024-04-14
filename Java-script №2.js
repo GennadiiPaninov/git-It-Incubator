@@ -2354,3 +2354,15 @@ var countBits = function(n) {
     return cur + Number(el)
   },0)
 };
+function findOutlier(i){
+  let res = 0
+  let odd = 0
+  if(i[0]%2===0) odd++
+  if(i[1]%2===0) odd++
+  if(i[2]%2===0) odd++
+  console.log(i, odd)
+  return i.find(el=>{
+    if(odd>=2) return el % 2 !== 0
+    return el % 2 === 0
+  })
+}

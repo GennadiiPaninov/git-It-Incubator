@@ -2349,3 +2349,8 @@ function createPhoneNumber(n){
 function createPhoneNumber2(numbers){
   return numbers.join('').replace(/(\d{3})(\d{3})(\d{4})/,'($1) $2-$3');
 }
+var countBits = function(n) {
+  return n.toString(2).split("").reduce((cur,el)=>{
+    return cur + Number(el)
+  },0)
+};

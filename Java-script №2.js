@@ -2340,3 +2340,9 @@ function disemvowel(str) {
 function disemvowel2(str) {
   return str.replace(/[aeiou]/gi, '');
 }
+function createPhoneNumber(n){
+  const hanCut = (a,b,c) => {
+    return a.slice(b, c).join("")
+  }
+  return`(${hanCut(n,0,3)}) ${hanCut(n,3,6)}-${hanCut(n,6)}`
+}

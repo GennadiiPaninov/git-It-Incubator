@@ -2371,3 +2371,22 @@ function findOutlier(int){
   var odd = int.filter(a=>a%2!==0);
   return even.length==1? even[0] : odd[0];
 }
+function duplicateCount(text){
+  const obj = {}
+  const res = new Set(text.toLowerCase())
+  text.split("").forEach(el=>{
+    if(!obj[el.toLowerCase()]){
+      obj[el.toLowerCase()] = 1
+    } else{
+      obj[el.toLowerCase()]++
+    }
+
+  })
+  let count = 0
+  for(let key in obj){
+    if(obj[key] > 2){
+      count += obj[key] - 2
+    }
+  }
+  return text.length - res.size - count
+}

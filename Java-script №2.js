@@ -2435,3 +2435,20 @@ function moveZeros(arr) {
   }
   return resArr
 }
+function persistence(n) {
+  if(`${n}`.length < 2) return 0
+  let count = 1
+  const multiplicativePer = (num)=>{
+    const resNum =`${num}`.split("").reduce((cur,el,ind)=>{
+      if(ind === 0) return el
+      return cur*el
+    },0)
+    if(`${resNum}`.length > 1){
+      count++
+      return multiplicativePer(resNum)
+    }
+    return count
+  }
+
+  return multiplicativePer(n)
+}

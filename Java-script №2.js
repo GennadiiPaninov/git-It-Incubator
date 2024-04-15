@@ -2427,3 +2427,11 @@ function alphabetPosition(text) {
   return res;
 }
 let alphabetPosition2 = (text) => text.toUpperCase().replace(/[^A-Z]/g, '').split('').map(ch => ch.charCodeAt(0) - 64).join(' ');
+
+function moveZeros(arr) {
+  const resArr = arr.filter(el=> el !== 0)
+  for(let i = resArr.length; i < arr.length;i++){
+    resArr.push(0)
+  }
+  return resArr
+}

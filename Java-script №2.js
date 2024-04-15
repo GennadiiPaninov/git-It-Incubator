@@ -2413,9 +2413,16 @@ function isValidWalk(walk) {
   }
   return false
 }
-function isValidWalk(walk) {
+function isValidWalk2(walk) {
   function count(val) {
     return walk.filter(function(a){return a==val;}).length;
   }
   return walk.length==10 && count('n')==count('s') && count('w')==count('e');
+}
+function alphabetPosition(text) {
+  const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  const res = text.split("").filter(el=> /[A-Za-z]/g.test(el)).map(el=>{
+    return alphabet.indexOf(el.toUpperCase()) + 1
+  }).join(" ")
+  return res;
 }

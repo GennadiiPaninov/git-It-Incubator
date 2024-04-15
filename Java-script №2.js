@@ -2390,3 +2390,26 @@ function duplicateCount(text){
   }
   return text.length - res.size - count
 }
+function isValidWalk(walk) {
+  if(walk.length !== 10) return false
+  const obj ={}
+  const way = new Set(walk)
+  if(way.size === 1 || way.size === 3) return false
+  walk.forEach(el=>{
+    if(obj[el]){
+      obj[el]++
+    } else {
+      obj[el] = 1
+    }
+  })
+  if(obj['n'] && obj['w']){
+    return obj['n'] === obj['s'] && obj['w'] === obj['e']
+  }
+  if(obj['n']){
+    return obj['n'] === obj['s']
+  }
+  if(obj['w']){
+    return obj['w'] === obj['e']
+  }
+  return false
+}

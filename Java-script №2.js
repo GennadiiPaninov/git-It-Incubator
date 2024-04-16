@@ -2452,3 +2452,9 @@ function persistence(n) {
 
   return multiplicativePer(n)
 }
+function pigIt(str){
+  return str.split(" ").map(el=>{
+    if(/[!?]/g.test(el)) return el
+    return `${el.substring(1)}${el[0]}ay`
+  }).join(" ")
+}

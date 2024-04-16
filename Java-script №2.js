@@ -2511,3 +2511,16 @@ function dirReduc(arr){
   return removeOppositeDirections(directions)
 
 }
+function rot13(message){
+  const a = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  const indexFind = (el)=>{
+    const index = a.indexOf(el.toUpperCase()) + 13
+    return index - (Math.floor(index/26) * 26)
+  }
+  return message.split("").map((el)=>{
+    if(/[a-zA-Z]/g.test(el)){
+      return el.toUpperCase() === el ? a[indexFind(el)].toUpperCase()  : a[indexFind(el)].toLowerCase()
+    }
+    return el
+  }).join("")
+}

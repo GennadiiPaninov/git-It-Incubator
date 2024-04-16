@@ -2458,3 +2458,12 @@ function pigIt(str){
     return `${el.substring(1)}${el[0]}ay`
   }).join(" ")
 }
+function humanReadable (seconds) {
+  const hours = `${Math.floor(seconds / 3600)}`
+  const minutes = `${Math.floor((seconds - (hours * 3600)) / 60)}`
+  const sec = `${seconds - (hours * 3600) - (minutes * 60)}`
+  const normolise = (el) =>{
+    return el.length == 1 ? `0${el}`: el
+  }
+  return `${normolise(hours)}:${normolise(minutes)}:${normolise(sec)}`
+}

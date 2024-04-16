@@ -2467,3 +2467,47 @@ function humanReadable (seconds) {
   }
   return `${normolise(hours)}:${normolise(minutes)}:${normolise(sec)}`
 }
+function dirReduc(arr){
+  const directions = []
+  for(let i =0 ; i<= arr.length; i++){
+    if(arr[i] === "NORTH"){
+      arr[i + 1] === "SOUTH" ? i++ : directions.push(arr[i])
+      continue
+    }
+    if(arr[i] === "EAST"){
+      arr[i + 1] === "WEST" ? i++ : directions.push(arr[i])
+      continue
+    }
+    if(arr[i] === "WEST"){
+      arr[i + 1] === "EAST" ? i++ : directions.push(arr[i])
+      continue
+    }
+    if(arr[i] === "SOUTH"){
+      arr[i + 1] === "NORTH" ? i++ : directions.push(arr[i])
+      continue
+    }
+  }
+  const removeOppositeDirections=(directions)=> {
+    const oppositeDirections = {
+      NORTH: 'SOUTH',
+      SOUTH: 'NORTH',
+      EAST: 'WEST',
+      WEST: 'EAST',
+    }
+
+    const filteredDirections = []
+
+    for (const direction of directions) {
+      const previousDirection = filteredDirections[filteredDirections.length - 1]
+      if (previousDirection === oppositeDirections[direction]) {
+        filteredDirections.pop()
+      } else {
+        filteredDirections.push(direction)
+      }
+    }
+
+    return filteredDirections
+  }
+  return removeOppositeDirections(directions)
+
+}

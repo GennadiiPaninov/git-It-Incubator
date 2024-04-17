@@ -2524,3 +2524,10 @@ function rot13(message){
     return el
   }).join("")
 }
+function generateHashtag (str) {
+  if(!str.trim()) return false
+  const resStr = `#${str.split(" ").map(el=> {
+    return el.trim() ? `${el[0].toUpperCase()}${el.substring(1)}` : ""
+  }).join("")}`
+  return resStr.length > 140 ? false : resStr
+}

@@ -2540,3 +2540,17 @@ var maxSequence = function(arr){
   }
   return maxSum
 }
+function firstNonRepeatingLetter(s) {
+  let res = ''
+  const setS = new Set(s.toLowerCase())
+  for(let key of setS){
+    let count = 0
+    if(res) continue
+    s.toLowerCase().split("").forEach(el=> {
+      el === key ? count++ : ''
+    })
+    if(count > 1) continue
+    res += key
+  }
+  return res ? s[s.toLowerCase().indexOf(res)] : ''
+}

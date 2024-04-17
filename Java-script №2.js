@@ -2554,3 +2554,25 @@ function firstNonRepeatingLetter(s) {
   }
   return res ? s[s.toLowerCase().indexOf(res)] : ''
 }
+snail = function(array) {
+
+  if (array.length === 0) return []
+  if (array.length === 1) return array[0]
+  const resArr = []
+  let arrLength = array.length
+  const length = Math.ceil(array.length / 2)
+
+  for (let i = 0; i < length; i++) {
+    resArr.push(...array[i].slice(i, array.length - i))
+    for (let j = i + 1; j < array.length - i - 1; j++) {
+      resArr.push(array[j][array.length - i - 1])
+    }
+    if (i !== array.length - i - 1) {
+      resArr.push(...array[array.length - 1 - i].slice(i, array.length - i).reverse())
+      for (let j = array.length - i - 2; j > i; j--) {
+        resArr.push(array[j][i])
+      }
+    }
+  }
+  return resArr
+}

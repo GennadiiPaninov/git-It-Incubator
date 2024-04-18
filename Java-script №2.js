@@ -2577,3 +2577,11 @@ snail = function(array) {
   return resArr
 }
 const arrayDiff=(a, b)=> a.filter(el=> b.every(el1=> el1 !== el))
+function toCamelCase(str){
+  const arr = str.split("").map((el)=>{
+    return /[_-]/g.test(el) ? " " : el
+  }).join("").split(" ").map((el,ind)=>{
+    return ind === 0 ? el : `${el[0].toUpperCase()}${el.substring(1)}`
+  }).join("")
+  return arr
+}

@@ -2576,3 +2576,4 @@ snail = function(array) {
   }
   return resArr
 }
+const arrayDiff=(a, b)=> a.filter(el=> b.every(el1=> el1 !== el))

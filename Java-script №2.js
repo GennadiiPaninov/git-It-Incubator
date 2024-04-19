@@ -2592,3 +2592,14 @@ function narcissistic(value) {
   },0)
   return value === narcissisticNum
 }
+function order(words){
+  const arrWords = words.split(" ")
+  const arr = new Array(arrWords.length)
+  arrWords.forEach(el=>{
+    const ind = el.split("").reduce((cur, el1)=>{
+      return /[0-9]/g.test(Number(el1)) ? cur += Number(el1) - 1 : cur
+    },0)
+    arr[ind] = el
+  })
+  return arr.join(" ")
+}

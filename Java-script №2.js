@@ -2585,3 +2585,10 @@ function toCamelCase(str){
   }).join("")
   return arr
 }
+function narcissistic(value) {
+  const exponent = `${value}`.length
+  const narcissisticNum = `${value}`.split("").reduce((cur,el)=>{
+    return cur + Math.pow(el, exponent)
+  },0)
+  return value === narcissisticNum
+}

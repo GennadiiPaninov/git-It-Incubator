@@ -2621,3 +2621,15 @@ function isPangram(string){
   }).length
   return leng === 26
 }
+function findEvenIndex(arr){
+  return arr.findIndex((el,ind)=> {
+    const left = ind === 0 ? 0 : arr.slice(0, ind).reduce((cur,el)=>{
+      return cur+=el
+    },0)
+    const right = ind === arr.length-1 ? 0 : arr.slice(ind+1).reduce((cur,el)=>{
+      return cur+=el
+    },0)
+    console.log(left, right)
+    return left === right
+  })
+}

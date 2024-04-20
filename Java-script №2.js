@@ -2603,3 +2603,9 @@ function order(words){
   })
   return arr.join(" ")
 }
+var uniqueInOrder=function(iterable){
+  return (Array.isArray(iterable) ? iterable : iterable.split("")).reduce((acc, el, ind, src) => {
+    if (el !== src[ind + 1]) acc.push(el)
+    return acc
+  }, [])
+}

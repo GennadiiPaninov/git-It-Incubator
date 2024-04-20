@@ -2612,3 +2612,12 @@ var uniqueInOrder=function(iterable){
 var uniqueInOrder1=function(iterable){
   return [...iterable].filter((a, i) => a !== iterable[i-1])
 }
+function isPangram(string){
+  const alphabet = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+  const leng = string.split("").filter(el=>{
+    return /[a-zA-Z]/g.test(el)
+  }).map(el=> alphabet.indexOf(el.toUpperCase())).sort((a,b)=> a-b).filter((el,ind,arr)=>{
+    return el !== arr[ind+1]
+  }).length
+  return leng === 26
+}

@@ -2633,3 +2633,15 @@ function findEvenIndex(arr){
     return left === right
   })
 }
+function solution(str){
+  return str.split("").reduce((cur, el,ind,arr)=>{
+    if(arr.length%2===0){
+      if(ind%2!==0) return cur
+      return cur.concat([`${el}${arr[ind + 1]}`])
+    } else{
+      if(ind%2!==0) return cur
+      if(ind === arr.length-1) return cur.concat([`${el}_`])
+      return cur.concat([`${el}${arr[ind + 1]}`])
+    }
+  },[])
+}

@@ -2654,3 +2654,12 @@ function findMissingLetter(array){
     }
   }
 }
+function towerBuilder(nFloors) {
+  const resArr = new Array(nFloors)
+  for (let i = 0; i < nFloors; i++) {
+    const one = new Array(nFloors - i - 1).fill(" ").join("")
+    const two = new Array(i * 2 + 1).fill("*").join("")
+    resArr[i] = `${one}${two}${one}`
+  }
+  return resArr
+}

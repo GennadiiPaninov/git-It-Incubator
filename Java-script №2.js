@@ -2663,3 +2663,16 @@ function towerBuilder(nFloors) {
   }
   return resArr
 }
+function deleteNth(arr,n){
+  let obj = {}
+  return arr.filter((el)=>{
+    if(!obj[el]){
+      obj[el] = 1
+    }
+    if(obj[el]> n){
+      return false
+    }
+    obj[el]++
+    return obj[el]
+  })
+}

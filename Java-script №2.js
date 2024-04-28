@@ -2694,3 +2694,9 @@ function longestConsec(strarr, k) {
   }
   return longestString
 }
+const longestConsec2 = (a, k) => (k < 1 || a.length < 1 || k > a.length)
+    // Test for k
+    ? ''
+    // Map Reduce for longest k combo string
+    : a.map((_, i, a) => a.slice(i, i + k).join(''))
+        .reduce((a, b) => a.length >= b.length ? a : b)

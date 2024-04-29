@@ -2700,3 +2700,18 @@ const longestConsec2 = (a, k) => (k < 1 || a.length < 1 || k > a.length)
     // Map Reduce for longest k combo string
     : a.map((_, i, a) => a.slice(i, i + k).join(''))
         .reduce((a, b) => a.length >= b.length ? a : b)
+
+function sortArray(a) {
+  const resArr = []
+  const filArr = a.filter(el=> el%2!==0).sort((a,b)=>a-b)
+  let i = 0
+  a.forEach((el)=>{
+    if(el%2!==0){
+      resArr.push(filArr[i])
+      i++
+    } else{
+      resArr.push(el)
+    }
+  })
+  return resArr
+}

@@ -2715,7 +2715,16 @@ function sortArray(a) {
   })
   return resArr
 }
-function sortArray(array) {
+function sortArra2(array) {
   const odd = array.filter((x) => x % 2).sort((a,b) => a - b);
   return array.map((x) => x % 2 ? odd.shift() : x);
+}
+function bowlingPins(arr) {
+  const resStr = "7 8 9 T\n 4 5 6 \n  2 3  \n   1   ".split("").map(el=>{
+    if(arr.includes(10) && el === "T"){
+      return " "
+    }
+    return arr.includes(Number(el)) ? " " : el
+  }).join("")
+  return resStr.replace(/[1-9T]/gi, "I")
 }

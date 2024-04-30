@@ -2728,3 +2728,9 @@ function bowlingPins(arr) {
   }).join("")
   return resStr.replace(/[1-9T]/gi, "I")
 }
+const caml =(this){
+  if(this.length === 0) return ""
+  console.log(this)
+  const camelCase = this.split(" ").map((el)=> `${el[0].toUpperCase()}${el.substring(1)}`).join("")
+ return camelCase
+}

@@ -2736,3 +2736,8 @@ const caml =(this)=>{
 const caml2 =(this)=>{
   return this.split(' ').map(w => w.slice(0, 1).toUpperCase() + w.slice(1)).join('');
 }
+function toWeirdCase(s){
+  return s.split(" ").map((el)=>{
+    return el.split("").map((el1,ind)=> ind%2===0 ? el1.toUpperCase() : el1.toLowerCase()).join("")
+  }).join(" ")
+}

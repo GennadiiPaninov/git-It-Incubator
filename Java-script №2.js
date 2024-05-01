@@ -2772,3 +2772,23 @@ function wave(str){
       return num === el 
     })
   }
+  function parse( data ){
+    let val = 0;
+    const resArr = []
+    data.split('').forEach((el)=>{
+      switch(el){
+          case "i":
+          val++
+          break;
+          case "s" :
+          val = Math.pow(val, 2)
+          break;
+          case "d": 
+          val--
+          break;
+          case 'o':
+          resArr.push(val)
+      }
+    })
+    return resArr
+  }

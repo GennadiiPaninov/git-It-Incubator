@@ -2741,3 +2741,11 @@ function toWeirdCase(s){
     return el.split("").map((el1,ind)=> ind%2===0 ? el1.toUpperCase() : el1.toLowerCase()).join("")
   }).join(" ")
 }
+function queueTime(customers, n) {
+   const tills = new Array(n).fill(0)
+    customers.forEach(customer => {
+        const minTill = tills.indexOf(Math.min(...tills))
+        tills[minTill] += customer
+    })
+    return Math.max(...tills)
+}

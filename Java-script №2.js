@@ -2803,3 +2803,20 @@ function wave(str){
     }
     return resArr
    }
+   function stockList(listOfArt, listOfCat){
+    if(listOfArt.length === 0 ) return ''
+    const obj = {}
+    let resStr = ''
+    listOfArt.forEach(el=>{
+      const num = Number(el.split(' ')[1])
+      if(obj[el[0]]){
+       obj[el[0]] = num + obj[el[0]]
+      } else {
+        obj[el[0]]  = num
+      }
+    })
+    listOfCat.forEach(el=>{
+      resStr += `(${el} : ${obj[el]? obj[el]: "0"}) - `
+    })
+    return resStr.substring(0, resStr.length - 3)
+  }

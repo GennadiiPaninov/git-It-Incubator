@@ -2792,3 +2792,14 @@ function wave(str){
     })
     return resArr
   }
+  function table(size) {
+    const resArr = []
+    for(let i=1;i<size+1;i++){
+        const arr = []
+        for(let j = 1; j < size+1 ; j++){
+          arr.push(i*j)
+        }
+      resArr.push(arr)
+    }
+    return resArr
+   }

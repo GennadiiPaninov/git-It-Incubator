@@ -2759,3 +2759,16 @@ function wave(str){
     }
     return arr
   }
+  function sumDigPow(a, b) {
+    const resArr = []
+    const arr = []
+    for(let i=a; i<=b;i++){
+      arr.push(i)
+    }
+    return arr.filter((el)=>{
+      const num = `${el}`.split('').reduce((cur,el,ind)=>{
+        return cur += Math.pow(el, ind+1)
+      },0)
+      return num === el 
+    })
+  }

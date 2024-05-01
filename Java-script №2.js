@@ -2749,3 +2749,13 @@ function queueTime(customers, n) {
     })
     return Math.max(...tills)
 }
+function wave(str){
+  const arr = []
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] !== ' ') {
+        const waveStr = str.slice(0, i) + str[i].toUpperCase() + str.slice(i + 1);
+        arr.push(waveStr)
+      }
+    }
+    return arr
+  }

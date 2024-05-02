@@ -2820,3 +2820,14 @@ function wave(str){
     })
     return resStr.substring(0, resStr.length - 3)
   }
+  function dataReverse(data) {
+    const arr = []
+    const resArr = []
+    for(let i = 0;i<data.length / 8;i++){
+      arr.push(data.slice(i*8, i*8+8))
+    }
+    arr.reverse().forEach(el=>{
+      resArr.push(...el)
+    })
+    return resArr
+  }

@@ -2849,3 +2849,17 @@ function wave(str){
   }
   return result.join("")
 }
+function encode(string) {
+  return string.split("").map((el)=>{
+  if(!/[aeiou]/.test(el)) return el
+  const vowels ={a:1, e:2, i:3, o:4, u:5} 
+  return vowels[el]
+  }).join("")
+}
+function decode(string) {
+ return string.split("").map((el)=>{
+  if(!/[12345]/.test(el)) return el
+  const vowels ={1:"a", 2:'e', 3:"i", 4:"o", 5:"u"} 
+  return vowels[el]
+  }).join("")
+}

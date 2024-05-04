@@ -2894,3 +2894,8 @@ function foldArray1(array, runs){
   }
   return resArr[resArr.length-1]
 }
+function foldArray(a, n) {
+  const r = [], c = a.slice();
+  while (c.length) r.push(c.pop() + (c.shift() || 0));
+  return n - 1 ? foldArray(r, n - 1) : r;
+}

@@ -2872,3 +2872,25 @@ function encode2(string){
 function decode2(string){
   return string.replace(/[1-5]/g, function (x) { return '_aeiou'.charAt(x) });
 }
+function foldArray1(array, runs){
+  const resArr = [array]
+  for(let i = 0; i < runs;i++){
+    const foldedArray = []
+    if(resArr[i].length%2===0){
+      const left = resArr[i].slice(0, resArr[i].length/2)
+      const right = resArr[i].slice(resArr[i].length/2).reverse()
+      left.forEach((el,ind)=>{
+        foldedArray.push(el+ right[ind])
+      })
+    } else{
+      const left = resArr[i].slice(0, Math.ceil(resArr[i].length/2))
+      const right = resArr[i].slice(Math.ceil(resArr[i].length/2)).reverse()
+      console.log(left, right)
+      left.forEach((el,ind)=>{
+        foldedArray.push(el + (right[ind] ? right[ind] : 0))
+      })
+    }
+    resArr.push(foldedArray)
+  }
+  return resArr[resArr.length-1]
+}

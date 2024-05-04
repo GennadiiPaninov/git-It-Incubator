@@ -2899,3 +2899,15 @@ function foldArray(a, n) {
   while (c.length) r.push(c.pop() + (c.shift() || 0));
   return n - 1 ? foldArray(r, n - 1) : r;
 }
+function solve1(s) {
+  const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  let res = 0
+  s.replace(/[aeiou]/g, " ").split(" ").forEach(el=>{
+    let cur = 0
+    el.split("").forEach(el1=>{
+      cur += alphabet.indexOf(el1.toUpperCase()) + 1
+    })
+    res = res < cur ? cur : res
+  })
+  return res;
+};

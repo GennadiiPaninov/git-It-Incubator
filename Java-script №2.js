@@ -2911,3 +2911,15 @@ function solve1(s) {
   })
   return res;
 };
+function countSmileys(arr) {
+  return arr.reduce((cur,el)=>{
+    const f = el.split("")
+    if(/[;:]/g.test(f[0]) && /[-~]/g.test(f[1]) && /[)D]/g.test(f[2])){
+      return ++cur
+    }else if(/[;:]/g.test(f[0]) && /[)D]/g.test(f[1]) && f.length===2){
+      console.log("+")
+      return ++cur
+    }
+    return cur
+  },0)
+}

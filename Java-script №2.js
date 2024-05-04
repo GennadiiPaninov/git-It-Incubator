@@ -2923,3 +2923,17 @@ function countSmileys(arr) {
     return cur
   },0)
 }
+function expandedForm(num) {
+  const res = `${num}`.split("").reduce((cur,el,ind)=>{
+    if(!/[1-9]/.test(el)) return cur
+  let zero = ''
+  for(let i = 0; i < `${num}`.length - ind - 1 ;i++){
+    zero = zero + "0"
+  }
+    cur.push(`${el}${zero}`)
+    return cur
+  },[]).reduce((cur,el)=>{
+    return cur + ` + ${el}` 
+  },'').substring(3)
+  return res
+}

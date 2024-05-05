@@ -2950,3 +2950,19 @@ function count(s) {
   }
   return reObj
 }
+function titleCase(title, minorWords) {
+  if(!title) return ""
+  if(!minorWords){
+    return title.split(" ").map(el=>{
+    return `${el[0].toUpperCase()}${el[1] ? el.substring(1).toLowerCase() : ""}`
+  }).join(" ")
+  }
+  const minorWordArr = minorWords.split(" ").map(el=> el.toLowerCase())
+ 
+  return title.split(" ").map((el,ind)=>{
+    if(minorWordArr.includes(el.toLowerCase()) && ind !== 0){
+      return el.toLowerCase()
+    }
+    return `${el[0].toUpperCase()}${el[1] ? el.substring(1).toLowerCase() : ""}`
+  }).join(" ")
+}

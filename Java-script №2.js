@@ -2943,3 +2943,10 @@ function inArray(array1,array2){
     return  cur
   },[]).sort()
 }
+function count(s) {
+  const reObj = {}
+  for(let i =0; i< s.length;i++){
+    reObj[s[i]] ?  reObj[s[i]]++ :  reObj[s[i]] = 1
+  }
+  return reObj
+}

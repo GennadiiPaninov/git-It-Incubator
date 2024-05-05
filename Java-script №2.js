@@ -2937,3 +2937,9 @@ function expandedForm(num) {
   },'').substring(3)
   return res
 }
+function inArray(array1,array2){
+  return array1.reduce((cur,el,ind)=>{
+    if(array2.find(el1=> el1.includes(el))) cur.push(el)
+    return  cur
+  },[]).sort()
+}

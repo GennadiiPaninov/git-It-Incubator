@@ -2988,3 +2988,10 @@ function goodVsEvil(good, evil){
   },0)
     return e < g ? 'Battle Result: Good triumphs over Evil' : e == g ? 'Battle Result: No victor on this battle field' : 'Battle Result: Evil eradicates all trace of Good'
   }
+  function partsSums(ls) {
+    const r = new Array(ls.length + 1).fill(0)
+    for (let i = ls.length - 1; i >= 0; i--) {
+      r[i] = r[i + 1] + ls[i]
+    }
+    return r
+  }

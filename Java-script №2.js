@@ -2966,3 +2966,25 @@ function titleCase(title, minorWords) {
     return `${el[0].toUpperCase()}${el[1] ? el.substring(1).toLowerCase() : ""}`
   }).join(" ")
 }
+function goodVsEvil(good, evil){
+  const g = good.split(" ").reduce((cur,el,ind)=>{
+    if(ind==0) cur+=1*el
+    if(ind==1) cur+=2*el
+    if(ind==2) cur+=3*el
+    if(ind==3) cur+=3*el
+    if(ind==4) cur+=4*el
+    if(ind==5) cur+=10*el
+    return cur
+  },0)
+  const e = evil.split(" ").reduce((cur,el,ind)=>{
+    if(ind==0) cur+=1*el
+    if(ind==1) cur+=2*el
+    if(ind==2) cur+=2*el
+    if(ind==3) cur+=2*el
+    if(ind==4) cur+=3*el
+    if(ind==5) cur+=5*el
+    if(ind==6) cur+=10*el
+    return cur
+  },0)
+    return e < g ? 'Battle Result: Good triumphs over Evil' : e == g ? 'Battle Result: No victor on this battle field' : 'Battle Result: Evil eradicates all trace of Good'
+  }

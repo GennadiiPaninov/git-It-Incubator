@@ -3022,3 +3022,14 @@ var findMissing1 = function (list) {
   var step = (list[list.length - 1] - list[0]) / (list.length);
   return list.filter(function(val, index) { return val !== (list[0] + index * step); })[0] - step;
 }
+function duplicateEncode(word){
+  const obj={}
+  word.toLowerCase().split("").forEach(el=>{
+    if(obj[el]){
+      obj[el]++
+    } else{
+      obj[el] = 1
+    }
+  })
+  return word.toLowerCase().split("").map((el)=> obj[el] > 1 ? ")" : "(").join("")
+}

@@ -3033,3 +3033,14 @@ function duplicateEncode(word){
   })
   return word.toLowerCase().split("").map((el)=> obj[el] > 1 ? ")" : "(").join("")
 }
+function tribonacci(signature,n){
+  if(n == 0) return []
+  if(n == 1) return [signature[0]]
+  const resArr = [...signature]
+  for(let i = 3; i < n; i++){
+    const arr = [...resArr.slice(i - 3, i)]
+    resArr.push(resArr.slice(i - 3, i).reduce((a,k)=>a+k,0))
+  }
+  return resArr
+
+}

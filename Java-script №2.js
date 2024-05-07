@@ -3000,3 +3000,21 @@ function goodVsEvil(good, evil){
     let sum = ls.reduce((p, c) => p + c, 0);
     return ls.map(v => sum = sum - v);
 }
+var findMissing = function (l) {
+  let singlStep = 0
+  if( l[1] - l[0] === l[2] - l[1]){
+    singlStep = l[1] - l[0]
+  } else{
+    const aa = l[1]-l[0]
+    const b =l[2]-l[1]
+    aa < 0  || b < 0 ?
+        singlStep = Math.max(l[1]-l[0], l[2]-l[1]) : singlStep = Math.min(l[1]-l[0], l[2]-l[1])
+  }
+  for(let i = 0;i<l.length ;i++){
+    if(l[i+1]){
+      if(l[i] + singlStep !== l[i+1]){
+        return l[i] + singlStep
+      }
+    }
+  }
+}

@@ -3061,3 +3061,7 @@ function digPow(n, p){
   if(num < n) return - 1
   return (num / n)%1===0 ? num / n : -1
 }
+function digPow2(n, p) {
+  var x = String(n).split("").reduce((s, d, i) => s + Math.pow(d, p + i), 0)
+  return x % n ? -1 : x / n
+}

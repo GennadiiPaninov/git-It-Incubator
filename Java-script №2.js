@@ -3069,3 +3069,12 @@ function findUniq(arr) {
   const number = arr[0] === arr[1] ? arr[0] : arr[0] === arr[2] ? arr[0] : arr[1]
   return arr.filter(el=> el!==number)[0]
 }
+function high(x){
+  const arr =  x.split(" ")
+  const resArr = x.split(" ").map(el=>{
+    return el.split("").reduce((cur,acc,)=>{
+      return cur + acc.toUpperCase().charCodeAt(0) - 'A'.charCodeAt(0) + 1
+    },0)
+  })
+  return arr[resArr.indexOf(Math.max(...resArr))]
+}

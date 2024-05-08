@@ -3051,3 +3051,13 @@ function tribonacci2(signature,n) {
   }
   return result;
 }
+function digPow(n, p){
+  let count = p
+  let num = `${n}`.split("").reduce((cur,el)=>{
+    const numb = Math.pow(el, count)
+    count++
+    return cur + numb
+  },0)
+  if(num < n) return - 1
+  return (num / n)%1===0 ? num / n : -1
+}

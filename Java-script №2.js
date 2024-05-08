@@ -3065,3 +3065,7 @@ function digPow2(n, p) {
   var x = String(n).split("").reduce((s, d, i) => s + Math.pow(d, p + i), 0)
   return x % n ? -1 : x / n
 }
+function findUniq(arr) {
+  const number = arr[0] === arr[1] ? arr[0] : arr[0] === arr[2] ? arr[0] : arr[1]
+  return arr.filter(el=> el!==number)[0]
+}

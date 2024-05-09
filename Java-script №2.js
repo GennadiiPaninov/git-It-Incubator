@@ -3099,3 +3099,19 @@ function comp(array1, array2){
 
   return true
 }
+function twoSum(numbers, target) {
+  const resArr = []
+  numbers.forEach((el,ind)=>{
+    for(let i =0; i<numbers.length; i++){
+      if(!resArr[0] && i !== ind){
+        if(el + numbers[i]=== target){
+          resArr[0] = ind
+          resArr[1] = i
+        }
+      }
+    }
+
+  })
+
+  return resArr
+}

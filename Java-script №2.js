@@ -3122,3 +3122,11 @@ function twoSum(numbers, target) {
     }
   }
 }
+function productFib(prod){
+  const arr = [0,1]
+  for(let i =1;i<arr.length;i++){
+    arr.push(arr[i] + arr[i-1])
+    if(arr[i]*arr[i+1] === prod) return [arr[i], arr[i+1], true]
+    if(arr[i]*arr[i+1] > prod) return [arr[i], arr[i+1], false]
+  }
+}

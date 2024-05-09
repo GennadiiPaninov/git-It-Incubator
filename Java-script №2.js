@@ -3082,3 +3082,20 @@ function high(s){
   let as = s.split(' ').map(s=>[...s].reduce((a,b)=>a+b.charCodeAt(0)-96,0));
   return s.split(' ')[as.indexOf(Math.max(...as))];
 }
+function comp(array1, array2){
+  if (array1 === null || array2 === null) {
+    return false
+  }
+  if (array1.length !== array2.length) {
+    return false
+  }
+  const sortedA = array1.sort((x, y) => x - y)
+  const sortedB = array2.sort((x, y) => x - y)
+  for (let i = 0; i < sortedA.length; i++) {
+    if (sortedA[i] ** 2 !== sortedB[i]) {
+      return false
+    }
+  }
+
+  return true
+}

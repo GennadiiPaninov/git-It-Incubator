@@ -3130,3 +3130,17 @@ function productFib(prod){
     if(arr[i]*arr[i+1] > prod) return [arr[i], arr[i+1], false]
   }
 }
+function orderWeight(s) {
+  return s.split(" ").sort((a,b)=>{
+
+    const aEl= `${a}`.split("").reduce((cur,el)=>{
+      return cur+= +el
+    },0)
+    console.log(aEl)
+    const bEl = `${b}`.split("").reduce((cur,el)=>{
+      return cur+= +el
+    },0)
+    if(aEl === bEl ) return `${a}` > `${b}` ? 1 : -1
+    return    aEl - bEl
+  }).join(" ")
+}

@@ -3144,3 +3144,17 @@ function orderWeight(s) {
     return    aEl - bEl
   }).join(" ")
 }
+function sumPairs(ints, s) {
+  const seen = {}
+  const resArr = []
+  for (let i = 0; i < ints.length; i++) {
+    const el = ints[i]
+    const complement = s - el
+    if (seen[complement] !== undefined) {
+      resArr.push([complement, el]);
+      break
+    }
+    seen[el] = i
+  }
+  return resArr[0] ? resArr[0] : undefined
+}

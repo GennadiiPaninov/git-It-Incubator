@@ -3169,3 +3169,9 @@ var encryptThis = function(text) {
   return resArr.join(" ")
 
 }
+const encryptThis1 = text => text
+    .split(' ')
+    .map(word => word
+        .replace(/(^\w)(\w)(\w*)(\w$)/, `$1$4$3$2`)
+        .replace(/^\w/, word.charCodeAt(0)))
+    .join(' ');

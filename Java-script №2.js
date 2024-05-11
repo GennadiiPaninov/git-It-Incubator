@@ -3158,3 +3158,14 @@ function sumPairs(ints, s) {
   }
   return resArr[0] ? resArr[0] : undefined
 }
+var encryptThis = function(text) {
+  const resArr = text.split(" ").map((el)=>{
+    if (el.length === 0) return ""
+    const firstCharCode = el.charCodeAt(0)
+    if (el.length === 1) return `${firstCharCode}`
+    if (el.length === 2) return `${firstCharCode}${el[1]}`
+    return `${firstCharCode}${el[el.length - 1]}${el.substring(2, el.length - 1)}${el[1]}`
+  })
+  return resArr.join(" ")
+
+}

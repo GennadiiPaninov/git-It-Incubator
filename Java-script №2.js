@@ -3190,3 +3190,10 @@ function meeting(s) {
 
   return resArr.map(name => "(" + name + ")").join("")
 }
+function meeting1(s) {
+  let string = s.toUpperCase().split(';')
+      .map(x => x.split(':').reverse().join(', '))
+      .sort()
+      .join(')(')
+  return '(' + string + ')'
+}

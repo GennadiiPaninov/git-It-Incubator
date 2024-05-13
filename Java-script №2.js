@@ -3175,3 +3175,18 @@ const encryptThis1 = text => text
         .replace(/(^\w)(\w)(\w*)(\w$)/, `$1$4$3$2`)
         .replace(/^\w/, word.charCodeAt(0)))
     .join(' ');
+function meeting(s) {
+  const resArr = s.split(";")
+      .map(name => name.split(":").reverse().map(part => part.toUpperCase()).join(", "))
+      .sort((a, b) => {
+        const [lastNameA, firstNameA] = a.split(", ")
+        const [lastNameB, firstNameB] = b.split(", ")
+        if (lastNameA < lastNameB) return -1
+        if (lastNameA > lastNameB) return 1
+        if (firstNameA < firstNameB) return -1
+        if (firstNameA > firstNameB) return 1
+        return 0
+      });
+
+  return resArr.map(name => "(" + name + ")").join("")
+}

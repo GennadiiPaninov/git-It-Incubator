@@ -3197,3 +3197,21 @@ function meeting1(s) {
       .join(')(')
   return '(' + string + ')'
 }
+const upArray=arr=>{
+  if (arr.length === 0 || arr.some(num => num < 0 || num > 9)) {
+    return null
+  }
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] < 9) {
+      arr[i]++
+      break
+    } else {
+      arr[i] = 0
+      if (i === 0) {
+        arr.unshift(1)
+      }
+    }
+  }
+
+  return arr
+}

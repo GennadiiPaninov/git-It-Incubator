@@ -3248,3 +3248,9 @@ function dashatize(num) {
   result = result.replace(/^-+|-+$/g, "")
   return result
 }
+function dashatize2(num) {
+  return String(num)
+      .replace(/([13579])/g, "-$1-")
+      .replace(/--+/g, "-")
+      .replace(/(^-|-$)/g, "")
+}

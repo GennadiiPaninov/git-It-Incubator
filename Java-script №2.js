@@ -3232,3 +3232,19 @@ function reverse2(string) {
       .join` `
       .trim();
 }
+function dashatize(num) {
+  const numStr = num.toString()
+  let result = ""
+  for (let i = 0; i < numStr.length; i++) {
+    if (parseInt(numStr[i]) % 2 !== 0) {
+      if (i > 0 && result[result.length - 1] !== "-") {
+        result += "-"
+      }
+      result += numStr[i] + "-"
+    } else {
+      result += numStr[i]
+    }
+  }
+  result = result.replace(/^-+|-+$/g, "")
+  return result
+}

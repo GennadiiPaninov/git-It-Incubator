@@ -3215,7 +3215,7 @@ const upArray=arr=>{
 
   return arr
 }
-function reverse(str){
+function reverse3(str){
   if(str.trim().length === 0) return ""
   const resArr = str.split(" ").map((el,ind)=>{
     if(ind%2!==0){
@@ -3224,4 +3224,11 @@ function reverse(str){
     return el
   }).join(" ")
   return resArr
+}
+function reverse2(string) {
+  return string
+      .split` `
+      .map((w, i) => i & 1 ? [...w].reverse().join`` : w)
+      .join` `
+      .trim();
 }

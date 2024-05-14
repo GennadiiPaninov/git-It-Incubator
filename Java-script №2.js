@@ -3215,3 +3215,13 @@ const upArray=arr=>{
 
   return arr
 }
+function reverse(str){
+  if(str.trim().length === 0) return ""
+  const resArr = str.split(" ").map((el,ind)=>{
+    if(ind%2!==0){
+      return el.split("").reverse().join("")
+    }
+    return el
+  }).join(" ")
+  return resArr
+}

@@ -3254,3 +3254,15 @@ function dashatize2(num) {
       .replace(/--+/g, "-")
       .replace(/(^-|-$)/g, "")
 }
+function passwordGen() {
+  const randomNum = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min
+  }
+  const eAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  const eLowerAlphabet = eAlphabet.toLowerCase()
+  const digits = "0123456789"
+  const symbols = eAlphabet + eLowerAlphabet + digits
+  const password = new Array(randomNum(6,20)).fill(null)
+  const pass = password.map(()=> symbols[randomNum(0,symbols.length-1)]).join("")
+  return /[a-z]/.test(pass) && /[A-Z]/.test(pass) && /\d/.test(pass) ? pass : passwordGen()
+}

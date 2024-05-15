@@ -3273,3 +3273,25 @@ function passwordGen(){
   }).join('');
   return /(?=.*[a-z].*)(?=.*[A-Z].*)(?=.*\d.*)^.{6,20}$/.test(pass) ? pass : passwordGen();
 }
+function highestRank(arr){
+  const obj = {}
+  let highestNum = new Number(),
+      highestNumVal = 0
+  arr.forEach(el=>{
+    if(obj[el]){
+      obj[el]++
+    }else{
+      obj[el] = 1
+    }
+  })
+  for(let key in obj){
+    if(obj[key] > highestNumVal){
+      highestNum = key
+      highestNumVal = obj[key]
+    } else if(obj[key] == highestNumVal && Number(key) > highestNum){
+      highestNum = key
+      highestNumVal = obj[key]
+    }
+  }
+  return Number(highestNum)
+}

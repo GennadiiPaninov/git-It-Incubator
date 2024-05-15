@@ -3266,3 +3266,10 @@ function passwordGen() {
   const pass = password.map(()=> symbols[randomNum(0,symbols.length-1)]).join("")
   return /[a-z]/.test(pass) && /[A-Z]/.test(pass) && /\d/.test(pass) ? pass : passwordGen()
 }
+function passwordGen(){
+  var pass = Array.apply(null, Array(Math.floor(Math.random()*(20-6+1)+6))).map(function(){
+    var c = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    return c.charAt(Math.random() * c.length);
+  }).join('');
+  return /(?=.*[a-z].*)(?=.*[A-Z].*)(?=.*\d.*)^.{6,20}$/.test(pass) ? pass : passwordGen();
+}

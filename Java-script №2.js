@@ -3297,3 +3297,21 @@ function highestRank(arr){
 }
 const highestRank2 = arr =>
     arr.sort((a, b) => arr.filter(val => val === b).length - arr.filter(val => val === a).length || b - a)[0];
+Array.prototype.square = function() {
+  return this.map((el) => Math.pow(el,2));
+};
+Array.prototype.cube = function() {
+  return this.map((el) => Math.pow(el,3));
+};
+Array.prototype.sum = function() {
+  return this.reduce((cur,el) => cur+el);
+};
+Array.prototype.average = function() {
+  return this.length ? this.reduce((cur,el) => cur+el) / this.length : NaN
+};
+Array.prototype.even = function() {
+  return this.filter(el=> el%2===0)
+};
+Array.prototype.odd = function() {
+  return this.filter(el=> el%2!==0)
+};

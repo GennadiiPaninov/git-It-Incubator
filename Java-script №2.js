@@ -3315,3 +3315,10 @@ Array.prototype.even = function() {
 Array.prototype.odd = function() {
   return this.filter(el=> el%2!==0)
 };
+function matrixAddition(a, b){
+  return a.map((el,ind)=>{
+    return el.map((el1,ind1)=>{
+      return el1+ b[ind][ind1]
+    })
+  })
+}

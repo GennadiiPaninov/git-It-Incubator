@@ -3322,3 +3322,13 @@ function matrixAddition(a, b){
     })
   })
 }
+function getLengthOfMissingArray(arrayOfArrays) {
+  if(arrayOfArrays === null || arrayOfArrays.includes(null) ) return 0
+  const arrayLength = arrayOfArrays.map(el=>el.length).sort((a,b)=>a-b)
+
+  for(let i = 0;i < arrayLength.length;i++){
+    if(arrayLength[i]===0) return 0
+    if(arrayLength[i]+1 !== arrayLength[i+1]) return arrayLength[i]+1
+  }
+  return 0
+}

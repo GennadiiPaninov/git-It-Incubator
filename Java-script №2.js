@@ -3362,3 +3362,15 @@ function beggars(values, n){
   }
   return resArr
 }
+function twosDifference(input){
+  const blackList = []
+  return input.reduce((cur,acc,ind)=>{
+    console.log(input.indexOf(acc+2))
+    if(input.indexOf(acc+2)!==-1){
+      blackList.push(input.indexOf(acc+2))
+      cur.push([acc,acc+2])
+      return cur
+    }
+    return cur
+  },[])
+}

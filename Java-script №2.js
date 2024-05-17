@@ -3348,3 +3348,17 @@ function bingo(ticket, win){
   })
   return amount >= win ? 'Winner!' :'Loser!'
 }
+function beggars(values, n){
+  const resArr = new Array(n).fill(0)
+  const arr = [...values]
+  for(let i = 0;i<values.length;i++){
+    for(let j =0;j<resArr.length;j++){
+      if(!arr[0]){
+        break;
+      }
+      resArr[j] = arr[0] + resArr[j]
+      arr.shift()
+    }
+  }
+  return resArr
+}

@@ -3339,3 +3339,12 @@ function dup1(s) {
   return s.map(x => x.replace(/(.)\1+/g,'$1'))
 };
 const sumConsecutives = s => s.reduce((acc, curr, i) => (s[i] === s[i-1]) ? (acc[acc.length-1] += curr, acc) : [...acc, curr], [])
+function bingo(ticket, win){
+  let amount = 0
+  ticket.forEach((el)=>{
+    if(el[0].split("").includes(String.fromCharCode(el[1]))){
+      amount++
+    }
+  })
+  return amount >= win ? 'Winner!' :'Loser!'
+}

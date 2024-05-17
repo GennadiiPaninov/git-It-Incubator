@@ -3335,3 +3335,6 @@ function getLengthOfMissingArray(arrayOfArrays) {
 function dup(s) {
   return s.map(w=>w.split("").filter((s,i)=>w[i+1]!==s).join(""))
 };
+function dup1(s) {
+  return s.map(x => x.replace(/(.)\1+/g,'$1'))
+};

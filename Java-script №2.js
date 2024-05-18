@@ -3400,3 +3400,9 @@ function getFirstPython(l) {
 function isSameLanguage(l) {
   return l.filter(e=> l[0].language === e.language).length === l.length
 }
+function allContinents(l) {
+  const zones = [ 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
+  const arr = l.filter(e=> zones.includes(e.continent)).map(e=> e.continent)
+  const set = new Set(arr)
+  return  set.size === 5
+}

@@ -3389,3 +3389,6 @@ function greetDevelopers(l) {
     return e
   })
 }
+function isRubyComing(l) {
+  return l.filter(e=> e.language === "Ruby").length ? true : false
+}

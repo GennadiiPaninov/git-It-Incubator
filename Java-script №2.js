@@ -3397,3 +3397,6 @@ function getFirstPython(l) {
     return c ? c : a.language == 'Python' ? `${a.firstName}, ${a.country}` : ""
   },"") || 'There will be no Python developers'
 }
+function isSameLanguage(l) {
+  return l.filter(e=> l[0].language === e.language).length === l.length
+}

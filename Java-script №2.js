@@ -3378,3 +3378,5 @@ function findSenior(l) {
   const resArr = l.sort((a,b)=> b.age-a.age)
   return resArr.filter((e)=> resArr[0].age === e.age)
 }
+const findSenior2 = list =>
+    list.filter(val => val.age === Math.max(...list.map(val => val.age)));

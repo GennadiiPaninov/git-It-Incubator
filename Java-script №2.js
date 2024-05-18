@@ -3380,3 +3380,6 @@ function findSenior(l) {
 }
 const findSenior2 = list =>
     list.filter(val => val.age === Math.max(...list.map(val => val.age)));
+function countDevelopers(l) {
+  return l.filter(e=> e.language == "JavaScript" && e.continent === 'Europe').length
+}

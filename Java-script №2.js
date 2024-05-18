@@ -3392,3 +3392,8 @@ function greetDevelopers(l) {
 function isRubyComing(l) {
   return l.filter(e=> e.language === "Ruby").length ? true : false
 }
+function getFirstPython(l) {
+  return l.reduce((c,a)=>{
+    return c ? c : a.language == 'Python' ? `${a.firstName}, ${a.country}` : ""
+  },"") || 'There will be no Python developers'
+}

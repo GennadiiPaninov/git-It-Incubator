@@ -3383,3 +3383,9 @@ const findSenior2 = list =>
 function countDevelopers(l) {
   return l.filter(e=> e.language == "JavaScript" && e.continent === 'Europe').length
 }
+function greetDevelopers(l) {
+  return l.map(e=> {
+    e.greeting = `Hi ${e.firstName}, what do you like the most about ${e.language}?`
+    return e
+  })
+}

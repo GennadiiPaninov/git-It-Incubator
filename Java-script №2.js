@@ -3374,3 +3374,7 @@ function twosDifference(input){
     return cur
   },[])
 }
+function findSenior(l) {
+  const resArr = l.sort((a,b)=> b.age-a.age)
+  return resArr.filter((e)=> resArr[0].age === e.age)
+}

@@ -3439,3 +3439,6 @@ function addUsername(l) {
     return e
   })
 }
+function getAverageAge(l) {
+  return Math.round(l.map(e=>e.age).reduce((c,a)=>c+a) / l.length)
+}

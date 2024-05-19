@@ -3445,3 +3445,20 @@ function getAverageAge(l) {
 function findAdmin(l, ln) {
   return l.filter(e=> e.language === ln && e.githubAdmin==='yes')
 }
+function isLanguageDiverse(list) {
+  const obj ={}
+  const arr = []
+  list.forEach(e=>{
+    if(!obj[e.language]){
+      obj[e.language] = 1
+    } else{
+      obj[e.language]++
+    }
+  })
+  for(let key in obj){
+    arr.push(obj[key])
+  }
+  const maxDevel = Math.max(...arr)
+
+  return arr.every(e=> e*2 >= maxDevel)
+}

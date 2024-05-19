@@ -3442,3 +3442,6 @@ function addUsername(l) {
 function getAverageAge(l) {
   return Math.round(l.map(e=>e.age).reduce((c,a)=>c+a) / l.length)
 }
+function findAdmin(l, ln) {
+  return l.filter(e=> e.language === ln && e.githubAdmin==='yes')
+}

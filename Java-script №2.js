@@ -3433,3 +3433,9 @@ function isAgeDiverse(list) {
       ? [10,20,30,40,50,60,70,80,90].every(e => list.some(x => x.age - e >= 0 && x.age - e <= 9))
       : false;
 }
+function addUsername(l) {
+  return l.map(e=>{
+    e.username = `${e.firstName[0].toLowerCase()+e.firstName.substring(1)+e.lastName[0].toLowerCase()}${new Date().getFullYear()-e.age}`
+    return e
+  })
+}

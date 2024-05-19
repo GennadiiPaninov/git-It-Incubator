@@ -3406,3 +3406,25 @@ function allContinents(l) {
   const set = new Set(arr)
   return  set.size === 5
 }
+function isAgeDiverse(list) {
+  const arr = [[10,19],[20,29],[30,39],[40,49],[50,59],[60,69],[70,79],[80,89],[90,99],[100, 109]]
+  list.forEach(e=>{
+    if(e.age>=100 &&arr[arr.length-1]!==0){
+      arr[arr.length-1] = 0
+    }
+    for(let i = 0;i<arr.length;i++){
+      if(arr[i] === 0){
+        continue
+      }
+      if(e.age>=100){
+        break;
+      }
+      console.log(arr[i][0]<=e.age, arr[i][0], e.age)
+      if(arr[i][0]<=e.age&&arr[i][1]>=e.age){
+        arr[i] = 0
+        break;
+      }
+    }
+  })
+  return arr.every(e=> e===0)
+}

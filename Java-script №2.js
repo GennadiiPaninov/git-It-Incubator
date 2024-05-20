@@ -3492,3 +3492,16 @@ function nthFibo(n) {
 
   return arr[n-1]
 }
+function createFunctions(n) {
+  var callbacks = [];
+
+  for (var i=0; i<n; i++) {
+    (function(j) {
+      callbacks.push(function() {
+        return j;
+      });
+    })(i);
+  }
+
+  return callbacks;
+}

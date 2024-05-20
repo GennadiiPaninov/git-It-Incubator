@@ -3462,3 +3462,14 @@ function isLanguageDiverse(list) {
 
   return arr.every(e=> e*2 >= maxDevel)
 }
+function askForMissingDetails(l) {
+  return l.map(d=>{
+    for(let key in d){
+      if(d[key] === null){
+        d.question = `Hi, could you please provide your ${key}.`
+        return d
+      }
+    }
+    return 1
+  }).filter(e=>e!==1)
+}

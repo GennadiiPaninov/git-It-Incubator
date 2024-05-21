@@ -3515,3 +3515,14 @@ function mineLocation(f){
 const mineLocation2 = field =>
     (idx => [idx, field[idx].indexOf(1)])
     (field.findIndex(val => val.includes(1)));
+function findUniq(arr) {
+  if(arr[0]==="") return 'a'
+  const set1 = new Set(arr[0].toLowerCase())
+  const set2 = new Set(arr[1].toLowerCase())
+  const set3 = new Set(arr[2].toLowerCase())
+  const unique = [...set1].every(item => set2.has(item)) ? set1 : set3
+  return arr.filter(e=>{
+    const set4 = new Set(e.toLowerCase())
+    return [...unique].every(item => set4.has(item)) ? false : true
+  }).join("")
+}

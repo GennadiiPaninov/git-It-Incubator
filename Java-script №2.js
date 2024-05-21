@@ -3512,3 +3512,6 @@ function mineLocation(f){
     }
   }
 }
+const mineLocation2 = field =>
+    (idx => [idx, field[idx].indexOf(1)])
+    (field.findIndex(val => val.includes(1)));

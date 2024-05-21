@@ -3526,3 +3526,6 @@ function findUniq(arr) {
     return [...unique].every(item => set4.has(item)) ? false : true
   }).join("")
 }
+function findUniq(arr) {
+  return arr.sort().filter((e, i, a) => e.match(new RegExp(`[^${a[1]}]`, 'gi')))[0];
+}

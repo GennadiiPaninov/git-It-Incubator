@@ -3505,3 +3505,10 @@ function createFunctions(n) {
 
   return callbacks;
 }
+function mineLocation(f){
+  for(let i =0;i<f.length;i++){
+    for(let j = 0;j<f[i].length;j++){
+      if(f[i][j] == 1) return [i,j]
+    }
+  }
+}

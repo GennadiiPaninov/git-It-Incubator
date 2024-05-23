@@ -3529,3 +3529,11 @@ function findUniq(arr) {
 function findUniq(arr) {
   return arr.sort().filter((e, i, a) => e.match(new RegExp(`[^${a[1]}]`, 'gi')))[0];
 }
+function solve(arr){
+  const resArr = []
+  const obj = {}
+  arr.forEach(e=>{
+    obj[e] ? obj[e]++ : obj[e] = 1
+  })
+  return arr.sort((a,b)=> obj[b] === obj[a] ?  a-b : obj[b] - obj[a])
+}

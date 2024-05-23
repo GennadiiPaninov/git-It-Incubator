@@ -3542,3 +3542,22 @@ function solve(arr){
   for(var n of arr) r[n]=r[n]+1||1
   return arr.slice().sort((a,b)=>r[b]-r[a]||a-b)
 }
+function flatten(...args) {
+  let result = [];
+
+  function flattenRecursive(item) {
+    if (Array.isArray(item)) {
+      for (let i = 0; i < item.length; i++) {
+        flattenRecursive(item[i]);
+      }
+    } else {
+      result.push(item);
+    }
+  }
+
+  for (let i = 0; i < args.length; i++) {
+    flattenRecursive(args[i]);
+  }
+
+  return result;
+}

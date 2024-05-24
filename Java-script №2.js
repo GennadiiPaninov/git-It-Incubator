@@ -3575,3 +3575,10 @@ function arraysSimilar(arr1, arr2) {
   }
   return true
 }
+function arraysSimilar2(arr1, arr2) {
+  arr1 = arr1.sort(sortFunc);
+  arr2 = arr2.sort(sortFunc);
+  return arr1.length == arr2.length && arr1.every(function(a,i) {return a === arr2[i];});
+}
+
+function sortFunc1(a,b) {return a-b;}

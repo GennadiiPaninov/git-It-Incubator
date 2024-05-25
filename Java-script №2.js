@@ -3581,4 +3581,19 @@ function arraysSimilar2(arr1, arr2) {
   return arr1.length == arr2.length && arr1.every(function(a,i) {return a === arr2[i];});
 }
 
-function sortFunc1(a,b) {return a-b;}
+function sortFunc12(a,b) {return a-b;}
+const findPairs = (nums, target) => {
+  // Основной цикл
+  for (let i = 0; i < nums.length; i++) {
+    const numFirst = nums[i];
+
+    // Вложенный цикл
+    for (let j = i + 1; j < nums.length; j++) {
+      const numSecond = nums[j];
+      // Условие
+      if (numFirst + numSecond === target) {
+        // Условие выполняется
+        return [numFirst, numSecond];
+      }
+    }
+  }

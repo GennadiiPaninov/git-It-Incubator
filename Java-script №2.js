@@ -3597,3 +3597,14 @@ const findPairs = (nums, target) => {
       }
     }
   }
+
+  function splitAndAdd(arr, n) {
+    if (arr.length === 1 || n < 1) return arr
+    const midIndex = Math.floor(arr.length / 2)
+    const firstHalf = arr.slice(0, midIndex).reverse()
+    const secondHalf = arr.slice(midIndex).reverse()
+
+    const newArr = secondHalf.map((num, index) => num + (firstHalf[index] || 0)).reverse()
+
+    return splitAndAdd(newArr, n - 1)
+  }

@@ -3632,3 +3632,17 @@ const findPairs = (nums, target) => {
     }
     return -1
   }
+  function solution2(a) {
+    var c = 0, i = 0;
+
+    while (typeof a[i] !== 'undefined') {
+      c++;
+      i += a[i];
+
+      if (c > a.length) {
+        return -1;
+      }
+    }
+
+    return a.length ? c : -1;
+  }

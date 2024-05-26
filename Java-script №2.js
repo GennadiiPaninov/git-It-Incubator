@@ -3618,3 +3618,17 @@ const findPairs = (nums, target) => {
 
     return splitAndAdd(arr.splice(0, Math.ceil(ln / 2)).map((a, i) => a + arr[i]), n-1);
   }
+  function solution(a) {
+    let position = 0
+    let jumps = 0
+    while (position >= 0 && position < a.length) {
+      if( jumps> a.length) return -1
+      const jump = a[position]
+      position += jump
+      jumps++
+      if (position >= a.length || position < 0) {
+        return jumps
+      }
+    }
+    return -1
+  }

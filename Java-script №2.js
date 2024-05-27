@@ -3661,3 +3661,4 @@ const findPairs = (nums, target) => {
     });
     return Math.min(...valArr)
   }
+  const getting_mad2 = a=> Math.min.apply(Math,[].concat.apply([],(a.map((v,i)=>a.map((n,j)=>(i!=j)?Math.abs(v-n):Infinity)))));

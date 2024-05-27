@@ -3662,3 +3662,21 @@ const findPairs = (nums, target) => {
     return Math.min(...valArr)
   }
   const getting_mad2 = a=> Math.min.apply(Math,[].concat.apply([],(a.map((v,i)=>a.map((n,j)=>(i!=j)?Math.abs(v-n):Infinity)))));
+  function atomicNumber(num){
+    if (num === 1) return [1]
+    const result = []
+    let currentShell = 1
+    let remainingElectrons = num
+    while (remainingElectrons > 0) {
+      const maxElectrons = 2 * Math.pow(currentShell, 2)
+      if (remainingElectrons >= maxElectrons) {
+        result.push(maxElectrons)
+        remainingElectrons -= maxElectrons
+      } else {
+        result.push(remainingElectrons)
+        remainingElectrons = 0
+      }
+      currentShell++
+    }
+    return result
+  }

@@ -3646,3 +3646,18 @@ const findPairs = (nums, target) => {
 
     return a.length ? c : -1;
   }
+  function gettingMad(a) {
+    const valArr = a.map((e, ind) => {
+      let min = Number.MAX_SAFE_INTEGER
+      for (let i = 0; i < a.length; i++) {
+        if (i !== ind) {
+          const diff = Math.abs(e - a[i])
+          if (diff < min) {
+            min = diff
+          }
+        }
+      }
+      return min
+    });
+    return Math.min(...valArr)
+  }

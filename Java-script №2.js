@@ -3680,3 +3680,13 @@ const findPairs = (nums, target) => {
     }
     return result
   }
+  function atomicNumber2(num) {
+    var c = 1, res = Array();
+    while (num > c * c * 2) {
+      res.push(c * c * 2);
+      num -= c * c * 2;
+      c++;
+    }
+    res.push(num);
+    return res;
+  }

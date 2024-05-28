@@ -3690,3 +3690,7 @@ const findPairs = (nums, target) => {
     res.push(num);
     return res;
   }
+  function countRedBeads(n) {
+    if(n<2) return 0
+    return 2 + ((n-2)*2)
+  }

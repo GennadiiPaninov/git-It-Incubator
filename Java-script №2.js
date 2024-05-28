@@ -3694,3 +3694,4 @@ const findPairs = (nums, target) => {
     if(n<2) return 0
     return 2 + ((n-2)*2)
   }
+  const countRedBeads2 = n => n < 2 ? 0 : (n-1) * 2;

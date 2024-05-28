@@ -3695,3 +3695,10 @@ const findPairs = (nums, target) => {
     return 2 + ((n-2)*2)
   }
   const countRedBeads2 = n => n < 2 ? 0 : (n-1) * 2;
+  function convertHashToArray(hash){
+    const resArr = []
+    for(let key in hash){
+      resArr.push([key, hash[key]])
+    }
+    return resArr
+  }

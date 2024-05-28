@@ -3702,3 +3702,4 @@ const findPairs = (nums, target) => {
     }
     return resArr
   }
+  const convertHashToArray2 = o => Object.entries(o).sort();

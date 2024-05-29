@@ -3703,3 +3703,17 @@ const findPairs = (nums, target) => {
     return resArr
   }
   const convertHashToArray2 = o => Object.entries(o).sort();
+  function createMessage2(initialMessage) {
+    let message = initialMessage
+
+    function inner(nextMessage) {
+      if (nextMessage) {
+        message += " " + nextMessage
+        return inner
+      } else {
+        return message
+      }
+    }
+
+    return inner
+  }

@@ -3728,3 +3728,4 @@ const findPairs = (nums, target) => {
     a1.forEach((e,i)=>e===a2[i]? score +=4: a2[i]===""? score+=0: score-=1)
     return score < 0 ? 0 : score
   }
+  checkExam = (x, y) => (x = y.reduce((s, e, i) => s + (e === x[i] ? 4 : e === '' ? 0 : -1), 0)) > 0 ? x : 0;

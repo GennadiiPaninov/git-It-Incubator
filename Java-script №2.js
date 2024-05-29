@@ -3723,3 +3723,8 @@ const findPairs = (nums, target) => {
       return createMessage(str + " "+ next);
     }
   }
+  function checkExam(a1, a2) {
+    let score = 0
+    a1.forEach((e,i)=>e===a2[i]? score +=4: a2[i]===""? score+=0: score-=1)
+    return score < 0 ? 0 : score
+  }

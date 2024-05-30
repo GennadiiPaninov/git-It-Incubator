@@ -3740,3 +3740,8 @@ const findPairs = (nums, target) => {
     }
     return '';
   }
+  var pyramidHeight = function(n){
+    let root = ~~((n * 3) ** (1/3));
+
+    return root * (root + 1) * (2*root+1) <= 6*n ? root : root-1;
+  }

@@ -3729,3 +3729,4 @@ const findPairs = (nums, target) => {
     return score < 0 ? 0 : score
   }
   checkExam = (x, y) => (x = y.reduce((s, e, i) => s + (e === x[i] ? 4 : e === '' ? 0 : -1), 0)) > 0 ? x : 0;
+  const binaryToString1=b=>b.replace(/.{8}/g, e=> String.fromCharCode(parseInt(e,2)))

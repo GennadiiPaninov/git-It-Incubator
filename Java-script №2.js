@@ -3790,3 +3790,12 @@ const findPairs = (nums, target) => {
     return result
 
   }
+  function columnize(it, n) {
+    let matr = [], cw = Array(n).fill(0)
+    for(let i = 0;i<it.length;i+=n ){
+      let row = it.slice(i,i+n)
+      matr.push(row)
+      cw = cw.map((c,j)=> Math.max(c,(row[j] || "").length))
+    }
+    return matr.map(row=>row.map((e,j)=> e.padEnd(cw[j])).join(" | ")).join("\n")
+  }

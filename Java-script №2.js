@@ -3770,3 +3770,23 @@ const findPairs = (nums, target) => {
 
     return [min, ...sqInRect(max - min, min, false)]
   }
+  function columnize(items, n) {
+    let result = '',
+        columnWidths = Array(n).fill(0)
+    for (let i = 0; i < items.length; i++) {
+      let j = i % n
+      columnWidths[j] = Math.max(columnWidths[j], items[i].length)
+    }
+    for (let i = 0; i < items.length; i++) {
+      let j = i % n
+      if (i > 0 && j == 0) {
+        result += '\n'
+      } else if (i > 0) {
+        result += ' | '
+      }
+      result += items[i].padEnd(columnWidths[j], ' ')
+    }
+    console.log(result)
+    return result
+
+  }

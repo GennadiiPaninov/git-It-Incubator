@@ -3799,3 +3799,22 @@ const findPairs = (nums, target) => {
     }
     return matr.map(row=>row.map((e,j)=> e.padEnd(cw[j])).join(" | ")).join("\n")
   }
+  var isAnagram = function(test, original) {
+    const F = (s)=>{
+      return s.toLowerCase().split("").sort((a,b)=>{
+        if(a<b){
+          return -1
+        }
+        return 1
+      })
+    }
+    const arrT = F(test)
+    const arrO = F(original)
+    console.log(arrT, arrO)
+    for(let i = 0;i<= arrT.length;i++){
+      if(arrT[i]!==arrO[i]){
+        return false
+      }
+    }
+    return true
+  }

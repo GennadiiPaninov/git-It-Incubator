@@ -3835,3 +3835,16 @@ const findPairs = (nums, target) => {
   const dontGiveMeFive2 = (start, end) => [...Array(++end - start)].reduce((pre, _, idx) => pre + !/5/.test(idx + start), 0);
   const sumOfMinimums=a=>a.reduce((c,ac)=>c+=Math.min(...ac),0)
   const getEvenNumbers=a=>a.filter(e=>e%2===0)
+  function isSortedAndHow(a) {
+
+    const arr = []
+    a.forEach((e,ind)=>{
+      if(e<a[ind+1]){
+        arr.push(1)
+      } else if(a[ind+1]) {
+        arr.push(-1)
+      }
+    })
+    console.log(arr)
+    return new Set(arr).size > 1 ? 'no' : arr[0] === 1 ? 'yes, ascending' : 'yes, descending'
+  }

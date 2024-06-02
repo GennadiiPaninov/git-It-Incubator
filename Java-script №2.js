@@ -3832,3 +3832,4 @@ const findPairs = (nums, target) => {
     }
     return arrN.length
   }
+  const dontGiveMeFive2 = (start, end) => [...Array(++end - start)].reduce((pre, _, idx) => pre + !/5/.test(idx + start), 0);

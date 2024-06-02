@@ -3824,3 +3824,11 @@ const findPairs = (nums, target) => {
     var o = original.toLowerCase().split('').sort().join('');
     return (t==o)?true:false;
   };
+  function dontGiveMeFive(start, end){
+    const arrN = []
+    for(let i=start;i<=end;i++){
+      if(`${i}`.split('').includes("5")) continue
+      arrN.push(i)
+    }
+    return arrN.length
+  }

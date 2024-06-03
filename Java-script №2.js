@@ -3864,3 +3864,16 @@ const findPairs = (nums, target) => {
   }
   const diff2 = (a, b) =>
       [...new Set([...a, ...b].filter(val => a.includes(val) ^ b.includes(val)))].sort();
+  function isSortedAndHow1(a) {
+
+    const arr = []
+    a.forEach((e,ind)=>{
+      if(e<a[ind+1]){
+        arr.push(1)
+      } else if(a[ind+1]) {
+        arr.push(-1)
+      }
+    })
+    console.log(arr)
+    return new Set(arr).size > 1 ? 'no' : arr[0] === 1 ? 'yes, ascending' : 'yes, descending'
+  }

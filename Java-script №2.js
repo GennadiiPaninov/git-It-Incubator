@@ -3877,3 +3877,7 @@ const findPairs = (nums, target) => {
     console.log(arr)
     return new Set(arr).size > 1 ? 'no' : arr[0] === 1 ? 'yes, ascending' : 'yes, descending'
   }
+  function isSortedAndHow(arr) {
+    return arr.every((x,i)=>i==0||arr[i]>=arr[i-1])?'yes, ascending':
+        arr.every((x,i)=>i==0||arr[i]<=arr[i-1])?'yes, descending':'no'
+  }

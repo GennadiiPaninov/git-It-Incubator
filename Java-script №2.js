@@ -3848,3 +3848,17 @@ const findPairs = (nums, target) => {
     console.log(arr)
     return new Set(arr).size > 1 ? 'no' : arr[0] === 1 ? 'yes, ascending' : 'yes, descending'
   }
+  function diff(a, b){
+    const arr =[]
+    a.forEach(e=>{
+      if(!b.includes(e) && !arr.includes(e)){
+        arr.push(e)
+      }
+    })
+    b.forEach(e=>{
+      if(!a.includes(e) && !arr.includes(e)){
+        arr.push(e)
+      }
+    })
+    return arr.sort()
+  }

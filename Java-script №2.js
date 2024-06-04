@@ -3882,3 +3882,12 @@ const findPairs = (nums, target) => {
         arr.every((x,i)=>i==0||arr[i]<=arr[i-1])?'yes, descending':'no'
   }
   const divCon=x=>x.reduce((cur,acc)=> typeof acc === "string" ? cur-=acc: cur+=acc,0)
+  function findDeletedNumber(arr, mixArr) {
+    mixArr.sort((a,b)=>a-b)
+    for(let i =0;i<arr.length;i++){
+      if(arr[i]!==mixArr[i]){
+        return arr[i]
+      }
+    }
+    return 0
+  }

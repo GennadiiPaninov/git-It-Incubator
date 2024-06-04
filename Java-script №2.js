@@ -3896,3 +3896,10 @@ const findPairs = (nums, target) => {
     let mixArrSum = mixArr.reduce((a,b) => a + b, 0)
     return arrSum - mixArrSum
   }
+  function myLanguages(res) {
+    const resArr =[]
+    for(let key in res){
+      if(res[key] >= 60) resArr.push(key)
+    }
+    return resArr.sort((a,b)=>res[b]-res[a])
+  }

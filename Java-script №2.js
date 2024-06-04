@@ -3903,3 +3903,6 @@ const findPairs = (nums, target) => {
     }
     return resArr.sort((a,b)=>res[b]-res[a])
   }
+  function myLanguages2(results) {
+    return Object.keys(results).filter(r => results[r] > 59).sort((a,b) => results[b] - results[a]);
+  }

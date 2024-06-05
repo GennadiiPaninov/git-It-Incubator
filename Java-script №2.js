@@ -3915,3 +3915,6 @@ const findPairs = (nums, target) => {
     })
     return resArr.length === 0 ? arr[0] : total(resArr)
   }
+  function total2(arr){
+    return arr.length > 1 ? total(arr.reduce((a, v, i, arr) => i ? a.concat(v + arr[i - 1]) : a, [])) : arr[0];
+  }

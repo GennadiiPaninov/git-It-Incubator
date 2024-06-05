@@ -3906,3 +3906,12 @@ const findPairs = (nums, target) => {
   function myLanguages2(results) {
     return Object.keys(results).filter(r => results[r] > 59).sort((a,b) => results[b] - results[a]);
   }
+  function total(arr) {
+    const resArr = []
+    arr.forEach((n,i)=>{
+      if(i !== arr.length -1){
+        resArr.push(n + arr[i+1])
+      }
+    })
+    return resArr.length === 0 ? arr[0] : total(resArr)
+  }

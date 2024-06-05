@@ -3918,3 +3918,16 @@ const findPairs = (nums, target) => {
   function total2(arr){
     return arr.length > 1 ? total(arr.reduce((a, v, i, arr) => i ? a.concat(v + arr[i - 1]) : a, [])) : arr[0];
   }
+  function cleanedCounts(data) {
+    let curCount = 0
+    return data.map((el,ind)=>{
+      if(curCount<el){
+        curCount = el
+      }
+      if(!data[ind - 1]) return el
+      if(el >= curCount){
+        return el
+      }
+      return curCount
+    })
+  }

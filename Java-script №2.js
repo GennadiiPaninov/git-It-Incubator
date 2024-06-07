@@ -3935,3 +3935,6 @@ const findPairs = (nums, target) => {
     let m = 0
     return a.map(e=>m=Math.max(e,m))
   }
+  function doubleEveryOther(a) {
+    return a.map((e, i) => i % 2 !== 0 ? e*2 : e);
+  }

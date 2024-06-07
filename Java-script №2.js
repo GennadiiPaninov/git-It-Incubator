@@ -3942,3 +3942,7 @@ const findPairs = (nums, target) => {
 
     return n.length===0 ? 0: n.reduce((c,a,i)=> i%2!==0 ? c : c+=a ,0)*n[n.length-1]
   }
+  function pak(s){
+    if(s.trim().length === 0 ) return ""
+    return s.split(" ").map((e,i)=> i === s.split(" ").length - 1 ? e : `${e} pak`).join(" ")
+  }

@@ -3946,3 +3946,5 @@ const findPairs = (nums, target) => {
     if(s.trim().length === 0 ) return ""
     return s.split(" ").map((e,i)=> i === s.split(" ").length - 1 ? e : `${e} pak`).join(" ")
   }
+  const pak2 = s =>
+      s.trim().split(` `).join(` pak `);

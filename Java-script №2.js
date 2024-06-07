@@ -3938,3 +3938,7 @@ const findPairs = (nums, target) => {
   function doubleEveryOther(a) {
     return a.map((e, i) => i % 2 !== 0 ? e*2 : e);
   }
+  function evenLast(n) {
+
+    return n.length===0 ? 0: n.reduce((c,a,i)=> i%2!==0 ? c : c+=a ,0)*n[n.length-1]
+  }

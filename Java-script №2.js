@@ -3948,3 +3948,11 @@ const findPairs = (nums, target) => {
   }
   const pak2 = s =>
       s.trim().split(` `).join(` pak `);
+  function removeDuplicateWords (s) {
+    const obj = {}
+    return s.split(" ").filter(e=>{
+      if(obj[e]) return false
+      obj[e] = 1
+      return  true
+    }).join(" ")
+  }

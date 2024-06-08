@@ -3956,3 +3956,4 @@ const findPairs = (nums, target) => {
       return  true
     }).join(" ")
   }
+  const removeDuplicateWords2 = s => [...new Set(s.split(' '))].join(' ')

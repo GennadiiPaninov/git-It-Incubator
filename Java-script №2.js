@@ -3964,3 +3964,6 @@ const findPairs = (nums, target) => {
       return cur+`-${acc.toLowerCase()}`
     },"")
   }
+  function kebabize2(str) {
+    return str.replace(/([A-Z])/g, "-$1").replace(/[0-9]/g, '').toLowerCase().replace(/^-/, '');
+  }

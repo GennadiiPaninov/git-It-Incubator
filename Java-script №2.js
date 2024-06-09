@@ -3957,3 +3957,10 @@ const findPairs = (nums, target) => {
     }).join(" ")
   }
   const removeDuplicateWords2 = s => [...new Set(s.split(' '))].join(' ')
+
+  function kebabize(str) {
+    return str.split("").filter(e=>!/[0-9]/.test(e)).join("").split(/(?=[A-Z])/).reduce((cur,acc, ind,arr)=>{
+      if(ind === 0) return cur+acc.toLowerCase()
+      return cur+`-${acc.toLowerCase()}`
+    },"")
+  }

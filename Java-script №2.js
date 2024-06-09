@@ -3967,3 +3967,6 @@ const findPairs = (nums, target) => {
   function kebabize2(str) {
     return str.replace(/([A-Z])/g, "-$1").replace(/[0-9]/g, '').toLowerCase().replace(/^-/, '');
   }
+  function vowel2index(str) {
+    return str.split("").map((e,i)=> /[aeiou]/.test(e)? i+1: e).join("")
+  }

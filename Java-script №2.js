@@ -3970,3 +3970,15 @@ const findPairs = (nums, target) => {
   function vowel2index(str) {
     return str.split("").map((e,i)=> /[aeiou]/.test(e)? i+1: e).join("")
   }
+  function maxSum(arr,range){
+    var max=-Infinity;
+    for (var i=0; i<range.length; ++i)
+    {
+      var s=0;
+      for (var j=range[i][0]; j<=range[i][1]; ++j)
+        s+=arr[j];
+      if (s>max)
+        max=s;
+    }
+    return max
+  }

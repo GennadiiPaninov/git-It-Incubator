@@ -3993,3 +3993,6 @@ const findPairs = (nums, target) => {
         .replace(/(.)\1/g, '')
         .length <= 1;
   }
+  function permuteAPalindrome (input) {
+    return [...input].sort().join('').replace(/(.)\1/g,'').length < 2
+  }

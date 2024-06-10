@@ -3985,3 +3985,11 @@ const findPairs = (nums, target) => {
   function maxSum2(arr,range){
     return Math.max(...range.map(i => arr.slice(i[0], i[1] + 1).reduce((a, b) => a + b)))
   }
+  function permuteAPalindrome (input) {
+    return input
+        .split('')
+        .sort((a, b) => a.charCodeAt() - b.charCodeAt())
+        .join('')
+        .replace(/(.)\1/g, '')
+        .length <= 1;
+  }

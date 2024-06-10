@@ -3982,3 +3982,6 @@ const findPairs = (nums, target) => {
     }
     return max
   }
+  function maxSum2(arr,range){
+    return Math.max(...range.map(i => arr.slice(i[0], i[1] + 1).reduce((a, b) => a + b)))
+  }

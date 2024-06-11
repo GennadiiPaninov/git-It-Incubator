@@ -4016,3 +4016,8 @@ const findPairs = (nums, target) => {
 
     return Math.pow(2, length) - 1;
   }
+  function estSubsets(arr) {
+    var set_ = new Set(arr);
+
+    return Math.pow(2, set_.size) - 1;
+  }

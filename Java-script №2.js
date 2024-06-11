@@ -4005,5 +4005,14 @@ const findPairs = (nums, target) => {
     }
     return translation
   }
-  const grabscrab = (anagram, dictionary) =>
+  const grabscrab2 = (anagram, dictionary) =>
       dictionary.filter(val => [...val].sort().join(``) === [...anagram].sort().join(``));
+  function estSubsets(arr) {
+    const set = new Set(arr);
+
+    const clearArray = Array.from(set);
+
+    const length = clearArray.length;
+
+    return Math.pow(2, length) - 1;
+  }

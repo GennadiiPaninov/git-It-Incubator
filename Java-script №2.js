@@ -4005,3 +4005,5 @@ const findPairs = (nums, target) => {
     }
     return translation
   }
+  const grabscrab = (anagram, dictionary) =>
+      dictionary.filter(val => [...val].sort().join(``) === [...anagram].sort().join(``));

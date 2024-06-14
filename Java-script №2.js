@@ -4031,3 +4031,5 @@ const findPairs = (nums, target) => {
     init = fct(init, u);
     return init;
   });
+  var guess = 101;
+  Math.random = () => 1;

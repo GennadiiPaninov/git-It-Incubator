@@ -4032,4 +4032,14 @@ const findPairs = (nums, target) => {
     return init;
   });
   var guess = 101;
-  Math.random = () => 1;
+  function autocomplete(input, dictionary){
+    const inp = input.split("").filter(e=>!/[~!@#$%^&*()_+1234567890]/.test(e)).join("")
+    const resArr = []
+    for(let i = 0;i<dictionary.length;i++){
+      if(resArr.length >= 5) return resArr
+      if(inp.toLowerCase()===dictionary[i].substring(0, inp.length).toLowerCase()){
+        resArr.push(dictionary[i])
+      }
+    }
+    return resArr
+  }

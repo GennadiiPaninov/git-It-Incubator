@@ -4059,3 +4059,7 @@ const findPairs = (nums, target) => {
     },0) / str.split(" ").length)
     return  na ? 'n/a' : numberArr[score]
   }
+  function averageString2(str) {
+    let obj = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+    return obj[Math.floor(str.split(' ').map(x=>obj.includes(x)?obj.indexOf(x):NaN).reduce((a, b)=>a+b)/str.split(' ').length)]||'n/a'
+  }

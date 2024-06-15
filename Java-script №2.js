@@ -4063,3 +4063,13 @@ const findPairs = (nums, target) => {
     let obj = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
     return obj[Math.floor(str.split(' ').map(x=>obj.includes(x)?obj.indexOf(x):NaN).reduce((a, b)=>a+b)/str.split(' ').length)]||'n/a'
   }
+  function deleteDigit(n) {
+    const arr=n.toString().split('');
+    let result=0;
+    for(let i=0;i<arr.length;i++){
+      let itisnotabigdeal=((arr.slice(0,i)+arr.slice(i+1))).split(',').join('')*1
+      if (itisnotabigdeal>result){
+        result = itisnotabigdeal;}
+    }
+    return result;
+  }

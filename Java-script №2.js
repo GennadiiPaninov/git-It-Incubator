@@ -4047,3 +4047,15 @@ const findPairs = (nums, target) => {
     var r = new RegExp('^' + input.replace(/[^a-z]/gi,''), 'i');
     return dictionary.filter(function(w){ return r.test(w); }).slice(0, 5);
   }
+  function averageString(str) {
+    if(!str) return 'n/a'
+    let na = false
+    const numberArr = ['zero', 'one','two','three','four','five','six','seven','eight', 'nine']
+    let score = Math.floor(str.split(" ").reduce((cur,acc)=>{
+      if(!numberArr.includes(acc)) {
+        na = true
+      }
+      return cur + numberArr.indexOf(acc)
+    },0) / str.split(" ").length)
+    return  na ? 'n/a' : numberArr[score]
+  }

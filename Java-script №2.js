@@ -4088,3 +4088,5 @@ const findPairs = (nums, target) => {
     if(count === name.length) return true
     return false
   }
+  const nameInStr2 = (str, name) =>
+      new RegExp([...name].join(`.*`), `i`).test(str);

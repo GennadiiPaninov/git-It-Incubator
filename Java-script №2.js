@@ -4077,3 +4077,14 @@ const findPairs = (nums, target) => {
     const s = String(n)
     return Math.max(...Array.from(s, (_, i) => s.slice(0, i) + s.slice(i + 1)))
   }
+  function nameInStr(str, name){
+    let count  = 0;
+    for(let i = 0;i<=str.length-1;i++){
+      if(count === name.length) return true
+      if(str[i].toLowerCase() === name[count].toLowerCase()){
+        count++
+      }
+    }
+    if(count === name.length) return true
+    return false
+  }

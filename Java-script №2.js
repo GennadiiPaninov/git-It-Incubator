@@ -4090,3 +4090,7 @@ const findPairs = (nums, target) => {
   }
   const nameInStr2 = (str, name) =>
       new RegExp([...name].join(`.*`), `i`).test(str);
+  var fatFingers = function(str) {
+    if(typeof str !== 'string') return str;
+    return str.replace(/A/g,'a').split('a').map((s,i)=>i%2?s.replace(/./g,m=>/[a-z]/.test(m)?m.toUpperCase():m.toLowerCase()):s).join``
+  };

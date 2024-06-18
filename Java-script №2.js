@@ -4113,3 +4113,7 @@ const findPairs = (nums, target) => {
 
     return N % 2 ? X : s + X + s;
   }
+  function wordSearch(query, seq){
+    const resArr = seq.filter(e=> e.toLowerCase().includes(query.toLowerCase()))
+    return resArr.length ? resArr : ["Empty"]
+  }

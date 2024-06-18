@@ -4108,3 +4108,8 @@ const findPairs = (nums, target) => {
     const a = new Array(N+1).fill("")
     return a.map((e,i)=>i==Math.floor(N/2)? X:Y).join("")
   }
+  var middleMe1 = function (N, X, Y) {
+    var s = Y.repeat(N/2);
+
+    return N % 2 ? X : s + X + s;
+  }

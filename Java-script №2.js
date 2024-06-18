@@ -4094,3 +4094,17 @@ const findPairs = (nums, target) => {
     if(typeof str !== 'string') return str;
     return str.replace(/A/g,'a').split('a').map((s,i)=>i%2?s.replace(/./g,m=>/[a-z]/.test(m)?m.toUpperCase():m.toLowerCase()):s).join``
   };
+  function fatFingers2(q) {
+    let a = '', c = false;
+    if (!q || q == '') { return q; }
+    for (let i = 0; i < q.length; i++) {
+      let t = q[i]; if (t == 'a' || t == 'A') { c = !c; continue; }
+      a += (c) ? (t == t.toLowerCase()) ? t.toUpperCase() : t.toLowerCase() : t;
+    }
+    return a;
+  }
+  const middleMe=(N, X, Y)=>{
+    if(N%2 !== 0) return X
+    const a = new Array(N+1).fill("")
+    return a.map((e,i)=>i==Math.floor(N/2)? X:Y).join("")
+  }

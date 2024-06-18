@@ -4117,3 +4117,4 @@ const findPairs = (nums, target) => {
     const resArr = seq.filter(e=> e.toLowerCase().includes(query.toLowerCase()))
     return resArr.length ? resArr : ["Empty"]
   }
+  wordSearch = (q, a) => (a = a.filter(e => e.match(new RegExp(q,'i'))))[0] ? a : ["Empty"];

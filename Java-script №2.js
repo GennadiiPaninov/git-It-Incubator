@@ -4144,3 +4144,7 @@ const findPairs = (nums, target) => {
     const arr = a.sort((a,b)=>a-b)
     return arr[arr.length-1]-arr[0] - arr.length +1
   }
+  function consecutive(arr){
+    let l = arr.length;
+    return l ? Math.max(...arr) - Math.min(...arr) - l + 1 : 0;
+  }

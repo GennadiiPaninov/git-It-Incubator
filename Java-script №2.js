@@ -4138,3 +4138,4 @@ const findPairs = (nums, target) => {
     })
     return resArr.sort((a,b)=> a-b)
   };
+  solve2=a=>Object.values(a.map((e,i)=>[[...new Set([...e].sort().join``)].join``,i]).reduce((x,y,i,b,c=b.map(_=>_[0]))=>(c.indexOf(y[0])!==c.lastIndexOf(y[0])?x[y[0]]=x[y[0]]+y[1]||y[1]:x,x),{})).sort((x,y)=>x-y)

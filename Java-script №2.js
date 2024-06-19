@@ -4118,3 +4118,23 @@ const findPairs = (nums, target) => {
     return resArr.length ? resArr : ["Empty"]
   }
   wordSearch = (q, a) => (a = a.filter(e => e.match(new RegExp(q,'i'))))[0] ? a : ["Empty"];
+  function solve(arr){
+    const arrInd = []
+    const resArr = []
+    const initArr = arr.map(e=>{
+      const word = new Set(e)
+      return [...word].sort().join("")
+    })
+    initArr.forEach((e,ind)=>{
+      let countInd = ind
+      for(let i = ind; i<initArr.length;i++){
+        if(arrInd.includes(ind)) continue
+        if(e === initArr[i] && ind!== i){
+          countInd += i
+          arrInd.push(i)
+        }
+      }
+      if(countInd !== ind) resArr.push(countInd)
+    })
+    return resArr.sort((a,b)=> a-b)
+  };

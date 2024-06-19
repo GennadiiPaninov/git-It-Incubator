@@ -4139,3 +4139,8 @@ const findPairs = (nums, target) => {
     return resArr.sort((a,b)=> a-b)
   };
   solve2=a=>Object.values(a.map((e,i)=>[[...new Set([...e].sort().join``)].join``,i]).reduce((x,y,i,b,c=b.map(_=>_[0]))=>(c.indexOf(y[0])!==c.lastIndexOf(y[0])?x[y[0]]=x[y[0]]+y[1]||y[1]:x,x),{})).sort((x,y)=>x-y)
+  function consecutive2(a) {
+    if(a.length < 2 ) return 0
+    const arr = a.sort((a,b)=>a-b)
+    return arr[arr.length-1]-arr[0] - arr.length +1
+  }

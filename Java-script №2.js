@@ -4170,3 +4170,10 @@ const findPairs = (nums, target) => {
         return itinerary.join(', ');
 
     }
+  function findRoutes(routes) {
+    var r1=routes.map(x=>x[0]),r2=routes.map(x=>x[1]),r={},
+        start=r1.filter(x=>!r2.includes(x))[0],rs=[start]
+    routes.forEach(x=>r[x[0]]=x[1])
+    while(rs.length<=routes.length) rs.push(start=r[start])
+    return rs.join(", ")
+  }

@@ -4177,3 +4177,9 @@ const findPairs = (nums, target) => {
     while(rs.length<=routes.length) rs.push(start=r[start])
     return rs.join(", ")
   }
+  function reverseMiddle2(array) {
+    if(array.length%2===0){
+      return [array[array.length/2-1],array[array.length/2]].reverse()
+    }
+    return [array[Math.floor(array.length/2-1)],array[Math.floor(array.length/2)],array[Math.floor(array.length/2)+1]].reverse()
+  }

@@ -4183,3 +4183,7 @@ const findPairs = (nums, target) => {
     }
     return [array[Math.floor(array.length/2-1)],array[Math.floor(array.length/2)],array[Math.floor(array.length/2)+1]].reverse()
   }
+  function reverseMiddle(a){
+    let n = a.length, k = n>>1
+    return a.slice(k-1,k+1+n%2).reverse()
+  }

@@ -4148,3 +4148,25 @@ const findPairs = (nums, target) => {
     let l = arr.length;
     return l ? Math.max(...arr) - Math.min(...arr) - l + 1 : 0;
   }
+    function findRoutes2(routes) {
+        const map = new Map();
+        const destinations = new Set();
+        for (const [start, end] of routes) {
+            map.set(start, end);
+            destinations.add(end);
+        }
+        let start = null;
+        for (const [key] of map) {
+            if (!destinations.has(key)) {
+                start = key;
+                break;
+            }
+        }
+        const itinerary = [];
+        while (start) {
+            itinerary.push(start);
+            start = map.get(start);
+        }
+        return itinerary.join(', ');
+
+    }

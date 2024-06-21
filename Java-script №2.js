@@ -4187,3 +4187,15 @@ const findPairs = (nums, target) => {
     let n = a.length, k = n>>1
     return a.slice(k-1,k+1+n%2).reverse()
   }
+  function divisibleByLast1(n) {
+    const str = `${n}`
+    const resArr = []
+    for(let i = 0;i<str.length;i++){
+      if(i == 0){
+        resArr.push(false)
+        continue
+      }
+      Number(str[i])%Number(str[i-1])===0 ? resArr.push(true) : resArr.push(false)
+    }
+    return resArr
+  }

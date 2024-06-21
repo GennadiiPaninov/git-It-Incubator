@@ -4214,3 +4214,6 @@ const findPairs = (nums, target) => {
     }
     return result
   }
+  function fisHex(name) {
+    return (name.match(/[a-f]/ig) || []).reduce((s, c) => s ^ parseInt(c, 16), 0)
+  }

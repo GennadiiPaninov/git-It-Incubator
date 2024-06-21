@@ -4202,3 +4202,15 @@ const findPairs = (nums, target) => {
   const divisibleByLast = n => {
     return n.toString().split('').map((el, ind, arr) => el % arr[ind - 1] === 0);
   }
+  function fisHex1(name) {
+    const hexChars = /[a-fA-F]/g
+    const validChars = name.match(hexChars)
+    if (!validChars) {
+      return 0
+    }
+    let result = 0
+    for (const char of validChars) {
+      result ^= parseInt(char, 16)
+    }
+    return result
+  }

@@ -4227,3 +4227,5 @@ const findPairs = (nums, target) => {
     if(arr.length === 2) return 2
     return arr.slice(ind[0], ind[1]+1).length
   };
+  const lengthOfSequence = (arr, n) =>
+      arr.filter(val => val === n).length === 2 ? arr.lastIndexOf(n) - arr.indexOf(n) + 1 : 0;

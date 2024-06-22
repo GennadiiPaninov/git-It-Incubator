@@ -4217,3 +4217,13 @@ const findPairs = (nums, target) => {
   function fisHex(name) {
     return (name.match(/[a-f]/ig) || []).reduce((s, c) => s ^ parseInt(c, 16), 0)
   }
+  var lengthOfSequence1 = function (arr, n) {
+    let ind = []
+    arr.forEach((e,index)=>{
+      if(e === n )ind.push(index)
+
+    })
+    if(ind.length!==2) return 0
+    if(arr.length === 2) return 2
+    return arr.slice(ind[0], ind[1]+1).length
+  };

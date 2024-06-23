@@ -4233,3 +4233,17 @@ const findPairs = (nums, target) => {
     if(typeof str !== 'string') return 'Not a string!'
     return str.replace(/[^A-Za-z0-9\s]/g, '')
   }
+  function scratch(lottery){
+    let score = 0
+    lottery.forEach(el=>{
+      const arr = el.split(" ")
+      const set = new Set(arr.slice(0, arr.length-1))
+      if(set.size === 1){
+        arr[arr.length-1] === "###" ? score += 10000 : score += +arr[arr.length-1]
+      }
+      if(set.size === 2 &&  set.has("###")){
+        arr[arr.length-1] === "###" ? score += 10000 : score += +arr[arr.length-1]
+      }
+    })
+    return score
+  }

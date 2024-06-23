@@ -4247,8 +4247,16 @@ const findPairs = (nums, target) => {
     })
     return score
   }
-  const scratch = lottery =>
+  const scratch2 = lottery =>
       lottery
           .map(e=>e.split` `)
           .map(e=>(+e.pop()||10000)*(new Set(e.filter(e=>e!='###')).size<2))
           .reduce((a,b)=>a+b,0)
+  function onlyDuplicates1(str) {
+    const obj = {}
+    const arr = str.split("")
+    arr.forEach(e=>{
+      obj[e] ? obj[e] +=1 : obj[e] = 1
+    })
+    return arr.filter(e=>obj[e]!==1).join("")
+  }

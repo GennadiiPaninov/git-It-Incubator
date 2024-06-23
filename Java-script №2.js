@@ -4260,3 +4260,6 @@ const findPairs = (nums, target) => {
     })
     return arr.filter(e=>obj[e]!==1).join("")
   }
+  function onlyDuplicates(str) {
+    return str.split('').filter(e => str.indexOf(e) != str.lastIndexOf(e)).join('')
+  }

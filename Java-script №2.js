@@ -4247,3 +4247,8 @@ const findPairs = (nums, target) => {
     })
     return score
   }
+  const scratch = lottery =>
+      lottery
+          .map(e=>e.split` `)
+          .map(e=>(+e.pop()||10000)*(new Set(e.filter(e=>e!='###')).size<2))
+          .reduce((a,b)=>a+b,0)

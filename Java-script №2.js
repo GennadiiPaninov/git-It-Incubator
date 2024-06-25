@@ -4270,3 +4270,4 @@ const findPairs = (nums, target) => {
     }
     return count >= 0 ? s.toLowerCase() : s.toUpperCase()
   }
+  const solve = s => s.replace(/[A-Z]/g,'').length < s.length/2 ? s.toUpperCase() : s.toLowerCase()

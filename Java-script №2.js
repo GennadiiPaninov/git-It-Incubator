@@ -4271,3 +4271,16 @@ const findPairs = (nums, target) => {
     return count >= 0 ? s.toLowerCase() : s.toUpperCase()
   }
   const solve = s => s.replace(/[A-Z]/g,'').length < s.length/2 ? s.toUpperCase() : s.toLowerCase()
+  function sortReindeer(reindeerNames) {
+    return reindeerNames.sort((a,b)=>{
+      const lastNameA = a.split(" ")[1]
+      const lastNameB = b.split(" ")[1]
+      if (lastNameA > lastNameB) {
+        return 1;
+      }
+      if (lastNameA < lastNameB) {
+        return -1;
+      }
+      return 0;
+    })
+  }

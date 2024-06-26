@@ -4284,4 +4284,10 @@ const findPairs = (nums, target) => {
       return 0;
     })
   }
-  const sortReindeer = reindeerNames => reindeerNames.sort((a, b) => a.split(' ')[1].localeCompare(b.split(' ')[1]));
+  const sortReindeer2 = reindeerNames => reindeerNames.sort((a, b) => a.split(' ')[1].localeCompare(b.split(' ')[1]));
+  function ranks1(a) {
+    const arrRank = [...a].sort((a,b)=> b-a)
+    return a.map((num)=> {
+      return arrRank.indexOf(num)+1
+    })
+  }

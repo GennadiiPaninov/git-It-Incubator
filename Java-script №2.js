@@ -4291,3 +4291,4 @@ const findPairs = (nums, target) => {
       return arrRank.indexOf(num)+1
     })
   }
+  const ranks2 = (a, b=[...a].sort((a,b)=>b-a)) => a.map(x => 1 + b.indexOf(x));

@@ -4297,3 +4297,5 @@ const findPairs = (nums, target) => {
         .sort((a, b) => a[1] - b[1])
         .map(([num]) => num)
   }
+  const sortByValueAndIndex = array =>
+      array.map((val, idx) => [val, ++idx * val]).sort((a, b) => a[1] - b[1]).map(val => val[0]);

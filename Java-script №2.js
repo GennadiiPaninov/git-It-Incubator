@@ -4292,3 +4292,8 @@ const findPairs = (nums, target) => {
     })
   }
   const ranks2 = (a, b=[...a].sort((a,b)=>b-a)) => a.map(x => 1 + b.indexOf(x));
+  function sortByValueAndIndex1(array){
+    return array.map((num, index) => [num, num * (index + 1)])
+        .sort((a, b) => a[1] - b[1])
+        .map(([num]) => num)
+  }

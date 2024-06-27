@@ -4299,3 +4299,16 @@ const findPairs = (nums, target) => {
   }
   const sortByValueAndIndex = array =>
       array.map((val, idx) => [val, ++idx * val]).sort((a, b) => a[1] - b[1]).map(val => val[0]);
+  function firstNSmallest1(array, n) {
+    n = Math.min(n, array.length)
+    const set = [...array].sort((a, b) => a - b).slice(0, n)
+    let count = 0
+    return array.filter((e) => {
+      if (set.includes(e) && count < n) {
+        set.splice(set.indexOf(e), 1)
+        count++
+        return true
+      }
+      return false
+    });
+  }

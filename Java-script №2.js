@@ -4338,3 +4338,7 @@ const findPairs = (nums, target) => {
       return obj[number] > 1 ?  acc : acc += number
     },0)
   }
+  function sumNoDuplicates(numList) {
+    const uniqueArr=numList.filter((num,index)=>numList.indexOf(num)===index&&numList.lastIndexOf(num)===index)
+    return uniqueArr.reduce((x,y)=>x+y,0);
+  }

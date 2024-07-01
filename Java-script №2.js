@@ -4318,3 +4318,13 @@ const findPairs = (nums, target) => {
     }
     return array
   }
+  function leaderboardSort(leaderboard, changes) {
+    for (const change of changes) {
+      const [name, operation] = change.split(' ')
+      const index = leaderboard.indexOf(name)
+      const delta = parseInt(operation.slice(1))
+      leaderboard.splice(index, 1)
+      leaderboard.splice(index + (operation[0] === '+' ? -delta : delta), 0, name)
+    }
+    return leaderboard
+  }

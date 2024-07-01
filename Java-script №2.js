@@ -4328,3 +4328,13 @@ const findPairs = (nums, target) => {
     }
     return leaderboard
   }
+  function sumNoDuplicates1(numList) {
+    if(numList.length === 0) return 0
+    const obj = {}
+    numList.forEach(el=>{
+      obj[el] ? obj[el] += 1 : obj[el] = 1
+    })
+    return numList.reduce((acc, number)=>{
+      return obj[number] > 1 ?  acc : acc += number
+    },0)
+  }

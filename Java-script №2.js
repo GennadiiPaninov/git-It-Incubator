@@ -4345,3 +4345,6 @@ const findPairs = (nums, target) => {
   function spot(s1,s2){
     return s1.split("").map((el,ind)=> el === s2[ind] ? null : ind ).filter(el=>el!==null)
   }
+  function roundToNext51(n){
+    return n % 5 === 0 ? n : (n < 0 ? n - (n % 5) : n - (n % 5) + 5);
+  }

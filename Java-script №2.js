@@ -4342,3 +4342,6 @@ const findPairs = (nums, target) => {
     const uniqueArr=numList.filter((num,index)=>numList.indexOf(num)===index&&numList.lastIndexOf(num)===index)
     return uniqueArr.reduce((x,y)=>x+y,0);
   }
+  function spot(s1,s2){
+    return s1.split("").map((el,ind)=> el === s2[ind] ? null : ind ).filter(el=>el!==null)
+  }

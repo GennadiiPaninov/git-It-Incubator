@@ -4354,3 +4354,25 @@ const findPairs = (nums, target) => {
   function removeUrlAnchor(url){
     return url.split('#')[0];
   }
+  const range1 = (...range)=>{
+    if(range.length == 1){
+      const arr = new Array(range[0]).fill(0)
+      return arr.map((el,ind)=> ind+1)
+    }
+    if(range.length===2){
+      let count = range[0]
+      const arr = new Array(range[1]-range[0]+1).fill(0)
+      for(let i=0;i<=(range[1]-range[0]);i++){
+        arr[i] = count
+        count++
+      }
+      return arr
+    }
+    let count = range[0]
+    const arr = new Array(Math.ceil((range[2]-range[0])/range[1])).fill(0)
+    for(let i=0;i<=((range[2]-range[0])/range[1]);i++){
+      arr[i] = count
+      count +=range[1]
+    }
+    return arr
+  };

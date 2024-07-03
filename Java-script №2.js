@@ -4376,3 +4376,12 @@ const findPairs = (nums, target) => {
     }
     return arr
   };
+  function range(min, step, max) {
+    if (arguments.length === 1) return range(1, 1, min)
+    if (arguments.length === 2) return range(min, 1, step)
+    const result = []
+    for (let i = min; i <= max; i += step) {
+      result.push(i)
+    }
+    return result
+  }

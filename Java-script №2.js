@@ -4385,6 +4385,12 @@ const findPairs = (nums, target) => {
     }
     return result
   }
-  function hoopCount (n) {
+  function hoopCount2 (n) {
     return n<10  ?"Keep at it until you get it": "Great, now move on to tricks"
+  }
+  function hoopCount1 (n) {
+    const HOPS_LIMIT = 10
+    return n >= HOPS_LIMIT
+        ? 'Great, now move on to tricks'
+        : 'Keep at it until you get it';
   }

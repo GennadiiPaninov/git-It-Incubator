@@ -4394,3 +4394,10 @@ const findPairs = (nums, target) => {
         ? 'Great, now move on to tricks'
         : 'Keep at it until you get it';
   }
+  function sort1(initialArray, sortingArray) {
+    const resArr = []
+    sortingArray.forEach((el,index)=>{
+      resArr[el] = initialArray[index]
+    })
+    return resArr
+  }

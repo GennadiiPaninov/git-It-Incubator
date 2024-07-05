@@ -4406,3 +4406,4 @@ const findPairs = (nums, target) => {
   function d01(a,b){
     return ![a].indexOf(b)
   }
+  function d012(a,b){ return !(a^b) }

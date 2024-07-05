@@ -4401,3 +4401,5 @@ const findPairs = (nums, target) => {
     })
     return resArr
   }
+  const sort = (initialArray, sortingArray) =>
+      initialArray.map((_, idx) => initialArray[sortingArray.indexOf(idx)]);

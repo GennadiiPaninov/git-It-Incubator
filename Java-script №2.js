@@ -4417,3 +4417,9 @@ const findPairs = (nums, target) => {
   function* generator2(a) {
     for (let i = 1;;i++) yield `${a} x ${i} = ${a*i}`;
   }
+  function sumDigits(n) {
+    return `${n}`.split("").reduce((cur,acc)=>{
+      if(/[0-9]/.test(Number(acc))) return cur+Number(acc)
+      return cur
+    },0)
+  }

@@ -4423,3 +4423,6 @@ const findPairs = (nums, target) => {
       return cur
     },0)
   }
+  function sumDigits2(number) {
+    return Math.abs(number).toString().split('').reduce(function(a,b){return +a + +b}, 0);
+  }

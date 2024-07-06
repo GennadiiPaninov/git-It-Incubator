@@ -4407,3 +4407,10 @@ const findPairs = (nums, target) => {
     return ![a].indexOf(b)
   }
   function d012(a,b){ return !(a^b) }
+  function* generator(a) {
+    let b = 1
+    while (true) {
+      yield `${a} x ${b} = ${a * b}`
+      b++
+    }
+  }

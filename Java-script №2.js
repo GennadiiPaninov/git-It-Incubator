@@ -4434,3 +4434,4 @@ const findPairs = (nums, target) => {
   function mostLikely1(p1,p2){
     return  p1.split(":")[0]/p1.split(":")[1]>p2.split(":")[0]/p2.split(":")[1]
   }
+ const mostLikely=(a,b,[c,d]=a.split`:`,[e,f]=b.split`:`)=>c/d>e/f

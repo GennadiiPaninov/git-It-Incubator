@@ -4431,3 +4431,6 @@ const findPairs = (nums, target) => {
     return resArr
   }
   const tailSwap1=a=>(a+"").replace(/(.+:)(.+),(.+:)(.+)/,"$1$4,$3$2").split(",")
+  function mostLikely1(p1,p2){
+    return  p1.split(":")[0]/p1.split(":")[1]>p2.split(":")[0]/p2.split(":")[1]
+  }

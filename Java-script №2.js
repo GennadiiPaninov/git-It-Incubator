@@ -4430,3 +4430,4 @@ const findPairs = (nums, target) => {
     const resArr = [`${arr[0].split(":")[0]}:${arr[1].split(":")[1]}`,`${arr[1].split(":")[0]}:${arr[0].split(":")[1]}`]
     return resArr
   }
+  const tailSwap1=a=>(a+"").replace(/(.+:)(.+),(.+:)(.+)/,"$1$4,$3$2").split(",")

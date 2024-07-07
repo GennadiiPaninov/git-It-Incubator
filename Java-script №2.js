@@ -4426,3 +4426,7 @@ const findPairs = (nums, target) => {
   function sumDigits2(number) {
     return Math.abs(number).toString().split('').reduce(function(a,b){return +a + +b}, 0);
   }
+  function tailSwap(arr) {
+    const resArr = [`${arr[0].split(":")[0]}:${arr[1].split(":")[1]}`,`${arr[1].split(":")[0]}:${arr[0].split(":")[1]}`]
+    return resArr
+  }

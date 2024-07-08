@@ -4456,3 +4456,9 @@ const findPairs = (nums, target) => {
     }
     return resArr
   }
+  function santaSort2(strings) {
+    const res = [], cnt = {}; strings.forEach(s => cnt[s] = cnt[s] + 1 || 1);
+    const sorted = Object.keys(cnt).sort(), k = Math.max(...Object.values(cnt));
+    for (let i = 0; i < k; ++i) for (const s of sorted) if (i < cnt[s]) res.push(s);
+    return res;
+  }

@@ -4435,3 +4435,24 @@ const findPairs = (nums, target) => {
     return  p1.split(":")[0]/p1.split(":")[1]>p2.split(":")[0]/p2.split(":")[1]
   }
  const mostLikely=(a,b,[c,d]=a.split`:`,[e,f]=b.split`:`)=>c/d>e/f
+  function santaSort2(unsortedNames) {
+    const resArr = []
+    const objName = {}
+    unsortedNames.forEach(el=>{
+      objName[el] ? objName[el] +=1 : objName[el] = 1
+    })
+    const maxCountName = Math.max(...Object.values(objName))
+    const nameArr = Object.keys(objName).sort()
+    for(let i = 0;i<maxCountName;i++){
+      const sortedName = nameArr.filter(name=>{
+        if(objName[name] < 1){
+          return false
+        }
+        objName[name]--
+        return true
+
+      })
+      resArr.push(...sortedName)
+    }
+    return resArr
+  }

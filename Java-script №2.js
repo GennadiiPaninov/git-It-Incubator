@@ -4467,3 +4467,4 @@ const findPairs = (nums, target) => {
       return [...nums.slice(ind+1)].filter(el=> el<num).length
     })
   }
+  const smaller = nums => nums.map((x, i) => nums.slice(i).filter(y => x > y).length);

@@ -4471,3 +4471,6 @@ const findPairs = (nums, target) => {
   function squeakyClean(arr) {
     return arr.filter(el=> (el=="")||(el==null)? false: true)
   }
+  function squeakyClean2(arr) {
+    return arr.filter(Boolean);
+  }

@@ -4462,3 +4462,8 @@ const findPairs = (nums, target) => {
     for (let i = 0; i < k; ++i) for (const s of sorted) if (i < cnt[s]) res.push(s);
     return res;
   }
+  function smaller(nums) {
+    return nums.map((num,ind)=>{
+      return [...nums.slice(ind+1)].filter(el=> el<num).length
+    })
+  }

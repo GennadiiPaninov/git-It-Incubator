@@ -4474,3 +4474,21 @@ const findPairs = (nums, target) => {
   function squeakyClean2(arr) {
     return arr.filter(Boolean);
   }
+  function bearDollars2(jobs) {
+    let total = 0
+    const hourlyRates = {
+      'close friend': 25,
+      'friend': 50,
+      'acquaintance': 100,
+    }
+    for (const [hours, client] of jobs) {
+      const rate = hourlyRates[client.toLowerCase()] ? hourlyRates[client.toLowerCase()] : 125
+      if(client === 'constructor'){
+        total+= 125
+        continue
+      }
+      total += hours * rate
+    }
+
+    return total
+  }

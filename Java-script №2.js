@@ -4492,3 +4492,7 @@ const findPairs = (nums, target) => {
 
     return total
   }
+  function bearDollars(arr) {
+    var obj = {'close friend': 1, 'friend': 2, 'acquaintance': 4};
+    return arr.reduce((a,b) => a + (b[0] * ((obj.hasOwnProperty(b[1].toLowerCase())) ? obj[b[1].toLowerCase()] : 5) * 25), 0);
+  }

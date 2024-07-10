@@ -4496,3 +4496,6 @@ const findPairs = (nums, target) => {
     var obj = {'close friend': 1, 'friend': 2, 'acquaintance': 4};
     return arr.reduce((a,b) => a + (b[0] * ((obj.hasOwnProperty(b[1].toLowerCase())) ? obj[b[1].toLowerCase()] : 5) * 25), 0);
   }
+  function coffee(str) {
+    return str.replace(/\bcoffee\b/gi, "COFFEE")
+  }

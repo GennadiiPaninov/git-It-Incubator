@@ -4514,3 +4514,12 @@ const findPairs = (nums, target) => {
   function mergeStrings(first, second){
     return (first + ' ' + second).replace(/(.*) \1/, '$1');
   }
+  function differenceOfSquares(n) {
+    let sumNum = 0
+    let sumSquaresNum = 0
+    for(let i = 0;i<=n; i++){
+      sumNum += i
+      sumSquaresNum += (Math.pow(i, 2))
+    }
+    return Math.pow(sumNum, 2) - sumSquaresNum
+  }

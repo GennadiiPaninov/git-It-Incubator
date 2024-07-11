@@ -2728,14 +2728,14 @@ function bowlingPins(arr) {
   }).join("")
   return resStr.replace(/[1-9T]/gi, "I")
 }
-const caml =(this)=>{
-  if(this.length === 0) return ""
-  const camelCase = this.split(" ").map((el)=> `${el[0].toUpperCase()}${el.substring(1)}`).join("")
- return camelCase
-}
-const caml2 =(this)=>{
-  return this.split(' ').map(w => w.slice(0, 1).toUpperCase() + w.slice(1)).join('');
-}
+// const caml =(this)=>{
+//   if(this.length === 0) return ""
+//   const camelCase = this.split(" ").map((el)=> `${el[0].toUpperCase()}${el.substring(1)}`).join("")
+//  return camelCase
+// }
+// const caml2 =(this)=>{
+//   return this.split(' ').map(w => w.slice(0, 1).toUpperCase() + w.slice(1)).join('');
+// }
 function toWeirdCase(s){
   return s.split(" ").map((el)=>{
     return el.split("").map((el1,ind)=> ind%2===0 ? el1.toUpperCase() : el1.toLowerCase()).join("")
@@ -4118,7 +4118,7 @@ const findPairs = (nums, target) => {
     return resArr.length ? resArr : ["Empty"]
   }
   wordSearch = (q, a) => (a = a.filter(e => e.match(new RegExp(q,'i'))))[0] ? a : ["Empty"];
-  function solve(arr){
+  function solve1(arr){
     const arrInd = []
     const resArr = []
     const initArr = arr.map(e=>{
@@ -4138,7 +4138,7 @@ const findPairs = (nums, target) => {
     })
     return resArr.sort((a,b)=> a-b)
   };
-  solve2=a=>Object.values(a.map((e,i)=>[[...new Set([...e].sort().join``)].join``,i]).reduce((x,y,i,b,c=b.map(_=>_[0]))=>(c.indexOf(y[0])!==c.lastIndexOf(y[0])?x[y[0]]=x[y[0]]+y[1]||y[1]:x,x),{})).sort((x,y)=>x-y)
+  // const solve2=a=>Object.values(a.map((e,i)=>[[...new Set([...e].sort().join``)].join``,i]).reduce((x,y,i,b,c=b.map(_=>_[0]))=>(c.indexOf(y[0])!==c.lastIndexOf(y[0])?x[y[0]]=x[y[0]]+y[1]||y[1]:x,x),{})).sort((x,y)=>x-y)
   function consecutive2(a) {
     if(a.length < 2 ) return 0
     const arr = a.sort((a,b)=>a-b)
@@ -4270,7 +4270,7 @@ const findPairs = (nums, target) => {
     }
     return count >= 0 ? s.toLowerCase() : s.toUpperCase()
   }
-  const solve = s => s.replace(/[A-Z]/g,'').length < s.length/2 ? s.toUpperCase() : s.toLowerCase()
+  const solve2 = s => s.replace(/[A-Z]/g,'').length < s.length/2 ? s.toUpperCase() : s.toLowerCase()
   function sortReindeer(reindeerNames) {
     return reindeerNames.sort((a,b)=>{
       const lastNameA = a.split(" ")[1]
@@ -4514,7 +4514,7 @@ const findPairs = (nums, target) => {
   function mergeStrings(first, second){
     return (first + ' ' + second).replace(/(.*) \1/, '$1');
   }
-  function differenceOfSquares(n) {
+  function differenceOfSquares2(n) {
     let sumNum = 0
     let sumSquaresNum = 0
     for(let i = 0;i<=n; i++){
@@ -4530,4 +4530,4 @@ const findPairs = (nums, target) => {
       squareSum += i;
     }
     return squareSum*squareSum - sum;
-  }
+  }}

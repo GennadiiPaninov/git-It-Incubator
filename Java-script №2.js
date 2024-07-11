@@ -4511,3 +4511,6 @@ const findPairs = (nums, target) => {
     }
     return first + second.substring(count)
   }
+  function mergeStrings(first, second){
+    return (first + ' ' + second).replace(/(.*) \1/, '$1');
+  }

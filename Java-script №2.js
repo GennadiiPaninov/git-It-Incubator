@@ -4499,3 +4499,15 @@ const findPairs = (nums, target) => {
   function coffee(str) {
     return str.replace(/\bcoffee\b/gi, "COFFEE")
   }
+  const mergeStrings2=(first, second)=>{
+    if(first === second) return first
+    let count = 0
+    const secondString = ''
+    for(let i = 1;i<first.length;i++){
+      let str = second.slice(0,i)
+      if(first.endsWith(str)){
+        count = i
+      }
+    }
+    return first + second.substring(count)
+  }

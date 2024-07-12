@@ -4545,3 +4545,36 @@ const countFeelings=(a,b,c=a=>a.split``.reduce((a,b)=>(a[b]=(a[b]||0)+1)&&a,{}),
   const res=b.map(a=>Object.entries(c(a)).map(([a,b])=>[a,d[a]||0/b])).map(a=>a.every(a=>a[1]>0)?1:0).reduce((a,b)=>a+b);
   return `${res} feeling${res==1?'':'s'}.`
 }
+function solve(s){
+  const obj = s.split("").reduce((acc, e)=>{
+    if(acc[e]){
+      acc[e]++
+    }else{
+      acc[e] = 1
+    }
+    return acc
+  },{})
+  const countKey = Object.keys(obj).length
+  if(countKey == 1){
+    return true
+  } else {
+    const arrVal =  Object.values(obj)
+    let countMin = 0
+    for(let i = 0;i<arrVal.length;i++){
+      if(Math.min(...arrVal) === arrVal[i]){
+        countMin++
+      }}
+    if(new Set(arrVal).size === 2 && Math.min(...arrVal)===1 && countMin === 1) return true
+    if(Math.max(arrVal) === 1 && new Set(arrVal).size === 2){
+      return true
+    }
+    if(new Set(arrVal).size === 1 && arrVal[0] === 1) return true
+    let count = 0
+    for(let i = 0;i<arrVal.length;i++){
+      if(Math.max(...arrVal) === arrVal[i]){
+        count++
+      }
+    }
+    return Math.max(...arrVal) -  Math.min(...arrVal) === 1 && new Set(arrVal).size === 2 && count === 1
+  }
+};

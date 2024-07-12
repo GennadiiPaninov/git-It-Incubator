@@ -4578,3 +4578,10 @@ function solve(s){
     return Math.max(...arrVal) -  Math.min(...arrVal) === 1 && new Set(arrVal).size === 2 && count === 1
   }
 };
+const solve = s => {
+  const same = a => /^(.)\1*$/.test([...new Set(a)].map(b=>a.split``.filter(c=>b==c).length).join``);
+  for (let i = 0; i < s.length; i++) {
+    if (same(s.slice(0, i) + s.slice(i + 1))) return true;
+  }
+  return false;
+};

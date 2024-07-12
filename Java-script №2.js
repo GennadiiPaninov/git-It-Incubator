@@ -4531,3 +4531,13 @@ const findPairs = (nums, target) => {
     }
     return squareSum*squareSum - sum;
   }}
+function countFeelings1(str, arr) {
+  const set = [...new Set(str)]
+  const hasFeel = (el)=>{
+    return el.split("").every(e=>{
+      return set.includes(e)
+    })
+  }
+  const val = arr.filter(el=> hasFeel(el)).length
+  return `${val} feeling${val!==1  ? "s": ""}.`
+}

@@ -4585,11 +4585,38 @@ const solve = s => {
   }
   return false;
 };
-let sequence = "0";
 
-for (let i = 1; i < n; i++) {
-  let complement = sequence.split("").map(digit => (digit === "0") ? "1" : "0").join("");
-  sequence += complement;
+function thueMorse(n){
+  let sequence = "0";
+
+  for (let i = 1; i < n; i++) {
+    let complement = sequence.split("").map(digit => (digit === "0") ? "1" : "0").join("");
+    sequence += complement;
+  }
+
+  return sequence.slice(0, n);
 }
+function showMe(yourID) {
 
-return sequence.slice(0, n);
+  const arr = yourID.split("-")
+  const isName = arr.some(el=> {
+
+    return  el.length < 2 || el[0].toUpperCase()!==el[0] || el.split("").some((el1,ind)=>{
+      if(ind === 0){
+        return false
+      }
+      return el1.toLowerCase()!==el1
+    })
+  })
+  if(isName) return false
+  if(yourID.split("").includes(" ")) return false
+
+  if(arr.length === 1 && arr[0][0].toUpperCase()===arr[0][0]) return true
+
+  if(arr.filter(el=> el!=="").length === 1) return false
+
+  if(arr[0].length === 1 || arr[1].length === 1) return false
+
+
+  return true
+}

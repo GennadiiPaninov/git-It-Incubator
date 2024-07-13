@@ -4620,3 +4620,4 @@ function showMe(yourID) {
 
   return true
 }
+const showMe=(S)=>/^[A-Z][a-z]+(?:-[A-Z][a-z]+)*$/.test(S)

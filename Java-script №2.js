@@ -4585,3 +4585,11 @@ const solve = s => {
   }
   return false;
 };
+let sequence = "0";
+
+for (let i = 1; i < n; i++) {
+  let complement = sequence.split("").map(digit => (digit === "0") ? "1" : "0").join("");
+  sequence += complement;
+}
+
+return sequence.slice(0, n);

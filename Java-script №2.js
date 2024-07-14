@@ -4642,3 +4642,18 @@ function testit2(s) {
 function takeUmbrella(weather, chance) {
   return  weather === 'rainy' ? true : weather === 'cloudy' && chance > 0.2 ? true : chance > 0.5
 }
+function testit(act,s) {
+  const res = act.map((el,ind)=>{
+    if(s[ind]==="_" && el === "run"){
+      return "_"
+    }else if(s[ind]==="_" && el === "jump"){
+      return "x"
+    } else if(s[ind]==="|" && el === "jump" ){
+      return "|"
+    }else if(s[ind]==="|" && el === "run" ){
+      return "/"
+    }
+
+  })
+  return res.join("")
+}

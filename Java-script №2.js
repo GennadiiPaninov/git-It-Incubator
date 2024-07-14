@@ -4639,3 +4639,6 @@ function testit(s) {
 function testit2(s) {
   return (s.match(/w.*?o.*?r.*?d/ig) || []).length;
 }
+function takeUmbrella(weather, chance) {
+  return  weather === 'rainy' ? true : weather === 'cloudy' && chance > 0.2 ? true : chance > 0.5
+}

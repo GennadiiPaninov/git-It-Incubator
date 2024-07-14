@@ -4636,3 +4636,6 @@ function testit(s) {
   }
   return countWord
 }
+function testit2(s) {
+  return (s.match(/w.*?o.*?r.*?d/ig) || []).length;
+}

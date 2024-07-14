@@ -4621,3 +4621,18 @@ function showMe(yourID) {
   return true
 }
 const showMe=(S)=>/^[A-Z][a-z]+(?:-[A-Z][a-z]+)*$/.test(S)
+function testit(s) {
+  let count = 0, countWord = 0
+  const word = 'word'
+  for(let i = 0;i<s.length;i++){
+    if(s[i].toLowerCase()=== word[count]){
+      if(count === 3){
+        count = 0
+        countWord++
+      } else{
+        count++
+      }
+    }
+  }
+  return countWord
+}

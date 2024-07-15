@@ -4657,3 +4657,7 @@ function testit(act,s) {
   })
   return res.join("")
 }
+function myParseInt(str) {
+  if(/[a-zA-Z.]/.test(str)) return NaN
+  return Number(str.trim())
+}

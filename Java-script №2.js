@@ -4668,3 +4668,6 @@ function replaceAll1(seq, find, replace) {
   if(!Array.isArray(seq)) return seq.replaceAll(find, replace)
   return seq.map(el=> el===find? replace:el)
 }
+function replaceAll(seq, find, replace) {
+  return Array.isArray(seq) ? seq.map(x=>x==find?replace:x) : seq.split(find).join(replace)
+}

@@ -4661,3 +4661,6 @@ function myParseInt(str) {
   if(/[a-zA-Z.]/.test(str)) return NaN
   return Number(str.trim())
 }
+function myParseInt2(str) {
+  return /^\s*\d+\s*$/.test(str) ? +str : NaN;
+}

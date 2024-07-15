@@ -4664,3 +4664,7 @@ function myParseInt(str) {
 function myParseInt2(str) {
   return /^\s*\d+\s*$/.test(str) ? +str : NaN;
 }
+function replaceAll1(seq, find, replace) {
+  if(!Array.isArray(seq)) return seq.replaceAll(find, replace)
+  return seq.map(el=> el===find? replace:el)
+}

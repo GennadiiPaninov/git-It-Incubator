@@ -4671,3 +4671,10 @@ function replaceAll1(seq, find, replace) {
 function replaceAll(seq, find, replace) {
   return Array.isArray(seq) ? seq.map(x=>x==find?replace:x) : seq.split(find).join(replace)
 }
+function scramble1(str, arr) {
+  const resArr = new Array(arr.length).fill(0)
+  for(let i =0;i<arr.length;i++){
+    resArr[arr[i]] = str[i]
+  }
+  return resArr.join("")
+};

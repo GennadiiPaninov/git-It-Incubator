@@ -4681,3 +4681,18 @@ function scramble1(str, arr) {
 function scramble(s, a) {
   return a.map((_,i)=>s[a.indexOf(i)]).join``
 };
+function getBestWord(points,words){
+  const alp = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  const arr = []
+  words.forEach((el,ind)=>{
+    let val = 0
+    el.split("").forEach((el1)=>{
+      val += points[alp.indexOf(el1)]
+    })
+    arr.push([val, el.length, ind])
+  })
+  const sortArr = [...arr].sort((a,b)=>{
+    return a[0]===b[0] ? a[ 1 ] - b[1]: b[0]-a[0]
+  })
+  return sortArr[0][2]
+}

@@ -4678,3 +4678,6 @@ function scramble1(str, arr) {
   }
   return resArr.join("")
 };
+function scramble(s, a) {
+  return a.map((_,i)=>s[a.indexOf(i)]).join``
+};

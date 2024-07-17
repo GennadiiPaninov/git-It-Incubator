@@ -4710,3 +4710,6 @@ function missingWord1(nums, str) {
   const sortedArr = nums.sort((a,b)=> a-b)
   return `${senten[sortedArr[0]]}${senten[sortedArr[1]]}${senten[sortedArr[2]]}`
 }
+const missingWord = (nums, str) =>
+    nums.sort((a, b) => a - b)[nums.length - 1] < (str = str.replace(/\s/g, ``).toLowerCase()).length ?
+        nums.map(val => str[val]).join(``) : `No mission today`;

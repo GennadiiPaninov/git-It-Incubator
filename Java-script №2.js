@@ -4697,3 +4697,9 @@ function getBestWord(points,words){
   return sortArr[0][2]
 }
 const getBestWord2=(a,b)=>b.map((b,c)=>[[...b].map(b=>a[b.charCodeAt()-65]).reduce((a,b)=>a+b),b.length,c]).reduce(([a,b,c],[d,e,f])=>d>a||d==a&&e<b?[d,e,f]:[a,b,c],[0,0,0])[2]
+
+function leastLarger(a,i) {
+  const num = a[i]
+  const smallestVal = a.map((el,ind)=> [el,ind]).filter(el=>el[0]>num)
+  return smallestVal.length ? smallestVal.sort((a,b)=> a[0]-b[0])[0][1] : -1
+}

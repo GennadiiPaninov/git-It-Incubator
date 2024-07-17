@@ -4704,3 +4704,9 @@ function leastLarger(a,i) {
   return smallestVal.length ? smallestVal.sort((a,b)=> a[0]-b[0])[0][1] : -1
 }
 const leastLarger1 = (a, i) => a.indexOf(Math.min(...a.filter(n => n > a[i])))
+function missingWord1(nums, str) {
+  const senten = str.split("").filter(el=> el!==" ").join("").toLowerCase()
+  if(Math.max(...nums) > senten.length-1) return "No mission today"
+  const sortedArr = nums.sort((a,b)=> a-b)
+  return `${senten[sortedArr[0]]}${senten[sortedArr[1]]}${senten[sortedArr[2]]}`
+}

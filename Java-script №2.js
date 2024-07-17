@@ -4703,3 +4703,4 @@ function leastLarger(a,i) {
   const smallestVal = a.map((el,ind)=> [el,ind]).filter(el=>el[0]>num)
   return smallestVal.length ? smallestVal.sort((a,b)=> a[0]-b[0])[0][1] : -1
 }
+const leastLarger1 = (a, i) => a.indexOf(Math.min(...a.filter(n => n > a[i])))

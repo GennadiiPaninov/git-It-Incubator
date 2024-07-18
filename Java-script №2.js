@@ -4755,3 +4755,6 @@ function sort(items) {
   }
   return items;
 }
+function killcount(counselors, jason){
+  return counselors.map(el=> el[1] < jason ? el[0] : "").filter(el=>el!=="")
+}

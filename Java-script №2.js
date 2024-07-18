@@ -4713,3 +4713,36 @@ function missingWord1(nums, str) {
 const missingWord = (nums, str) =>
     nums.sort((a, b) => a - b)[nums.length - 1] < (str = str.replace(/\s/g, ``).toLowerCase()).length ?
         nums.map(val => str[val]).join(``) : `No mission today`;
+function sort1(items) {
+  if (items.length <= 1) {
+    return items;
+  }
+
+  const pivot = items[Math.floor(items.length / 2)];
+  const left = [];
+  const right = [];
+
+  for (let i = 0; i < items.length; i++) {
+    if (i === Math.floor(items.length / 2)) {
+      continue;
+    }
+
+    if (compareItems(items[i], pivot) < 0) {
+      left.push(items[i]);
+    } else {
+      right.push(items[i]);
+    }
+  }
+
+  return [...sort(left), pivot, ...sort(right)];
+}
+
+function compareItems(a, b) {
+  if (typeof a === 'number' && typeof b === 'number') {
+    return a - b;
+  } else if (typeof a === 'string' && typeof b === 'string') {
+    return a.localeCompare(b);
+  } else {
+    return String(a).localeCompare(String(b));
+  }
+}

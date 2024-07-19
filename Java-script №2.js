@@ -4768,3 +4768,16 @@ function meanVsMedian2(n) {
   if(n.reduce((a,b) => a + b,0)/n.length < n.sort((a,b) => b-a)[1]) return 'median';
   if(n.reduce((a,b) => a + b,0)/n.length === n.sort((a,b) => b-a)[1]) return 'same';
 }
+function compoundArray(a, b) {
+  const count = Math.max(a.length,b.length)
+  const resultArr = []
+  for(let i = 0; i< count;i++){
+    if(a[i] !== undefined){
+      resultArr.push(a[i])
+    }
+    if(b[i] !== undefined){
+      resultArr.push(b[i])
+    }
+  }
+  return resultArr
+}

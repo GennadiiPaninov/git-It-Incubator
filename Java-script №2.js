@@ -4763,3 +4763,8 @@ function meanVsMedian(numbers) {
   const median = numbers.sort((a,b)=> a-b)[Math.floor(numbers.length/2)]
   return mean >median ? 'mean' : mean == median ? "same" : 'median'
 }
+function meanVsMedian2(n) {
+  if(n.reduce((a,b) => a + b,0)/n.length > n.sort((a,b) => b-a)[1]) return 'mean';
+  if(n.reduce((a,b) => a + b,0)/n.length < n.sort((a,b) => b-a)[1]) return 'median';
+  if(n.reduce((a,b) => a + b,0)/n.length === n.sort((a,b) => b-a)[1]) return 'same';
+}

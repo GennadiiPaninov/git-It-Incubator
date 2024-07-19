@@ -4758,3 +4758,8 @@ function sort(items) {
 function killcount(counselors, jason){
   return counselors.map(el=> el[1] < jason ? el[0] : "").filter(el=>el!=="")
 }
+function meanVsMedian(numbers) {
+  const mean = numbers.reduce((cur,acc)=>cur+acc) / numbers.length
+  const median = numbers.sort((a,b)=> a-b)[Math.floor(numbers.length/2)]
+  return mean >median ? 'mean' : mean == median ? "same" : 'median'
+}

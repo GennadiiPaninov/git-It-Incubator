@@ -4781,3 +4781,11 @@ function compoundArray(a, b) {
   }
   return resultArr
 }
+function compoundArray1(a, b) {
+  var c = []
+  while (a.length || b.length) {
+    if (a.length) c.push(a.shift())
+    if (b.length) c.push(b.shift())
+  }
+  return c
+}

@@ -4813,3 +4813,34 @@ function operationArguments2(arr){
 
   return queue;
 }
+function sort(items){
+  function bubbleSort(arr) {
+    for (var i = 0, endI = arr.length - 1; i < endI; i++) {
+      var wasSwap = false;
+      for (var j = 0, endJ = endI - i; j < endJ; j++) {
+        if (arr[j] > arr[j + 1]) {
+          var swap = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = swap;
+          wasSwap = true;
+        }
+      }
+      if (!wasSwap) break;
+    }
+    return arr;
+  }
+  const sortArray = []
+  const length = items.length
+  if(typeof items[0]==='number'){
+    for(let i = 0; i<length;i++){
+      sortArray.push(Math.min(...items))
+      items.splice(items.indexOf(Math.min(...items)), 1)
+    }
+
+  }else {
+    return bubbleSort(items)
+  }
+
+
+  return sortArray
+}

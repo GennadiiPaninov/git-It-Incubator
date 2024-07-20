@@ -4789,3 +4789,19 @@ function compoundArray1(a, b) {
   }
   return c
 }
+function operationArguments(arr){
+  const arrayNumbers = []
+  arr.forEach(el=>{
+    if(typeof el === 'number'){
+      arrayNumbers.push(el)
+    } else {
+      if(arrayNumbers.length === 0) {
+        arrayNumbers[0] = el(0)
+      } else {
+        arrayNumbers[arrayNumbers.length-1] = el(arrayNumbers[arrayNumbers.length-1])
+      }
+
+    }
+  })
+  return arrayNumbers
+}

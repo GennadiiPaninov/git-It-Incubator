@@ -4805,3 +4805,11 @@ function operationArguments(arr){
   })
   return arrayNumbers
 }
+function operationArguments2(arr){
+  const queue = [];
+
+  for (const x of arr)
+    queue.push(typeof x === "function" ? x(queue.pop() ?? 0) : x);
+
+  return queue;
+}

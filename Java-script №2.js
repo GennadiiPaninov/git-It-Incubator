@@ -4874,3 +4874,4 @@ function arrange2(s) {
   })
   return resArr;
 }
+const arrange = (s, l = s.length - 1) => s.map((_, i) => s[i + 1 & 2 ? l - (i >> 1) : i >> 1]);

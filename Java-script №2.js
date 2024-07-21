@@ -4853,3 +4853,24 @@ function sort(items) {
   }
   return items;
 }
+function arrange2(s) {
+  if(s.length===0) return  []
+  const resArr = []
+  const upTo = s.length%2===0 ? Math.floor((s.length - 1) / 2) : (s.length - 1) / 2
+  s.forEach((el,ind,arr)=>{
+    if(ind <= upTo){
+      if(ind%2===0){
+        resArr.push(arr[ind])
+        if(ind !== upTo || s.length%2===0){
+          resArr.push(arr[arr.length-1-ind])
+        }
+      } else{
+        resArr.push(arr[arr.length-1-ind])
+        if(ind !== upTo  || s.length%2===0){
+          resArr.push(arr[ind])
+        }
+      }
+    }
+  })
+  return resArr;
+}

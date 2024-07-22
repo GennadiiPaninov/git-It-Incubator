@@ -4905,3 +4905,10 @@ const solution1 = mtrx => {
   }
   return false
 }
+const solution = mtrx => {
+  let x = mtrx.findIndex(row => row.includes('x')), y = mtrx[x].indexOf('x')
+  return mtrx[x].slice(0, y).find(x => x == '>') ||
+  mtrx[x].slice(y).find(x => x == '<') ||
+  mtrx.slice(0, x).find(row => row[y] == 'v') ||
+  mtrx.slice(x).find(row => row[y] == '^') ? true : false
+}

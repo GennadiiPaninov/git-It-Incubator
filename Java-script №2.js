@@ -4881,3 +4881,27 @@ function matrix(array) {
     return el
   })
 }
+const solution1 = mtrx => {
+  const arr = []
+  mtrx.forEach((el,ind)=>{
+    el.forEach((el1,ind1)=>{
+      if(el1 === 'x'){
+        arr[0] = [ind, ind1]
+      }
+      if(/[\^>v<]/.test(el1)){
+        arr[1] = [ind, ind1]
+        arr[2] = el1
+      }
+    })
+  })
+  if(arr[2] == "^"){
+    return arr[0][1] == arr[1][1] &&  arr[0][0]< arr[1][0]
+  }else  if(arr[2] == "v"){
+    return arr[0][1] == arr[1][1]&&  arr[0][0]> arr[1][0]
+  }else  if(arr[2] == "<"){
+    return arr[0][0] == arr[1][0] && arr[0][1] < arr[1][1]
+  }else  if(arr[2] == ">"){
+    return arr[0][0] == arr[1][0] && arr[0][1] > arr[1][1]
+  }
+  return false
+}

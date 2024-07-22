@@ -4875,3 +4875,9 @@ function arrange2(s) {
   return resArr;
 }
 const arrange = (s, l = s.length - 1) => s.map((_, i) => s[i + 1 & 2 ? l - (i >> 1) : i >> 1]);
+function matrix(array) {
+  return array.map((el,ind)=>{
+    el[ind] < 0 ? el[ind]= 0 : el[ind] = 1
+    return el
+  })
+}

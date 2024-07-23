@@ -4923,3 +4923,11 @@ function findDiscounted1(prices){
   }
   return arrayPrices.join(" ")
 }
+function findDiscounted(prices){
+  prices = prices.split(' ');
+  prices.forEach((e,i) => {
+    let pos = prices.indexOf((+e + e / 3).toString(), i);
+    if (pos != -1) prices.splice(pos, 1);
+  });
+  return prices.join(' ');
+}

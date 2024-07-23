@@ -4930,4 +4930,26 @@ function findDiscounted(prices){
     if (pos != -1) prices.splice(pos, 1);
   });
   return prices.join(' ');
+
+}
+
+function hammingWeight1(n) {
+  let count = 0
+  while (n) {
+    count += n & 1
+    n >>= 1
+  }
+  return count
+}
+function pernicious1(n) {
+  const floor = Math.floor(n)
+  if (floor <= 0) return "No pernicious numbers"
+  const result = []
+  for (let i = 1; i <= floor; i++) {
+    const digitSum = hammingWeight(i)
+    if (isPrime(digitSum)) {
+      result.push(i);
+    }
+  }
+  return result.length > 0 ? result : "No pernicious numbers"
 }

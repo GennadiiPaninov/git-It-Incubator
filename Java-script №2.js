@@ -4912,3 +4912,14 @@ const solution = mtrx => {
   mtrx.slice(0, x).find(row => row[y] == 'v') ||
   mtrx.slice(x).find(row => row[y] == '^') ? true : false
 }
+function findDiscounted1(prices){
+  const arrayPrices = prices.split(" ").map(el=>+el)
+  for(let i =0;i<arrayPrices.length;i++){
+    const sale = arrayPrices.indexOf(arrayPrices[i] * 100 / 75)
+    if(sale !== -1){
+      arrayPrices.splice(sale,1)
+
+    }
+  }
+  return arrayPrices.join(" ")
+}

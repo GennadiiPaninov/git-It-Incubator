@@ -4970,3 +4970,63 @@ function mixFruit2 (arr) {
   var prices = {banana:5,orange:5, apple:5, lemon:5, grapes:5, avocado: 7, strawberry:7,mango:7};
   return Math.round(arr.reduce((a,b)=> a += prices[b.toLowerCase()] || 9,0)/arr.length);
 }
+
+function frame1(balls){
+  if(/[W]/g.test(balls)) return 'Foul'
+  function findNumbers(str) {
+    let result = [];
+    let currentNum = '';
+    for (let i = 0; i < str.length; i++) {
+      if (!isNaN(parseInt(str[i]))) {
+        currentNum += str[i];
+      } else {
+        if (currentNum !== '') {
+          result.push([i - currentNum.length, parseInt(currentNum)]);
+          currentNum = '';
+        }
+      }
+    }
+    if (currentNum !== '') {
+      result.push([str.length - currentNum.length, parseInt(currentNum)]);
+    }
+    return result;
+  }
+  const obj = {}
+  const array = findNumbers(balls)
+  balls.split("").forEach((el,ind, arr)=>{
+    if(/[RYGPW]/.test(el)){
+      let count = 0
+      if(array.find(el=>el[0]==ind+1)){
+        console.log(array.find(el=>el[0]==ind+1)[1])
+        count += array.find(el=>el[0]==ind+1)[1]
+      }
+      obj[el] ? obj[el] += (count == 0 ? 1 :count) : obj[el] = (count == 0 ? 1 : count)
+    }else if(el === "B"){
+      let count = 0
+      if(array.find(el=>el[0]==ind+2)){
+        count += array.find(el=>el[0]==ind+2)[1]
+        console.log(count)
+      }
+      obj[`${el}${arr[ind+1]}`] ? obj[`${el}${arr[ind+1]}`] += (count == 0 ? 1 :count) : obj[`${el}${arr[ind+1]}`] = (count == 0 ? 1 : count)
+    }
+  })
+  let count = 0
+  for(let key in obj){
+    if(key === "R"){
+      count += obj[key]
+    }else if(key === "Y"){
+      count += (obj[key] * 2)
+    }else if(key === "G"){
+      count += (obj[key] * 3)
+    }else if(key === "Bn"){
+      count += (obj[key] * 4)
+    }else if(key === "Be"){
+      count += (obj[key] * 5)
+    }else if(key === "P"){
+      count += (obj[key] * 6)
+    }else if(key === "Bk"){
+      count += (obj[key] * 7)
+    }
+  }
+  return count > 147 ?  "invalid data" : count
+}

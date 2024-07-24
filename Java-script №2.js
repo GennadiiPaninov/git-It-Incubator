@@ -4957,3 +4957,12 @@ const pernicious = n =>
     (val => val.length < 1 || n < 2 ? `No pernicious numbers` : val)
     ([...Array(n > 0 ? n ^ 0 : 0)].map((_, idx) => ++idx).filter(val =>
         [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47].includes([...val.toString(2)].filter(val => +val).length)));
+function mixFruit (arr) {
+  const regF = ['banana', 'orange', 'apple', 'lemon', 'grapes']
+  const specF = ['avocado', 'strawberry','mango']
+  const val = arr.reduce((acc,curr)=>{
+    return regF.indexOf(curr.toLowerCase()) !== -1 ? acc+=5 : specF.indexOf(curr.toLowerCase()) !== -1 ? acc+=7 : acc+=9
+  },0)
+  return Math.round( val / arr.length)
+
+}

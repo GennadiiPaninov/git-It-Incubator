@@ -5030,3 +5030,13 @@ function frame1(balls){
   }
   return count > 147 ?  "invalid data" : count
 }
+function frame(balls) {
+  if (/W/.test(balls)) return 'Foul'
+  let score = 0
+  balls.replace(/([A-Z][a-z]?)(\d*)/g, (m, color, count) => {
+    count = count || 1
+    score += blz[color] * count
+  })
+  if (score > 147) return 'invalid data'
+  return score
+}

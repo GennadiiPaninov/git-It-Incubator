@@ -5072,3 +5072,12 @@ const longestPalindrome2 = (s, parity = 0) =>
         .sort()
         .join('')
         .replace(/[\W_]|(.)\1|(.)/g, (x, double, single) => double ? x : (single && (parity = 1), '')).length + parity;
+function combine(...values) {
+  const obj = {}
+  values.forEach(el=>{
+    for(let key in el){
+      obj[key] ? obj[key] += el[key] : obj[key] = el[key]
+    }
+  })
+  return obj
+}

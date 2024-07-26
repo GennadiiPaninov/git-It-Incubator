@@ -5040,3 +5040,29 @@ function frame(balls) {
   if (score > 147) return 'invalid data'
   return score
 }
+function longestPalindrome(str) {
+  const obj = {}
+  str.toLowerCase().split("").filter(el=>/[0-9a-z]/.test(el)).forEach((el)=>{
+    if(/[0-9a-z]/.test(el)){
+      obj[el] ? obj[el] += 1 : obj[el] = 1
+    }
+  })
+  console.log(obj)
+  let result = 0
+  const arr = Object.values(obj).sort((a,b)=> b-a)
+  console.log(arr)
+  for(let i = 0;i<arr.length;i++){
+    if(arr[i]===1){
+      result++
+      break;
+    }else if(arr[i]%2===0){
+      result += arr[i]
+    }else if(arr[i]%2!==0){
+      result += (arr[i]-1)
+    }
+    if(i === arr.length && arr.some(el=>el%2!==0)){
+      result++
+    }
+  }
+  return result
+}

@@ -5066,3 +5066,9 @@ function longestPalindrome(str) {
   }
   return result
 }
+const longestPalindrome2 = (s, parity = 0) =>
+    s.toLowerCase()
+        .split('')
+        .sort()
+        .join('')
+        .replace(/[\W_]|(.)\1|(.)/g, (x, double, single) => double ? x : (single && (parity = 1), '')).length + parity;

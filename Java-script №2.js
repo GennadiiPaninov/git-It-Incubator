@@ -5085,3 +5085,25 @@ const combine2 = (...params) => params.reduce((a, b) => {
   for (const x in b) { a[x] = x in a ? a[x] + b[x] : b[x] };
   return a;
 }, {});
+function sortTwisted37(array) {
+  const result = [...array].map(el => {
+    if (/3/.test(`${el}`) && /7/.test(`${el}`)) {
+      return Number(`${el}`.split("").map(digit => digit === '3' ? '7' : digit === '7' ? '3' : digit).join(""));
+    } else if (/3/.test(`${el}`)) {
+      return Number(`${el}`.split("").map(digit => digit === '3' ? '7' : digit).join(""));
+    } else if (/7/.test(`${el}`)) {
+      return Number(`${el}`.split("").map(digit => digit === '7' ? '3' : digit).join(""));
+    }
+    return el;
+  }).sort((a, b) => a - b).map(el => {
+    if (/3/.test(`${el}`) && /7/.test(`${el}`)) {
+      return Number(`${el}`.split("").map(digit => digit === '3' ? '7' : digit === '7' ? '3' : digit).join(""));
+    } else if (/3/.test(`${el}`)) {
+      return Number(`${el}`.split("").map(digit => digit === '3' ? '7' : digit).join(""));
+    } else if (/7/.test(`${el}`)) {
+      return Number(`${el}`.split("").map(digit => digit === '7' ? '3' : digit).join(""));
+    }
+    return el;
+  });
+  return result;
+}

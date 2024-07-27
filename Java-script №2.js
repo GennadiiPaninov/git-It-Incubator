@@ -5107,3 +5107,5 @@ function sortTwisted37(array) {
   });
   return result;
 }
+const twist=n=>+(n+"").replace(/./g,x=>x=="-"?x:"0127456389"[x]),
+    sortTwisted37=arr=>arr.slice().sort((a,b)=>twist(a)-twist(b))

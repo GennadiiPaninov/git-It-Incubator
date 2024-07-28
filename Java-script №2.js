@@ -5121,3 +5121,16 @@ function rowWeights1(array){
   },[0,0])
 }
 const rowWeights=arr=>arr.reduce((a,b,i)=>(a[i%2]+=b,a),[0,0])
+function commonGround2(s1, s2){
+  const arr1 = s1.split(" ")
+  const arr2 = s2.split(" ")
+  const result = []
+  for(let i = 0;i<Math.min(arr1.length, arr2.length) ;i++){
+    if(arr1.length <= arr2.length){
+      arr2.indexOf(arr1[i]) !== -1 &&  arr2.indexOf(arr1[i]) >= i ? result.push(arr1[i]) : ""
+    }  else if(arr1.length > arr2.length){
+      arr1.indexOf(arr2[i]) !== -1 &&  arr1.indexOf(arr2[i]) >= i ? result.push(arr2[i]) : ""
+    }
+  }
+  return result.length === 0 ? 'death' : result.join(" ")
+}

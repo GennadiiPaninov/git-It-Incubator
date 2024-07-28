@@ -5109,3 +5109,14 @@ function sortTwisted37(array) {
 }
 const twist=n=>+(n+"").replace(/./g,x=>x=="-"?x:"0127456389"[x]),
     sortTwisted37=arr=>arr.slice().sort((a,b)=>twist(a)-twist(b))
+
+function rowWeights1(array){
+  return array.reduce((acc,cur,ind)=>{
+    if(ind%2===0){
+      acc[0] = acc[0] + cur
+    } else if(ind%2!==0){
+      acc[1] = acc[1] + cur
+    }
+    return acc
+  },[0,0])
+}

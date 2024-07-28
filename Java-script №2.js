@@ -5120,3 +5120,4 @@ function rowWeights1(array){
     return acc
   },[0,0])
 }
+const rowWeights=arr=>arr.reduce((a,b,i)=>(a[i%2]+=b,a),[0,0])

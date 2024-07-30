@@ -5136,3 +5136,12 @@ function commonGround2(s1, s2){
 }
 const commonGround = (s1, s2) =>
     s2.split(` `).filter(val => s1.includes(val)).join(` `) || `death`;
+function deleteValues(array, pred) {
+  for(var i = 0; i < array.length; i++) {
+    if ( pred(array[i]) ) {
+      array.splice(i, 1);
+      i--
+    }
+  }
+  return array;
+}

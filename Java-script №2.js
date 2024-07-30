@@ -5155,3 +5155,4 @@ function getMatrix(number) {
   }
   return resArr
 }
+const getMatrix1=n=>[...Array(n)].map((_,i)=>[...Array(n)].map((_,j)=>+(i==j)))

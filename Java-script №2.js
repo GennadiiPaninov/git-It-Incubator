@@ -5145,3 +5145,13 @@ function deleteValues(array, pred) {
   }
   return array;
 }
+function getMatrix(number) {
+  const resArr = []
+  for(let i =0; i < number;i++){
+    const arr = new Array(number).fill(0)
+    arr[i] = 1
+    resArr.push(arr)
+
+  }
+  return resArr
+}

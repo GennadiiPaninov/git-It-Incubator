@@ -5166,3 +5166,5 @@ function arrayManip(array){
   })
   return resArray
 }
+const arrayManip2 = array =>
+    array.map((val, idx) => array.slice(idx).filter(v => v > val).sort((a, b) => a - b)[0] || -1);

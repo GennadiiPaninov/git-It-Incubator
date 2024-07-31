@@ -5168,3 +5168,13 @@ function arrayManip(array){
 }
 const arrayManip2 = array =>
     array.map((val, idx) => array.slice(idx).filter(v => v > val).sort((a, b) => a - b)[0] || -1);
+function removeSmallest(n, arr) {
+  if(n<=0) return arr
+  if(n>arr.length) return []
+  const array = [...arr]
+  for(let i = 0;i<n;i++){
+    let ind = array.indexOf(Math.min(...array))
+    array.splice(ind,1)
+  }
+  return array
+}

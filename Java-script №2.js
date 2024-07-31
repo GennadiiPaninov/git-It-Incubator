@@ -5156,3 +5156,13 @@ function getMatrix(number) {
   return resArr
 }
 const getMatrix1=n=>[...Array(n)].map((_,i)=>[...Array(n)].map((_,j)=>+(i==j)))
+
+function arrayManip(array){
+  const resArray = array.map((el,ind,arr)=>{
+    const numberArr = arr.filter((num,index)=>{
+      return index <= ind ? false : num > el
+    })
+    return numberArr.length ? Math.min(...numberArr) : -1
+  })
+  return resArray
+}

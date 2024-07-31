@@ -5178,3 +5178,8 @@ function removeSmallest(n, arr) {
   }
   return array
 }
+function removeSmallest(n, arr) {
+  let res = arr.slice(0);
+  while( n-- > 0 ) res.splice(res.indexOf( Math.min(...res) ),1);
+  return res
+}

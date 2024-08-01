@@ -5193,3 +5193,6 @@ function listToArray1(list) {
   }
   return result;
 }
+function listToArray(list) {
+  return !list ? [] : [list.value].concat(listToArray(list.next));
+}

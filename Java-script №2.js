@@ -5222,3 +5222,22 @@ function longestWord(letters){
   const lengthTheMostLong = [...resArr].sort((a,b)=> b.length-a.length)[0].length
   return resArr.filter(el=> el.length===lengthTheMostLong)
 }
+function longestWord(letters) {
+  //return longest word(s)
+
+  var substract = (word) => {
+    letters.split('').forEach((char) => word = word.replace(char, ''));
+
+    return word;
+  };
+
+  var matches = words
+      .filter((word) => substract(word).length === 0)
+      .sort((a, b) => b.length - a.length);
+
+  if (matches.length === 0) return null;
+
+  var longest = matches[0].length;
+
+  return matches.filter((word) => word.length === longest).sort();
+}

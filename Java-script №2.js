@@ -5244,3 +5244,6 @@ function longestWord(letters) {
 function broken1(x){
   return x.split("").map(e=>e=="1"? "0": "1").join("")
 }
+function broken(x){
+  return x.replace(/[10]/gi, match=> match ==='0'? '1':'0');
+}

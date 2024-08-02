@@ -5196,7 +5196,7 @@ function listToArray1(list) {
 function listToArray(list) {
   return !list ? [] : [list.value].concat(listToArray(list.next));
 }
-function longestWord(letters){
+function longestWord2(letters){
   const objLetters = {}
 
   letters.split("").forEach(el=>{
@@ -5240,4 +5240,7 @@ function longestWord(letters) {
   var longest = matches[0].length;
 
   return matches.filter((word) => word.length === longest).sort();
+}
+function broken1(x){
+  return x.split("").map(e=>e=="1"? "0": "1").join("")
 }

@@ -5196,3 +5196,29 @@ function listToArray1(list) {
 function listToArray(list) {
   return !list ? [] : [list.value].concat(listToArray(list.next));
 }
+function longestWord(letters){
+  const objLetters = {}
+
+  letters.split("").forEach(el=>{
+    objLetters[el] ? objLetters[el] += 1 : objLetters[el] = 1
+  })
+  const length = Object.values(objLetters).length
+
+  if(length === 0) return null
+
+  const resArr = words.filter(el=>{
+    const copy = {...objLetters}
+    for(let i=0;i<el.length;i++){
+      if(/[.]/.test(el[i])) return true
+      if(copy[el[i]] && copy[el[i]] > 0){
+        copy[el[i]]--
+      } else {
+        return false
+      }
+    }
+    return true
+  })
+  if(resArr.length === 0) return null
+  const lengthTheMostLong = [...resArr].sort((a,b)=> b.length-a.length)[0].length
+  return resArr.filter(el=> el.length===lengthTheMostLong)
+}

@@ -5269,3 +5269,4 @@ function gHappy(str) {
   }
   return true;
 }
+const gHappy = str => !/([^g]|^)g([^g]|$)/.test(str)

@@ -5255,3 +5255,6 @@ function countRepeats1(str) {
     return acc
   },0)
 }
+function countRepeats(str) {
+  return (str.match(/(.)(?=\1)/g) || []).length
+}

@@ -5247,3 +5247,11 @@ function broken1(x){
 function broken(x){
   return x.replace(/[10]/gi, match=> match ==='0'? '1':'0');
 }
+function countRepeats1(str) {
+  return str.split("").reduce((acc,cur,ind,arr)=>{
+    if(arr.ind !== 0 && cur === arr[ind-1]){
+      acc++
+    }
+    return acc
+  },0)
+}

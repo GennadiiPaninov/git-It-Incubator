@@ -5279,3 +5279,6 @@ function bestFriend(txt, a, b) {
   }
   return true
 }
+function bestFriend(txt, a, b) {
+  return [...txt].every((x, i) => x !== a || txt[i+1] === b)
+}

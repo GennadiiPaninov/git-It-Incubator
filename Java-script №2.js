@@ -5270,3 +5270,12 @@ function gHappy(str) {
   return true;
 }
 const gHappy = str => !/([^g]|^)g([^g]|$)/.test(str)
+function bestFriend(txt, a, b) {
+  if(txt.length ===0) return true
+  for(let i = 0;i<txt.length;i++){
+    if(txt[i]==a && txt[i+1] !== b){
+      return false
+    }
+  }
+  return true
+}

@@ -5279,6 +5279,15 @@ function bestFriend(txt, a, b) {
   }
   return true
 }
-function bestFriend(txt, a, b) {
+function bestFriend2(txt, a, b) {
   return [...txt].every((x, i) => x !== a || txt[i+1] === b)
+}
+function lottery1(str){
+  let numString = ""
+  for(let i =0;i<str.length;i++){
+    if(/[0-9]/.test(str[i]) && numString.indexOf(str[i])===-1){
+      numString += str[i]
+    }
+  }
+  return numString ? numString : "One more run!"
 }

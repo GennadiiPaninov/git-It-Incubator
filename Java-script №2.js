@@ -5291,3 +5291,6 @@ function lottery1(str){
   }
   return numString ? numString : "One more run!"
 }
+function lottery(str){
+  return [...new Set(str.replace( /\D/g, '' ))].join('') || "One more run!"
+}

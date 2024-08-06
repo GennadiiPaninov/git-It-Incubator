@@ -5300,3 +5300,7 @@ function deEmojify1(emojiString) {
   const res = emojiString.split(" ").map(el=>`${arr.indexOf(el)===-1? " ": arr.indexOf(el) }`).join("").split(" ").map(el=>String.fromCharCode(el)).join("")
   return res
 }
+const deEmojify = emojiString => {
+  const dict = [':)', ':D', '>(', '>:C', ':/', ':|', ':O', ';)', '^.^', ':('];
+  return emojiString.length ? emojiString.split('  ').map(c => String.fromCharCode(+c.split(' ').map(s => dict.indexOf(s)).join(''))).join('') : '';
+};

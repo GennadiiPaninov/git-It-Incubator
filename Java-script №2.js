@@ -5308,7 +5308,7 @@ function isTuringEquation1(s){
   const expression = s.split(/[+=]/).map(el=>Number(el.split("").reverse().join("")))
   return expression[0]+expression[1] === expression[2]
 }
-function isTuringEquation(s){
+function isTuringEquation1(s){
   var [a,b,c]=[...s].reverse().join('').match(/\d+/g);
   return a-c===+b;
 }

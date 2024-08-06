@@ -5294,3 +5294,9 @@ function lottery1(str){
 function lottery(str){
   return [...new Set(str.replace( /\D/g, '' ))].join('') || "One more run!"
 }
+function deEmojify1(emojiString) {
+  if(!emojiString) return ""
+  const arr = [":)", ":D", '>(', '>:C',':/',':|', ':O', ';)', '^.^', ':(']
+  const res = emojiString.split(" ").map(el=>`${arr.indexOf(el)===-1? " ": arr.indexOf(el) }`).join("").split(" ").map(el=>String.fromCharCode(el)).join("")
+  return res
+}

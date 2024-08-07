@@ -5312,3 +5312,31 @@ function isTuringEquation1(s){
   var [a,b,c]=[...s].reverse().join('').match(/\d+/g);
   return a-c===+b;
 }
+function solve(s) {
+  let res = s
+
+  while(res.indexOf("[")!==-1){
+    let count = 1
+    if(res[res.indexOf("[")+11]==="*"){
+      if(/[0-9]/.test(res[res.indexOf("[")+13])){
+        count = Number(res[res.indexOf("[")+12]+res[res.indexOf("[")+13])
+        res = res.substring(0, res.indexOf("[")-count>0 ? res.indexOf("[")-count : 0 )
+            +
+            res.substring(res.indexOf("[")+14)
+      }else{
+        count = Number(res[res.indexOf("[")+12])
+
+        res = res.substring(0, res.indexOf("[")-count>0 ? res.indexOf("[")-count : 0 )
+            +
+            res.substring(res.indexOf("[")+13)
+      }
+
+    } else{
+      res = res.substring(0, res.indexOf("[")-count>0 ? res.indexOf("[")-count : 0 )
+          +
+          res.substring(res.indexOf("[")+11)
+    }
+
+  }
+  return res
+}

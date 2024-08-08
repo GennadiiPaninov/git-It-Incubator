@@ -5396,3 +5396,5 @@ function parityBit(binary) {
   })
   return arr.join(" ")
 }
+const parityBit = binary =>
+    binary.replace(/(?=(?:0*10*1)*0*10*\b|(.{7}))\d{8}/g, (_, $b7) => $b7 || 'error');

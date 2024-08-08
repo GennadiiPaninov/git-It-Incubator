@@ -5372,3 +5372,15 @@ function levenshtein(a,b){
 
   return dp[m][n];
 }
+function levenshtein(a, b) {
+  let weights = Array.from({ length: b.length + 1 }, (_, i) => i);
+  for (let i = 0; i < a.length; i++) {
+    const current = [i + 1];
+    for (let j = 0; j < b.length; j++) {
+      const cost = weights[j] + (a[i] != b[j]);
+      current.push(Math.min(current[j] + 1, weights[j + 1] + 1, cost));
+    }
+    weights = current;
+  }
+  return weights.pop();
+}

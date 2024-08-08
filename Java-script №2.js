@@ -5384,3 +5384,15 @@ function levenshtein(a, b) {
   }
   return weights.pop();
 }
+function parityBit(binary) {
+  const arr = []
+  binary.split(" ").forEach(el=>{
+    const isOdd = `${el}`.split("").reduce((acc,cur)=>{
+      return acc+Number(cur)
+    },0) % 2 === 0
+    isOdd ? arr.push(el.substring(0,7)) : arr.push('error')
+
+
+  })
+  return arr.join(" ")
+}

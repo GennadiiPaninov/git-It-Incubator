@@ -5402,3 +5402,15 @@ function sortGiftCode1(code){
   return code.split("").sort().join("")
 }
 const sortGiftCode = code => "abcdefghijklmnopqrstuvwxyz".split("").filter(letter => code.includes(letter)).join("")
+function missingNo(nums) {
+  const arr = nums.sort((a,b)=>a-b)
+  let count = 0
+  for(let i = 0;i<arr.length;i++){
+    if(count === arr[i]){
+      count++
+    }else{
+      return count
+    }
+  }
+  return 100
+}

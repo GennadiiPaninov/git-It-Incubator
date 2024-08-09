@@ -5401,3 +5401,4 @@ const parityBit = binary =>
 function sortGiftCode1(code){
   return code.split("").sort().join("")
 }
+const sortGiftCode = code => "abcdefghijklmnopqrstuvwxyz".split("").filter(letter => code.includes(letter)).join("")

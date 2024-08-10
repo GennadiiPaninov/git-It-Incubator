@@ -5434,3 +5434,9 @@ function removeParentheses(s){
   }
   return result
 }
+function removeParentheses2(s){
+  while (s.match(/\([\w ]+\)/g)) {
+    s = s.replace(/\([\w ]+\)/g ,'');
+  }
+  return s;
+}

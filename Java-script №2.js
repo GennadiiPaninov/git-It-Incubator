@@ -5417,3 +5417,20 @@ function missingNo(nums) {
 function missingNo(nums) {
   return 5050 - nums.reduce((a, b) => a + b, 0)
 }
+function removeParentheses(s){
+  let count = 0
+  let result = ""
+  for(let i = 0;i<s.length;i++){
+    if(s[i] === "("){
+      count++
+    }
+    if(s[i] === ")"){
+      count--
+      continue
+    }
+    if(count ==0){
+      result+=s[i]
+    }
+  }
+  return result
+}

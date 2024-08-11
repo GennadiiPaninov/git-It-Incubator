@@ -5445,3 +5445,4 @@ function removeNthElement(arr, n) {
   copy.splice(n, 1);
   return copy
 }
+const removeNthElement2 = (arr, n = 0) =>[...arr.slice(0, n), ...arr.slice(n + 1)]

@@ -5446,3 +5446,7 @@ function removeNthElement(arr, n) {
   return copy
 }
 const removeNthElement2 = (arr, n = 0) =>[...arr.slice(0, n), ...arr.slice(n + 1)]
+function longestWord(stringOfWords) {
+
+  return stringOfWords.split(" ").reverse().sort((a,b)=> b.length-a.length)[0]
+}

@@ -5440,3 +5440,8 @@ function removeParentheses2(s){
   }
   return s;
 }
+function removeNthElement(arr, n) {
+  const copy = [...arr]
+  copy.splice(n, 1);
+  return copy
+}

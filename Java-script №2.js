@@ -5456,8 +5456,9 @@ function sum (a,b){
     return el+a
   }
 }
-function sum (a,b){
+function sum2 (a,b){
   if (arguments.length === 1)
     return function(b) { return a + b; };
   return a+b;
 }
+const add = a => b => a+b;

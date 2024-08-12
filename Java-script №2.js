@@ -5450,3 +5450,9 @@ function longestWord(stringOfWords) {
 
   return stringOfWords.split(" ").reverse().sort((a,b)=> b.length-a.length)[0]
 }
+function sum (a,b){
+  if(b!==undefined) return a+b
+  return (el)=>{
+    return el+a
+  }
+}

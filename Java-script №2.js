@@ -5473,3 +5473,11 @@ function move_zeros1(arrNum, isRight){
   })
   return isRight || isRight=== undefined  ? [...copy,...arr] : [...arr,...copy]
 }
+function move_zeros2(arrNum, isRight = true) {
+  let zeroes    = arrNum.filter(i => i === 0);
+  let nonZeroes = arrNum.filter(i => i !== 0);
+
+  return isRight ?
+      nonZeroes.concat(zeroes) :
+      zeroes.concat(nonZeroes);
+}

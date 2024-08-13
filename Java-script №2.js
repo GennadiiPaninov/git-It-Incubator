@@ -5488,3 +5488,8 @@ function sc1(a){
     }
   }
 }
+function sc2(apple){
+  var row = apple.findIndex(x => x.includes("B"));
+  var col = apple[row].indexOf("B");
+  return [row, col];
+}

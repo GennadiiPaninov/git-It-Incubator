@@ -5462,3 +5462,14 @@ function sum2 (a,b){
   return a+b;
 }
 const add = a => b => a+b;
+function move_zeros1(arrNum, isRight){
+  const arr = []
+  const copy = arrNum.filter(el=>{
+    if(el ===0){
+      arr.push(0)
+      return false
+    }
+    return true
+  })
+  return isRight || isRight=== undefined  ? [...copy,...arr] : [...arr,...copy]
+}

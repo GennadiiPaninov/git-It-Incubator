@@ -5481,3 +5481,10 @@ function move_zeros2(arrNum, isRight = true) {
       nonZeroes.concat(zeroes) :
       zeroes.concat(nonZeroes);
 }
+function sc1(a){
+  for(let i = 0;i<a.length ;i++){
+    if(a[i].indexOf("B")!==-1){
+      return [i, a[i].indexOf("B")]
+    }
+  }
+}

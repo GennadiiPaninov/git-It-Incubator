@@ -5493,3 +5493,14 @@ function sc2(apple){
   var col = apple[row].indexOf("B");
   return [row, col];
 }
+function findMaxRange(ranges){
+  let max = 0
+  const arr = ranges.map(el=>{
+    const array = el.split(" to ")
+    const range = Math.abs(array[0].substring(5)  - array[1])
+
+    return {el, range}
+  })
+  arr.forEach(el=> max < el.range? max = el.range : "")
+  return arr.filter(el=> el.range ===max).map(el=>el.el)
+}

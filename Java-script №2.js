@@ -5515,3 +5515,4 @@ function findMaxRange2(ranges) {
 function borrow(s){
   return s.toLowerCase().replace(/[!?":;., ]/g, "")
 }
+const borrow = s => s.toLowerCase().replace(/\W/g,'');

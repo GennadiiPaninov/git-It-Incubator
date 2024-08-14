@@ -5512,3 +5512,6 @@ function findMaxRange2(ranges) {
   let max = Math.max(...ranges.map(key))
   return ranges.filter(x => key(x) == max)
 }
+function borrow(s){
+  return s.toLowerCase().replace(/[!?":;., ]/g, "")
+}

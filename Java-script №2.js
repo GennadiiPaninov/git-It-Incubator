@@ -5504,3 +5504,11 @@ function findMaxRange(ranges){
   arr.forEach(el=> max < el.range? max = el.range : "")
   return arr.filter(el=> el.range ===max).map(el=>el.el)
 }
+function findMaxRange2(ranges) {
+  let key = s => {
+    let [_, a, b] = s.split(/from | to /)
+    return Math.abs(b - a)
+  }
+  let max = Math.max(...ranges.map(key))
+  return ranges.filter(x => key(x) == max)
+}

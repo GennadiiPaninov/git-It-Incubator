@@ -5516,3 +5516,18 @@ function borrow(s){
   return s.toLowerCase().replace(/[!?":;., ]/g, "")
 }
 const borrow = s => s.toLowerCase().replace(/\W/g,'');
+function matrixElementsSum1(matrix) {
+  const array = new Array(matrix[0].length).fill(null)
+  return matrix.reduce((acc,cur,ind)=>{
+    const num = cur.reduce((acc1,cur1,ind1)=>{
+      if(array[ind1]===ind1){
+        return acc1
+      }
+      if(cur1===0){
+        array[ind1] = ind1
+      }
+      return acc1 + cur1
+    },0)
+    return acc + num
+  },0)
+}

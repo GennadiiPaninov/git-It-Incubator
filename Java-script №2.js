@@ -5531,3 +5531,5 @@ function matrixElementsSum1(matrix) {
     return acc + num
   },0)
 }
+const matrixElementsSum2 = matrix =>
+    matrix.reduce((pre, val, idx) => pre + val.reduce((pre, val, i) => pre + val * matrix.slice(0, idx + 1).every(val => val[i]), 0), 0);

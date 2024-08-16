@@ -5547,3 +5547,7 @@ function howManyGifts(maxBudget, gifts){
   }
   return count
 }
+function howManyGifts2(maxBudget, gifts){
+  gifts.sort((a,b) => a-b)
+  return gifts.filter(item => (maxBudget -= item) >= 0).length
+}

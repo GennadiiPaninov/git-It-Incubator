@@ -5533,3 +5533,17 @@ function matrixElementsSum1(matrix) {
 }
 const matrixElementsSum2 = matrix =>
     matrix.reduce((pre, val, idx) => pre + val.reduce((pre, val, i) => pre + val * matrix.slice(0, idx + 1).every(val => val[i]), 0), 0);
+function howManyGifts(maxBudget, gifts){
+  let cur = maxBudget
+  let count = 0
+  const arr = gifts.sort((a,b)=>a-b)
+  for(let i = 0;i<arr.length;i++){
+    if(cur - arr[i]>=0){
+      count++
+      cur= cur-arr[i]
+    }else{
+      return count
+    }
+  }
+  return count
+}

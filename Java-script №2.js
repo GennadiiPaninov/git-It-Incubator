@@ -5607,3 +5607,6 @@ function apples1(kilos, price) {
   if(kilos < 13) return price * kilos - (price * kilos * 0.30)
 
 }
+function apples(k, p) {
+  return k * p * (1 - 0.05 * Math.floor((1 + k) / 2));
+}

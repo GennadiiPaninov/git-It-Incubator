@@ -5551,3 +5551,49 @@ function howManyGifts2(maxBudget, gifts){
   gifts.sort((a,b) => a-b)
   return gifts.filter(item => (maxBudget -= item) >= 0).length
 }
+function VendingMachine1(items, money) {
+  this.items = items;
+  this.money = money;
+}
+
+VendingMachine.prototype.vend = function (selection, moneyInserted) {
+  const item = this.items.find(item => item.code.toLowerCase() === selection.toLowerCase());
+
+  if (!item) {
+    return `Invalid selection! : Money in vending machine = ${this.money.toFixed(2)}`;
+  }
+
+  if (item.quantity === 0) {
+    return `${item.name}: Out of stock!`;
+  }
+
+  if (moneyInserted < item.price) {
+    return "Not enough money!";
+  }
+
+  const change = moneyInserted - item.price;
+  this.money += item.price;
+  item.quantity--;
+
+  if (change > 0) {
+    return `Vending ${item.name} with ${change.toFixed(2)} change.`;
+  } else {
+    return `Vending ${item.name}`;
+  }
+};
+class VendingMachine{
+  constructor(items, cache){
+    this.items = items;
+    this.cache = +cache;
+  }
+  vend(sel, money){
+    const item = this.items.find(a=>a.code==sel);
+    if (!item) return `Invalid selection! : Money in vending machine = ${this.cache.toFixed(2)}`;
+    if (money<item.price) return 'Not enough money!';
+    if (!item.quantity) return `${item.name}: Out of stock!`;
+    const change = money - item.price;
+    item.quantity--;
+    this.cache += item.price;
+    return `Vending ${item.name}${change ? ` with ${change.toFixed(2)} change.` : ''}`;
+  }
+}

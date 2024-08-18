@@ -5597,3 +5597,13 @@ class VendingMachine{
     return `Vending ${item.name}${change ? ` with ${change.toFixed(2)} change.` : ''}`;
   }
 }
+function apples1(kilos, price) {
+  if(kilos < 1) return price * kilos
+  if(kilos < 3) return price * kilos - (price * kilos * 0.05)
+  if(kilos < 5) return price * kilos - (price * kilos * 0.10)
+  if(kilos < 7) return price * kilos - (price * kilos * 0.15)
+  if(kilos < 9) return price * kilos - (price * kilos * 0.20)
+  if(kilos < 11) return price * kilos - (price * kilos * 0.25)
+  if(kilos < 13) return price * kilos - (price * kilos * 0.30)
+
+}

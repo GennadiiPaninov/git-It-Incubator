@@ -5610,3 +5610,35 @@ function apples1(kilos, price) {
 function apples(k, p) {
   return k * p * (1 - 0.05 * Math.floor((1 + k) / 2));
 }
+function nonsense(str) {
+  console.log(str)
+  const obj = {
+    "0":"a",
+    "1":"e",
+    "2":"i",
+    "3":"o",
+    "4":"u",
+  }
+  let res = str.toLowerCase().replace(/raptor/g, "").replace(/trex/g, "").split("").map((el,ind)=>{
+    if(ind ===0){
+      if(obj[el]){
+        return obj[el].toUpperCase()
+      }
+      return el.toUpperCase()
+    }
+    if(obj[el]){
+      return obj[el]
+    }
+    return el
+  }).join("")
+  if(res[res.length-1]!=="."){
+    res = res+"."
+  }
+  console.log(res)
+  return res.split("").map((el,ind,arr)=>{
+    if(el === "i" && arr[ind-1]=== " "&& arr[ind+1]=== " "){
+      return "I"
+    }
+    return el
+  }).join("")
+}

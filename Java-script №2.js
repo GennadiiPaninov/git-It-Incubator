@@ -5642,3 +5642,5 @@ function nonsense(str) {
     return el
   }).join("")
 }
+const nonsense2 = (str) => str.toLowerCase().replace(/0|1|2|3|4/g, x=>'aeiou'[x])
+    .replace(/trex|\.|raptor|/g, '').replace(/^.| i /g, x=>x.toUpperCase()) + '.'

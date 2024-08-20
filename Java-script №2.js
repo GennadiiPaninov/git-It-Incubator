@@ -5674,3 +5674,6 @@ function rank1(st, we, n) {
   })[n-1][1]
   return result
 }
+const rank4 = (st, we, n) =>
+    (arr => !st ? `No participants` : n > arr.length ? `Not enough participants` : arr[--n][0])
+    (st.split(`,`).map((val, idx) => [val, [...val.toLowerCase()].reduce((pre, v) => pre + v.charCodeAt() - 96, val.length) * we[idx]]).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])));

@@ -5644,3 +5644,33 @@ function nonsense(str) {
 }
 const nonsense2 = (str) => str.toLowerCase().replace(/0|1|2|3|4/g, x=>'aeiou'[x])
     .replace(/trex|\.|raptor|/g, '').replace(/^.| i /g, x=>x.toUpperCase()) + '.'
+function rank1(st, we, n) {
+  const enAlp = [
+    'a', 'b', 'c', 'd', 'e', 'f', 'g',
+    'h', 'i', 'j', 'k', 'l', 'm', 'n',
+    'o', 'p', 'q', 'r', 's', 't', 'u',
+    'v', 'w', 'x', 'y', 'z'
+  ];
+  const names = st.split(",")
+  if(st.length ===  0) return "No participants"
+  if(n > names.length) return "Not enough participants"
+
+  const result = names.map((el,ind)=>{
+    const som = el.toLowerCase().split("").reduce((acc,cur,)=>{
+      return acc + enAlp.indexOf(cur) + 2
+    },0)
+    return [(som * we[ind]),el]
+  }).sort((a,b)=>{
+    if(a[0]==b[0]){
+      if(a[1]>b[1]){
+        return 1
+      }else if(a[1]===b[1]){
+        return 0
+      }else {
+        return -1
+      }
+    }
+    return b[0]-a[0]
+  })[n-1][1]
+  return result
+}

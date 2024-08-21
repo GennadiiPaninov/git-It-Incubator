@@ -5696,3 +5696,6 @@ function createArrayOfTiers(num) {
   }
   return arr
 }
+function createArrayOfTiers2(num) {
+  return Array.prototype.map.call(num.toString(), (_, i, s) => s.slice(0, i + 1));
+}

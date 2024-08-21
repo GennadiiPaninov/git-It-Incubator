@@ -5689,3 +5689,10 @@ function lineupStudents(students){
 }
 const lineupStudents = students =>
     students.trim().split(` `).sort((a, b) => b.length - a.length || b.localeCompare(a));
+function createArrayOfTiers(num) {
+  const arr = []
+  for(let i =0 ;i<`${num}`.length;i++){
+    arr.push(`${num}`.substring(0, i+1))
+  }
+  return arr
+}

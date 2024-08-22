@@ -5699,3 +5699,15 @@ function createArrayOfTiers(num) {
 function createArrayOfTiers2(num) {
   return Array.prototype.map.call(num.toString(), (_, i, s) => s.slice(0, i + 1));
 }
+function isAlt(word) {
+  const vowels = ["a","e","i","o","u"]
+  const arr = []
+  vowels.indexOf(word[0]) !== -1 ? arr.push(1): arr.push(0)
+  for(let i = 1;i<word.length;i++){
+    vowels.indexOf(word[i])!==-1 ? arr.push(1) : arr.push(0)
+    console.log(arr, word)
+    if(arr[i-1]==1 && arr[i]!==0)return false
+    if(arr[i-1]==0 && arr[i]!==1)return false
+  }
+  return true
+}

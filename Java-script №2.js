@@ -5718,3 +5718,6 @@ function sentence(a) {
   a.forEach(el=>arr.push(...Object.entries(el)))
   return arr.sort((a,b)=> a[0]-b[0]).map((el,ind)=>el[1]).join(" ")
 }
+function sentence2(a) {
+  return a.sort((a,b)=>Object.keys(a)-Object.keys(b)).map(x=>x[+Object.keys(x)]).join` `
+}

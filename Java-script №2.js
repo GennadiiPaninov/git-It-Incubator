@@ -5713,3 +5713,8 @@ function isAlt(word) {
 function isAlt2(word) {
   return !/[aeiou]{2}|[^aeiou]{2}/.test(word);
 }
+function sentence(a) {
+  const arr = []
+  a.forEach(el=>arr.push(...Object.entries(el)))
+  return arr.sort((a,b)=> a[0]-b[0]).map((el,ind)=>el[1]).join(" ")
+}

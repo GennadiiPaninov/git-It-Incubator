@@ -5732,3 +5732,7 @@ function reverseSlice2(str) {
 function reverseSlice(s) {
   return Array(s.length).fill(0).map((e, i) => s.split("").reverse().join("").slice(i));
 }
+function betweenExtremes2(numbers) {
+  const arr = numbers.sort((a,b)=>b-a)
+  return arr[0] - arr[arr.length-1]
+}

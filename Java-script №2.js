@@ -5736,3 +5736,6 @@ function betweenExtremes2(numbers) {
   const arr = numbers.sort((a,b)=>b-a)
   return arr[0] - arr[arr.length-1]
 }
+function betweenExtremes(numbers) {
+  return Math.max(...numbers) - Math.min(...numbers);
+}

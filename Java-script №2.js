@@ -5721,3 +5721,11 @@ function sentence(a) {
 function sentence2(a) {
   return a.sort((a,b)=>Object.keys(a)-Object.keys(b)).map(x=>x[+Object.keys(x)]).join` `
 }
+function reverseSlice2(str) {
+  const reverseStr = str.split("").reverse().join('')
+  const resArr = []
+  for(let i = 0; i < str.length;i++){
+    resArr.push(reverseStr.slice(i))
+  }
+  return resArr;
+}

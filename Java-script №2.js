@@ -5729,3 +5729,6 @@ function reverseSlice2(str) {
   }
   return resArr;
 }
+function reverseSlice(s) {
+  return Array(s.length).fill(0).map((e, i) => s.split("").reverse().join("").slice(i));
+}

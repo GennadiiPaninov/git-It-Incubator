@@ -5739,3 +5739,16 @@ function betweenExtremes2(numbers) {
 function betweenExtremes(numbers) {
   return Math.max(...numbers) - Math.min(...numbers);
 }
+function amidakuji(arr) {
+  const n = arr[0].length + 1
+  let positions = Array.from({ length: n }, (el, i) => i)
+  console.log(positions)
+  for (let row of arr) {
+    for (let i = 0; i < row.length; i++) {
+      if (row[i] === '1') {
+        [positions[i], positions[i + 1]] = [positions[i + 1], positions[i]]
+      }
+    }
+  }
+  return positions
+}

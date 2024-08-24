@@ -3,7 +3,7 @@ const arrey1 = [1, 2, 3, 4, 5, 6, 7, 8]
 
 const result1 = arrey1.reduce((el1, el2)=> {
   return el1 + el2
-}, 0)// ноль это значение, в которое будет el2
+}, 0)
 console.log(result1)
  
 const arrey2 = [
@@ -19,10 +19,10 @@ const result2 = arrey2.reduce((el1, obj)=>{
   
   return{
     
-    ...el1, [obj.id]: obj.name, // копирование оператором spread 
+    ...el1, [obj.id]: obj.name,
   }
 
-}, {id: '123', name: 'John', })// замыкание на объекте
+}, {id: '123', name: 'John', })
 console.log(result2)
 
 
@@ -47,8 +47,8 @@ const maxsumArrayEl=(arr,ranges)=>{
  let currentMaxResult = -Infinity;
 
   for(let i = 0; i < ranges.length; i++){
-    const [start, end]= ranges[i]; // деструктуризация, создаем срозу две переменные
-    const sum = sumFrom0toN[end] - (sumFrom0toN[start -1] || 0) //текущая сумма
+    const [start, end]= ranges[i];
+    const sum = sumFrom0toN[end] - (sumFrom0toN[start -1] || 0)
    
     //[1,3] start end, 
     if(sum > currentMaxResult){
@@ -58,35 +58,23 @@ const maxsumArrayEl=(arr,ranges)=>{
 
   return currentMaxResult
 }
-
-console.log(maxsumArrayEl([1,-2,3,4,-5,-4,3,2,1], [[1,3],[0,4],[6,8]]))
-console.log(maxsumArrayEl([1,-2,3,4,-5,-4,3,2,1], [[1,3]]))
-console.log(maxsumArrayEl([1,-2,3,4,-5,-4,3,2,1], [[1,4],[2,5]]))
-
 const euros = [29.76, 41.85, 46.5];
 
 const sumReduce = euros.reduce((total, amount) => {
  
   return total + amount 
-}); 
-console.log(sumReduce) 
-// reducer
-const average = euros.reduce((total, amount, index, array) => { 
-  console.log(total)
+});
+const average = euros.reduce((total, amount, index, array) => {
   total += amount 
-  return total/array.length }, 0); 
-console.log(average)
-
+  return total/array.length }, 0);
 const fruitBasket = ['banana', 'cherry', 'orange', 'apple', 'cherry', 'orange', 'apple', 'banana', 'cherry', 'orange', 'fig' ];
 const count15 = fruitBasket.reduce( (tally, fruit) => {
-  tally[fruit] = (tally[fruit] || 0) + 1 ;// fruit - ключ tally[fruit] создается ключ = присваевается значение которое уже есть
+  tally[fruit] = (tally[fruit] || 0) + 1 ;
   return tally;
 } , {} )
-console.log(count15) // { banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1 }
 let objFrut = {"виски": 10};
 objFrut["виски"] = objFrut["виски"] + 12; 
 console.log(objFrut)
-// reducer
 const minSum=arr=> {
   return arr.sort((a,b)=>a-b).slice(0, arr.length/2)
     .reduce((current, el, ind)=> current += el * arr[arr.length -ind -1], 0 )
@@ -94,7 +82,6 @@ const minSum=arr=> {
 const maxProduct=(numbers, size)=>{
   return numbers.sort((a,b)=> b-a).splice(0, size).reduce((cur, el)=> cur *= el, 1)
 }
-// reducer + filter + spred
 const arrayLeaders=numbers=>{
   return numbers.filter((el,index, arr)=>{
     let sum = [...arr].splice(index + 1, arr.length -1).reduce((cur,el1)=> cur+= el1,0)
@@ -104,7 +91,6 @@ const arrayLeaders=numbers=>{
   
 }
 
-// reducer, с изменением элемента в массиве, возврат массива умножения числа, без текущего элемента по индексу
 
 const productArray=n=>{
   return n.reduce((cur, el, ind, arr)=>{
@@ -278,7 +264,6 @@ function bingo(a) {
   return "WIN"
 
 }
-
     function theVar(theVariables) {
       let alphabet = ["0","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
       const first = alphabet.indexOf(theVariables[0])
@@ -329,9 +314,9 @@ function dominator(arr) {
   return -1;
 }
 function solve(arr){
-  const uniqueIntegers = new Set(arr);// создается объект уникальных значений
+  const uniqueIntegers = new Set(arr);
 
-  for (const num of uniqueIntegers) { //проверяет естть ли ключ который соответствует
+  for (const num of uniqueIntegers) {
     if (!uniqueIntegers.has(-num)) {
       return num;
     }
@@ -5751,4 +5736,16 @@ function amidakuji(arr) {
     }
   }
   return positions
+}
+function rotateMatrix(matrix) {
+  const resArr = []
+  for(let i = matrix[0].length-1;i>=0;i--){
+    resArr[i] = []
+    for(let j = 0;j<matrix.length;j++){
+      resArr[i].push(matrix[j][i])
+
+    }
+
+  }
+  return resArr.reverse()
 }

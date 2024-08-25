@@ -5812,3 +5812,12 @@ function bombHasBeenPlanted(matrix, time) {
 
   return false
 }
+const bombHasBeenPlanted = (map, time) => {
+  const findObj = obj => [row = map.findIndex(row => row.includes(obj)), map[row]?.indexOf(obj)];
+  const getDist = ([obj1Y, obj1X], [obj2Y, obj2X]) => Math.max(Math.abs(obj2Y - obj1Y), Math.abs(obj2X - obj1X)) || Infinity;
+
+  const [posCT, posB, posK] = ['CT', 'B', 'K'].map(findObj);
+  const [distCT_B, distCT_K, distKB] = [[posCT, posB], [posCT, posK], [posK, posB]].map(args => getDist(...args));
+
+  return time >= distCT_B + DEFUSE_TIME.withHands || time >= distCT_K + distKB + DEFUSE_TIME.withKit;
+}

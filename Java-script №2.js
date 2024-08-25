@@ -5749,3 +5749,66 @@ function rotateMatrix(matrix) {
   }
   return resArr.reverse()
 }
+function bombHasBeenPlanted(matrix, time) {
+  const directions = [
+    [0, 1], [1, 0], [0, -1], [-1, 0],
+    [1, 1], [1, -1], [-1, 1], [-1, -1]
+  ];
+
+  let start, bomb, kit;
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[0].length; j++) {
+      if (matrix[i][j] === "CT") start = [i, j];
+      if (matrix[i][j] === "B") bomb = [i, j];
+      if (matrix[i][j] === "K") kit = [i, j];
+    }
+  }
+
+  const bfs = (start, goal) => {
+    const queue = [[...start, 0]];
+    const visited = new Set();
+    visited.add(start.toString());
+
+    while (queue.length > 0) {
+      const [x, y, cost] = queue.shift();
+
+      if (x === goal[0] && y === goal[1]) {
+        return cost;
+      }
+
+      for (let [dx, dy] of directions) {
+        const nx = x + dx;
+        const ny = y + dy;
+
+        if (
+            nx >= 0 && ny >= 0 &&
+            nx < matrix.length && ny < matrix[0].length &&
+            !visited.has([nx, ny].toString()) &&
+            matrix[nx][ny] !== "X"
+        ) {
+          visited.add([nx, ny].toString())
+          queue.push([nx, ny, cost + 1])
+        }
+      }
+    }
+    return Infinity;
+  };
+
+  const timeToBombWithoutKit = bfs(start, bomb)
+  const timeToKit = kit ? bfs(start, kit) : Infinity
+  const timeFromKitToBomb = kit ? bfs(kit, bomb) : Infinity
+
+  if (timeToBombWithoutKit + 10 <= time) {
+    return true
+  }
+
+  if (timeToKit !== Infinity && timeFromKitToBomb !== Infinity) {
+    const totalTimeWithKit = timeToKit + timeFromKitToBomb + 5;
+    if (totalTimeWithKit <= time) {
+      return true
+    }
+  }
+
+  return false
+}

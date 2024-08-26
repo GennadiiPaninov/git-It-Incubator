@@ -5821,3 +5821,14 @@ const bombHasBeenPlanted = (map, time) => {
 
   return time >= distCT_B + DEFUSE_TIME.withHands || time >= distCT_K + distKB + DEFUSE_TIME.withKit;
 }
+Array.prototype.sortReloaded = function(dir = 'asc') {
+  if (dir !== 'asc' && dir !== 'desc') {
+    return false
+  }
+  const sortedArray = [...this]
+  sortedArray.sort((a, b) => {
+    return dir === 'asc' ? a - b : b - a
+  });
+
+  return sortedArray
+};

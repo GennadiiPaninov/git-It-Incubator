@@ -5860,3 +5860,7 @@ function rotate(array,n){
   }
   return n > 0 ? [...copy.splice(copy.length-n), ...copy] : [...copy.splice(Math.abs(n)), ...copy]
 }
+function rotate2(array, n) {
+  n = n % array.length
+  return array.slice(-n).concat(array.slice(0, -n))
+}

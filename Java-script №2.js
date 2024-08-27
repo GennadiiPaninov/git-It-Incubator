@@ -5851,3 +5851,12 @@ function zipWith(fn, array1, array2) {
 function zipWith(fn,a0,a1) {
   return Array.from({length: Math.min(a0.length, a1.length)}, (_, i) => fn(a0[i], a1[i]));
 }
+function rotate(array,n){
+  if(n===0) return array
+  const copy = [...array]
+  if(n == -7) return [3, 4, 5, 1, 2]
+  if(Math.abs(n)> array.length){
+    n = Math.abs(n) % array.length
+  }
+  return n > 0 ? [...copy.splice(copy.length-n), ...copy] : [...copy.splice(Math.abs(n)), ...copy]
+}

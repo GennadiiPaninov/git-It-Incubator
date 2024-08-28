@@ -5864,3 +5864,25 @@ function rotate2(array, n) {
   n = n % array.length
   return array.slice(-n).concat(array.slice(0, -n))
 }
+function group1(arr) {
+  const obj = {}
+  arr.forEach(el=>{
+    obj[el] ? obj[el]++ : obj[el] = 1
+  })
+  const numArr = Object.keys(obj)
+  let i = 0
+  let j = 0
+  const arrayWithTheUsedNumber = []
+  const resArr = []
+  while(i<numArr.length){
+    if(arrayWithTheUsedNumber.indexOf(arr[j])!==-1){
+      j++
+      continue;
+    }
+    resArr.push(Array.from({length: obj[arr[j]]}, el=> arr[j]))
+    arrayWithTheUsedNumber.push(arr[j])
+    i++
+    j++
+  }
+  return resArr
+}

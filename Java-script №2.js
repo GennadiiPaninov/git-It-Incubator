@@ -5909,3 +5909,17 @@ function paginate(arr) {
   }
   return result.join(', ')
 }
+function paginate2(arr) {
+  var result = [];
+  var seq = [];
+  arr.sort((a,b) => a - b);
+
+  arr.forEach((s, i) => {
+    seq.push(s);
+    if(s + 1 !== arr[i + 1]) {
+      result.push(seq.length > 1 ? seq[0] + '-' + seq.pop() : s);
+      seq = [];
+    }
+  })
+  return result.join(', ')
+}

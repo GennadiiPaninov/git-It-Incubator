@@ -5889,3 +5889,23 @@ function group1(arr) {
 function group(arr) {
   return [...new Set(arr)].map(n => arr.filter(x => x == n));
 }
+function paginate(arr) {
+  arr.sort((a, b) => a - b)
+  const result = []
+  let rangeStart = arr[0]
+  let rangeEnd = arr[0]
+  for (let i = 1; i <= arr.length; i++) {
+    if (arr[i] === rangeEnd + 1) {
+      rangeEnd = arr[i]
+    } else {
+      if (rangeStart === rangeEnd) {
+        result.push(rangeStart.toString())
+      } else {
+        result.push(`${rangeStart}-${rangeEnd}`)
+      }
+      rangeStart = arr[i]
+      rangeEnd = arr[i]
+    }
+  }
+  return result.join(', ')
+}

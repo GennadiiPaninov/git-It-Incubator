@@ -5940,3 +5940,21 @@ const maxPalindrom = (array) => {
   })
   return maxSize
 }
+const maxMirror = (arr) => {
+  const n = arr.length
+  let maxLength = 0
+  for (let i = 0; i < n; i++) {
+    for (let j = n - 1; j >= 0; j--) {
+      let length = 0
+      let k = i
+      let l = j
+      while (k < n && l >= 0 && arr[k] === arr[l]) {
+        length++
+        k++
+        l--
+      }
+      maxLength = Math.max(maxLength, length)
+    }
+  }
+  return maxLength > 1 ? maxLength : 0
+}

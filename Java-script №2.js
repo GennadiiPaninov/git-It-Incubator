@@ -5958,3 +5958,10 @@ const maxMirror = (arr) => {
   }
   return maxLength > 1 ? maxLength : 0
 }
+const maxMirror2 = (arr) => {
+  var rv=","+arr.slice().reverse().join()+","
+  for(var l=arr.length;l>1;l--)
+    for(var i=0;i<=arr.length-l;i++)
+      if(rv.includes(","+arr.slice(i,i+l).join()+",")) return l
+  return 0//new Set(arr).size<arr.length?1:0
+}

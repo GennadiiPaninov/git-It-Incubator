@@ -5923,3 +5923,20 @@ function paginate2(arr) {
   })
   return result.join(', ')
 }
+const maxPalindrom = (array) => {
+  let maxSize = 0
+  const str = array.join("")
+  array.forEach((el,ind,arr)=>{
+    let j = 1
+    for(let i = ind;i<arr.length-1;i++){
+      const subsStr = str.substring(ind,i+2)
+      console.log(subsStr,subsStr.split("").reverse().join(""), subsStr.length)
+      if(subsStr === subsStr.split("").reverse().join("")){
+
+        if( maxSize < subsStr.length) maxSize = subsStr.length
+      }
+      j++
+    }
+  })
+  return maxSize
+}

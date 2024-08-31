@@ -5965,3 +5965,6 @@ const maxMirror2 = (arr) => {
       if(rv.includes(","+arr.slice(i,i+l).join()+",")) return l
   return 0//new Set(arr).size<arr.length?1:0
 }
+function multiplyAndFilter(array, m){
+  return array.filter(el=>typeof el == "number").map(el=>el*m)
+}

@@ -5968,3 +5968,14 @@ const maxMirror2 = (arr) => {
 function multiplyAndFilter(array, m){
   return array.filter(el=>typeof el == "number").map(el=>el*m)
 }
+function max(data, accessor) {
+  if(accessor!==undefined){
+    const arr = []
+    for(let i = 0;i<data.length;i++){
+      arr.push(accessor(data[i]))
+    }
+    return Math.max(...arr)
+    console.log(data, accessor(data[0]))
+  }
+  return Math.max(...data)
+}

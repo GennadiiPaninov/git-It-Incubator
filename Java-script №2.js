@@ -5992,3 +5992,10 @@ function updateInventory(curStock, newStock) {
     if(a[0]<b[0]) return -1
   }).map((el)=>[el[1],el[0]])
 }
+function updateInventory2(curStock, newStock) {
+  let obj = {}
+  curStock.concat(newStock).forEach(([cnt, name]) => {
+    obj[name] ? obj[name] += cnt : obj[name] = cnt
+  })
+  return Object.keys(obj).sort().map(k => [obj[k], k])
+}

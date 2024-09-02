@@ -5975,7 +5975,20 @@ function max(data, accessor) {
       arr.push(accessor(data[i]))
     }
     return Math.max(...arr)
-    console.log(data, accessor(data[0]))
   }
   return Math.max(...data)
+}
+function updateInventory(curStock, newStock) {
+  const obj = {}
+  curStock.forEach(el=>{
+    obj[el[1]] ?  obj[el[1]] += el[0]: obj[el[1]] = el[0]
+  })
+  newStock.forEach(el=>{
+    obj[el[1]] ?  obj[el[1]] += el[0]: obj[el[1]] = el[0]
+  })
+  return Object.entries(obj).sort((a,b)=>{
+    if(a[0]>b[0]) return 1
+    if(a[0]==b[0]) return 0
+    if(a[0]<b[0]) return -1
+  }).map((el)=>[el[1],el[0]])
 }

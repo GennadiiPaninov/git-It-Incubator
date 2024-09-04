@@ -6005,3 +6005,8 @@ function waveSort(arr) {
     [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]]
   }
 }
+function sortGrades(lst){
+  if(lst[0]=="VB"&&lst[1]==="VB") return lst
+  const arr1 = [...["VB",'V0', 'V0+'], ...Array.from({length: 17},(el,ind)=>`V${ind+1}`)]
+  return arr1.filter(el=>lst.indexOf(el)!==-1)
+}

@@ -6010,3 +6010,6 @@ function sortGrades(lst){
   const arr1 = [...["VB",'V0', 'V0+'], ...Array.from({length: 17},(el,ind)=>`V${ind+1}`)]
   return arr1.filter(el=>lst.indexOf(el)!==-1)
 }
+function sortGrades2(lst){
+  return lst.sort((a, b) => grades.indexOf(a) - grades.indexOf(b));
+}

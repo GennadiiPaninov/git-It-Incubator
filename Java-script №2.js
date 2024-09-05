@@ -6013,3 +6013,28 @@ function sortGrades(lst){
 function sortGrades2(lst){
   return lst.sort((a, b) => grades.indexOf(a) - grades.indexOf(b));
 }
+function common(a,b,c){
+  a.sort((a,b)=>a-b)
+  b.sort((a,b)=>a-b)
+  c.sort((a,b)=>a-b)
+  let i = 0, j = 0, k = 0
+  let sum = 0
+  while (i < a.length && j < b.length && k < c.length) {
+    if (a[i] === b[j] && b[j] === c[k]) {
+      sum += a[i]
+      i++
+      j++
+      k++
+    } else {
+      if (a[i] < b[j]) {
+        i++
+      } else if (b[j] < c[k]) {
+        j++
+      } else {
+        k++
+      }
+    }
+  }
+
+  return sum
+}

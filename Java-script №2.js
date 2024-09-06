@@ -6042,3 +6042,11 @@ const common = (a,b,c) => {
   [a,b,c] = [a,b,c].map(el => el.reduce((sum, num) => (sum[num] = (sum[num] || 0) + 1, sum), {}));
   return Object.keys(a).reduce((sum, key) => sum + Math.min(a[key]||0, b[key]||0, c[key]||0) * key, 0);
 }
+function alternate1(n, f, s){
+  const result = []
+  for(let i = 0;i< n;i++){
+    if(i%2===0) result.push(f)
+    if(i%2!==0) result.push(s)
+  }
+  return result
+}

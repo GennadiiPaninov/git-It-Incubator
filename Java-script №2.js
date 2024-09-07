@@ -6050,3 +6050,14 @@ function alternate1(n, f, s){
   }
   return result
 }
+function* nextElementGenerator(array) {
+  let i = 0
+  while(true){
+    yield array[i]
+    if(i==array.length-1){
+      i=0
+    } else{
+      i++
+    }
+  }
+}

@@ -6061,3 +6061,19 @@ function* nextElementGenerator(array) {
     }
   }
 }
+const removeDuplicateIds = (obj) => {
+  const arr = Object.entries(obj).sort((a,b)=>a[0]-b[0]).map(el=>{
+    const setArr = new Set(el[1])
+    return [el[0],[...setArr]]
+  })
+  for(let i = 0;i<arr.length-1;i++){
+    for(let j = i;j<arr.length-1;j++){
+      if(arr[i][1].length>0){
+        arr[i][1] = arr[i][1].filter(el=> arr[j+1] && arr[j+1][1].indexOf(el)==-1)
+      }
+    }
+  }
+  const object = {}
+  arr.forEach(el=> obj[el[0]] = el[1])
+  return obj
+};

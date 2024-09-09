@@ -6077,3 +6077,18 @@ const removeDuplicateIds = (obj) => {
   arr.forEach(el=> obj[el[0]] = el[1])
   return obj
 };
+const countWord=s=>{
+  const word = 'word'
+  let i = 0
+  let count = 0
+  s.toLowerCase().split("").forEach(el=>{
+    if(i == 3 && el == word[i]){
+      i=0
+      count++
+    }else if(el == word[i]){
+      count++
+      i++
+    }
+  })
+  return Math.floor(count / 4)
+}

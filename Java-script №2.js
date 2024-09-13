@@ -6117,3 +6117,8 @@ function stringIntGreaterThan1(a, b) {
   }
   return false
 }
+function stringIntGreaterThan(a, b) {
+  var sa = a[0]=="-", sb = b[0]=="-";
+  if( sa && sb ) return stringIntGreaterThan(b.slice(1),a.slice(1));
+  return ( sa || sb )? !sa : a.length > b.length || a.length==b.length && a > b;
+}

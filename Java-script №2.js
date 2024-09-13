@@ -6092,3 +6092,28 @@ const countWord=s=>{
   })
   return Math.floor(count / 4)
 }
+function stringIntGreaterThan1(a, b) {
+  const val = a[0]==='-' && b[0]==='-' ? 0 : 1
+  console.log(a,b)
+
+  if(a[0]==="-" && b[0]!=="-") return false
+  if(a[0]!=="-" && b[0]==="-") return true
+  if(val===1){
+    if(a.length<b.length) return false
+    if(a.length>b.length) return true
+  }
+  if(val===0){
+    if(a.length>b.length) return false
+    if(a.length<b.length) return true
+  }
+  for(let i = 0;i<a.length;i++){
+    if(val===1){
+      if(a[i]>b[i]) return true
+      if(a[i]<b[i]) return false
+    } else{
+      if(a[i]<b[i]) return true
+      if(a[i]>b[i]) return false
+    }
+  }
+  return false
+}

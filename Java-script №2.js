@@ -6122,3 +6122,11 @@ function stringIntGreaterThan(a, b) {
   if( sa && sb ) return stringIntGreaterThan(b.slice(1),a.slice(1));
   return ( sa || sb )? !sa : a.length > b.length || a.length==b.length && a > b;
 }
+function onesCounter(input) {
+  const arr = [0]
+  for(let i =0;i<input.length;i++){
+
+    input[i] == 1 ? arr[arr.length-1]++ : arr.push(0)
+  }
+  return arr.filter(el=>el!==0)
+}

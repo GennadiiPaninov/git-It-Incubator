@@ -6136,3 +6136,6 @@ function predictAge(...props){
     return cur + (acc*acc)
   },0)) / 2 )
 }
+function predictAge2(...n){
+  return (Math.hypot(...n)/2)>>0
+}

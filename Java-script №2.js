@@ -6131,3 +6131,8 @@ function onesCounter(input) {
   return arr.filter(el=>el!==0)
 }
 var onesCounter1 = ($) => ($.join('').match(/(1+)/g)||[]).map(e=>e.length)
+function predictAge(...props){
+  return Math.trunc(Math.sqrt(props.reduce((cur,acc)=>{
+    return cur + (acc*acc)
+  },0)) / 2 )
+}

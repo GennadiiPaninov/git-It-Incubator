@@ -6139,3 +6139,6 @@ function predictAge(...props){
 function predictAge2(...n){
   return (Math.hypot(...n)/2)>>0
 }
+function sortList (sortBy, list) {
+  return list.length ? list.sort((a,b)=> b[sortBy]-a[sortBy]) : list
+}

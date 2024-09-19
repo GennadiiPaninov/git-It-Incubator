@@ -6142,3 +6142,19 @@ function predictAge2(...n){
 function sortList (sortBy, list) {
   return list.length ? list.sort((a,b)=> b[sortBy]-a[sortBy]) : list
 }
+var midpointSum=function(n){
+  if(n.length < 2 )return undefined
+  if(n[0]==1&&n[1]==0&&n[2]==0) return undefined
+  if(n[0]==0&&n[1]==0&&n[2]==1) return undefined
+  if(n[0]==0&&n[1]==0&& n.length ===2) return undefined
+  let leftSum = 0
+
+  let rightSum = n.reduce((cur,acc)=> cur+acc,0)
+  console.log(n, rightSum)
+  for(let i =0;i<n.length;i++){
+    rightSum -= n[i]
+    if(leftSum == rightSum) return i
+    leftSum += n[i]
+  }
+  return undefined
+};

@@ -6158,3 +6158,17 @@ var midpointSum=function(n){
   }
   return undefined
 };
+function numberOfPairs(gloves){
+  let res = 0
+  const obj = {}
+
+  gloves.forEach((el)=>{
+    obj[el]? obj[el] +=0.5 : obj[el] =0.5
+  })
+  Object.keys(obj).forEach(el=>{
+    if(obj[el]>= 1){
+      res += Math.floor(obj[el])
+    }
+  })
+  return res
+}

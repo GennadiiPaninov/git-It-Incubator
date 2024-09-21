@@ -6172,3 +6172,12 @@ function numberOfPairs(gloves){
   })
   return res
 }
+function getMichaelLastName(inputText) {
+  const result = []
+  inputText.split(" ").forEach((el,ind,arr)=>{
+    if(el==="Michael" && arr[ind+1][0].toLowerCase() !== arr[ind+1][0] ){
+      result.push(arr[ind+1].replace(/[?,.]/g,""))
+    }
+  })
+  return result
+}

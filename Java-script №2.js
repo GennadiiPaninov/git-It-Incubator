@@ -6181,3 +6181,6 @@ function getMichaelLastName(inputText) {
   })
   return result
 }
+function getMichaelLastName2(txt) {
+  return txt.match(/Michael\s([A-Z]\w+)/g).map(x => x.split(' ')[1])
+}

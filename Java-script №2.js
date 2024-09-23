@@ -6197,3 +6197,7 @@ function combine(...arg) {
   }
   return res
 }
+function combine2(...arr) {
+  const len = Math.max(...arr.map(e => e.length));
+  return [...Array(len)].reduce((a,c,i) => a.concat(arr.map(e=>e[i])),[]).filter(e=>e!==undefined);
+}

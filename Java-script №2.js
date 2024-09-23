@@ -6184,3 +6184,16 @@ function getMichaelLastName(inputText) {
 function getMichaelLastName2(txt) {
   return txt.match(/Michael\s([A-Z]\w+)/g).map(x => x.split(' ')[1])
 }
+function combine(...arg) {
+  const copy = [...arg]
+  const val = copy.sort((a,b)=> b.length-a.length)[0].length
+  const res = []
+  for(let i =0;i<val;i++){
+    for(let j = 0;j<arg.length;j++){
+      if(arg[j][i]!==undefined){
+        res.push(arg[j][i])
+      }
+    }
+  }
+  return res
+}

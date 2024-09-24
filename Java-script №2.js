@@ -6201,3 +6201,8 @@ function combine2(...arr) {
   const len = Math.max(...arr.map(e => e.length));
   return [...Array(len)].reduce((a,c,i) => a.concat(arr.map(e=>e[i])),[]).filter(e=>e!==undefined);
 }
+function divisors(integer) {
+  var res = []
+  for (var i = 2; i <= Math.floor(integer / 2); ++i) if (integer % i == 0) res.push(i);
+  return res.length ? res : integer + ' is prime'
+};

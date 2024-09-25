@@ -6206,3 +6206,14 @@ function divisors(integer) {
   for (var i = 2; i <= Math.floor(integer / 2); ++i) if (integer % i == 0) res.push(i);
   return res.length ? res : integer + ' is prime'
 };
+function squaresNeeded(g){
+  if(g==0) return 0
+  let val = 1
+  let i = 1
+  while(true){
+    if(val>g) return i-1
+    if(val==g) return i
+    i++
+    val = val * 2
+  }
+}

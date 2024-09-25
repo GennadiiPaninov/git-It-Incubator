@@ -6217,3 +6217,6 @@ function squaresNeeded(g){
     val = val * 2
   }
 }
+function squaresNeeded2(g){
+  return Math.ceil(Math.log2(grains+1))
+}

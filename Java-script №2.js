@@ -6220,3 +6220,6 @@ function squaresNeeded(g){
 function squaresNeeded2(g){
   return Math.ceil(Math.log2(grains+1))
 }
+function divisibleByThree(str){
+  return str.split("").reduce((acc,cur)=>Number(cur)+acc,0) % 3===0
+}

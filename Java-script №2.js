@@ -6240,3 +6240,6 @@ function oddOne(arr) {
   }
   return -1
 }
+function oddOne(arr) {
+  return arr.findIndex(x => x % 2 != 0);
+}

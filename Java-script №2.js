@@ -6271,3 +6271,16 @@ function fillWater(buckets){
   resArr.push(`${litres} ${litres > 1 ? "litres" : "litre"}`)
   return resArr
 }
+
+function fillWater2(buckets) {
+  let litres = 0
+  buckets = buckets.map(x => {
+    if (/^robber-/.test(x)) {
+      litres += 30 - x.length
+      return padEnd(x, 30, 'water')
+    }
+    return x
+  })
+  litres = `${litres} litre${litres > 1 ? 's' : ''}`
+  return buckets.concat(litres)
+}

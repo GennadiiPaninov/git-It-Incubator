@@ -6243,3 +6243,31 @@ function oddOne(arr) {
 function oddOne(arr) {
   return arr.findIndex(x => x % 2 != 0);
 }
+function fillWater(buckets){
+  let litres = 0
+  const resArr = []
+  const water = 'water'
+  buckets.forEach(el=>{
+    let word = el
+
+    if(word.startsWith('robber-')){
+      const count = 30 - el.length
+      let ind = 0
+      for(let i =0;i<count;i++){
+        if(ind===4){
+          word = word + water[ind]
+          ind = 0
+          litres++
+        } else {
+          word = word + water[ind]
+          ind++
+          litres++
+        }
+      }
+    }
+    resArr.push(word)
+
+  })
+  resArr.push(`${litres} ${litres > 1 ? "litres" : "litre"}`)
+  return resArr
+}

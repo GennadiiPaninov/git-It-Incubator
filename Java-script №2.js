@@ -6284,3 +6284,14 @@ function fillWater2(buckets) {
   litres = `${litres} litre${litres > 1 ? 's' : ''}`
   return buckets.concat(litres)
 }
+function minimumBillCount(value, bills){
+  bills.sort((a, b) => b - a)
+  let count = 0
+  for (const bill of bills) {
+    while (value >= bill) {
+      value -= bill
+      count++
+    }
+  }
+  return count
+}

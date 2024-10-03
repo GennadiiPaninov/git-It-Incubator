@@ -6295,3 +6295,5 @@ function minimumBillCount(value, bills){
   }
   return count
 }
+const minimumBillCount2 = (value, availables) => availables.sort((a, b) => b - a)
+    .reduce((count, available) => (count += value / available | 0, value %= available, count), 0);

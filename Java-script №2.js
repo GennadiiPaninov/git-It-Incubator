@@ -6297,3 +6297,41 @@ function minimumBillCount(value, bills){
 }
 const minimumBillCount2 = (value, availables) => availables.sort((a, b) => b - a)
     .reduce((count, available) => (count += value / available | 0, value %= available, count), 0);
+
+function boundingBox2(imageArray) {
+  if (imageArray.length === 0) {
+    return []
+  }
+  const arr = []
+  imageArray.forEach((el, ind) => {
+    el.forEach((num, index) => {
+      if (num === 1) {
+        arr.push([ind, index])
+      }
+    });
+  });
+  if (arr.length === 0) {
+    return imageArray
+  }
+  let top = arr[0][0]
+  let bottom = arr[0][0]
+  let leftSide = arr[0][1]
+  let rightSide = arr[0][1]
+  arr.forEach(([row, col]) => {
+    if (row < top) top = row
+    if (row > bottom) bottom = row
+    if (col < leftSide) leftSide = col
+    if (col > rightSide) rightSide = col
+  });
+  return imageArray.map((el, ind) => {
+    return el.map((num, index) => {
+      if (ind === top || ind === bottom) {
+        return index >= leftSide && index <= rightSide ? 1 : 0
+      }
+      if (index === leftSide || index === rightSide) {
+        return ind >= top && ind <= bottom ? 1 : 0
+      }
+      return 0
+    });
+  });
+}

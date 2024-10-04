@@ -6335,3 +6335,18 @@ function boundingBox2(imageArray) {
     });
   });
 }
+const boundingBox = (imageArray) => {
+  let o = { t: Infinity, b: -1, l: Infinity, r: -1 };
+
+  imageArray = imageArray.map((r, i) => {
+    return r.map((c, j) => {
+      if (c === 1) o = { t: Math.min(i, o.t), b: Math.max(i, o.b), l: Math.min(j, o.l), r: Math.max(j, o.r) };
+      return 0;
+    });
+  });
+
+  for (let i = o.t; i <= o.b; i++) imageArray[i][o.l] = imageArray[i][o.r] = 1;
+  for (let i = o.l; i <= o.r; i++) imageArray[o.t][i] = imageArray[o.b][i] = 1;
+
+  return imageArray;
+};

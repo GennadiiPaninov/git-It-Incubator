@@ -6360,3 +6360,7 @@ function add12(arr) {
   })
   return resArr
 }
+function add(a){
+  let t = 0
+  return a.map(e=>t+=e)
+}

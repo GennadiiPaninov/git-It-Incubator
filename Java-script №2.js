@@ -6350,3 +6350,13 @@ const boundingBox = (imageArray) => {
 
   return imageArray;
 };
+function add12(arr) {
+  const resArr = []
+  if(arr.length<1) return resArr
+  let value = 0
+  arr.forEach((el)=>{
+    resArr.push(value+el)
+    value = value + el
+  })
+  return resArr
+}

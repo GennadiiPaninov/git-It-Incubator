@@ -6364,3 +6364,9 @@ function add(a){
   let t = 0
   return a.map(e=>t+=e)
 }
+function noonerize1(n) {
+  if(typeof n[0]!=='number' || typeof n[1]!=='number') return 'invalid array'
+  const f = `${n[1]}`[0] +`${n[0]}`.substring(1)
+  const s = `${n[0]}`[0] +`${n[1]}`.substring(1)
+  return Math.abs(f-s)
+}

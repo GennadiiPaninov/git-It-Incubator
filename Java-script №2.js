@@ -6370,3 +6370,6 @@ function noonerize1(n) {
   const s = `${n[0]}`[0] +`${n[1]}`.substring(1)
   return Math.abs(f-s)
 }
+const noonerize = numbers =>
+    numbers.some(isNaN) ? `invalid array` :
+        Math.abs(numbers.map((val, idx) => `${numbers[idx ^ 1]}`[0] + `${val}`.slice(1)).reduce((pre, val) => pre - val));

@@ -6379,3 +6379,6 @@ function solution1(n){
   if( n%1 >= 0.25 && n%1<0.75) return num + 0.5
   return num + 1
 }
+function solution4(n){
+  return Math.round(n*2)/2;
+}

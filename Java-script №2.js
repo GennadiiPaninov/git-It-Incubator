@@ -6373,3 +6373,9 @@ function noonerize1(n) {
 const noonerize = numbers =>
     numbers.some(isNaN) ? `invalid array` :
         Math.abs(numbers.map((val, idx) => `${numbers[idx ^ 1]}`[0] + `${val}`.slice(1)).reduce((pre, val) => pre - val));
+function solution1(n){
+  const num = n - n%1
+  if( n%1 < 0.25 ) return num
+  if( n%1 >= 0.25 && n%1<0.75) return num + 0.5
+  return num + 1
+}

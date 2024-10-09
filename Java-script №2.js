@@ -6382,3 +6382,15 @@ function solution1(n){
 function solution4(n){
   return Math.round(n*2)/2;
 }
+function coinsNeeded2(amount, coinDenominations) {
+  coinDenominations.sort((a, b) => b - a)
+  let value = amount
+  let result = 0
+  for (let i = 0; i < coinDenominations.length; i++) {
+    if(amount / coinDenominations[i] >= 1){
+      result += Math.floor(value / coinDenominations[i])
+      value -= coinDenominations[i] * Math.floor(value / coinDenominations[i])
+    }
+  }
+  return result
+}

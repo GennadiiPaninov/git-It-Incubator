@@ -6394,3 +6394,8 @@ function coinsNeeded2(amount, coinDenominations) {
   }
   return result
 }
+function coinsNeeded(amount,[...coins]) {
+  return function needed(amount,[coin,...coins]) {
+    return amount && Math.floor(amount / coin) + needed(amount % coin, coins);
+  } ( amount, coins.sort( (x,y) => y-x ) ) ;
+}

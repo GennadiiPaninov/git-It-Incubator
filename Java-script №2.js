@@ -6414,3 +6414,6 @@ function countInversions2( array ){
   }
   return inversions
 }
+function countInversions(arr){
+  return arr.map((x, i) => arr.slice(i+1).filter(y => y < x).length).reduce((a, b) => a+b, 0);
+}

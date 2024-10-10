@@ -6399,3 +6399,18 @@ function coinsNeeded(amount,[...coins]) {
     return amount && Math.floor(amount / coin) + needed(amount % coin, coins);
   } ( amount, coins.sort( (x,y) => y-x ) ) ;
 }
+function countInversions2( array ){
+  if(array.length < 2) return 0
+  let inversions = 0
+  for (let j = array.length - 1; j > 0; j--) {
+    for (let i = 0; i < j; i++) {
+      if (array[i] > array[i + 1]) {
+        let temp = array[i]
+        array[i] = array[i + 1]
+        array[i + 1] = temp
+        inversions++
+      }
+    }
+  }
+  return inversions
+}

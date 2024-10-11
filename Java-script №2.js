@@ -6425,3 +6425,7 @@ function roofFix2(f, r){
   }
   return true
 }
+
+function roofFix(s, x){
+  return x.split('').every((e,i) => e == '_' || s[i] == ' ');
+}

@@ -6417,3 +6417,11 @@ function countInversions2( array ){
 function countInversions(arr){
   return arr.map((x, i) => arr.slice(i+1).filter(y => y < x).length).reduce((a, b) => a+b, 0);
 }
+function roofFix2(f, r){
+  for(let i = 0;i<f.length;i++){
+    if(f[i]!==" " && (r[i]=='/' || r[i]=='\\')){
+      return false
+    }
+  }
+  return true
+}

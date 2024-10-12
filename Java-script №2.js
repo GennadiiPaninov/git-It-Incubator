@@ -6429,3 +6429,27 @@ function roofFix2(f, r){
 function roofFix(s, x){
   return x.split('').every((e,i) => e == '_' || s[i] == ' ');
 }
+function zeroPlentiful2(arr){
+  if(arr.length < 4) return 0
+  if(arr.length == arr.filter(el=> el==0 && arr.length>4).length) return 1
+  console.log(arr)
+  let result = 0
+  let count = 0
+  for(let i = 0;i< arr.length;i++){
+    if(arr[i]!==0){
+      if(count<4 && count !==0) return 0
+      if(count>=4){
+        result++
+      }
+      count = 0
+    } else {
+      count++
+    }
+  }
+  if(count >= 4){
+    result++
+  }else if(count > 0){
+    return 0
+  }
+  return result
+}

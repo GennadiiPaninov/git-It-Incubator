@@ -6475,3 +6475,11 @@ function orderBreaker2(arr) {
 
   return null
 }
+function orderBreaker(arr) {
+  for(let i=0;i<arr.length;i++){
+    let [a,v,b] = [arr[i-1],arr[i],arr[i+1]];
+    if( a===undefined && v>b || b===undefined && a>v || a<=b && (a>v||v>b) )
+      return v;
+  }
+  throw "No breaker (this is breaking the rules!)";
+}

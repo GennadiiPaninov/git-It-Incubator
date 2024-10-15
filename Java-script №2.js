@@ -6457,3 +6457,21 @@ function zeroPlentiful(arr){
   var sequences = arr.map((x) => !x ? x : ',').join('').split(',').filter((str) => str);
   return sequences.every((str) => str.length >= 4) ? sequences.length : 0;
 }
+function orderBreaker2(arr) {
+  const isSorted = (array) => {
+    for (let i = 1; i < array.length; i++) {
+      if (array[i] < array[i - 1]) {
+        return false
+      }
+    }
+    return true
+  }
+  for (let i = 0; i < arr.length; i++) {
+    const newArr = arr.slice(0, i).concat(arr.slice(i + 1))
+    if (isSorted(newArr)) {
+      return arr[i]
+    }
+  }
+
+  return null
+}

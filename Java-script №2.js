@@ -6483,7 +6483,7 @@ function orderBreaker(arr) {
   }
   throw "No breaker (this is breaking the rules!)";
 }
-function indexEqualsValue(a) {
+function indexEqualsValue2(a) {
   let currentLow = -1;
   let helperFunction = (start, stop, currentLow, a) => {
     if (start > stop) {
@@ -6501,3 +6501,5 @@ function indexEqualsValue(a) {
   }
   return helperFunction(0, a.length -1, currentLow, a);
 }
+
+indexEqualsValue=(a,b=0,c=a.length-1,i=(b+c)>>1)=>b<c?i<=a[i]?indexEqualsValue(a,b,i):indexEqualsValue(a,++i,c):a[c]==c?c:-1

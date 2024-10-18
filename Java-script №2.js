@@ -6517,3 +6517,9 @@ function getState2(promise) {
     },0)
   })
 }
+function getState(promise) {
+  const t = {};
+  return Promise.race([promise, t])
+      .then(v => (v === t)? "pending" : "fulfilled")
+      .catch(err => "rejected");
+}

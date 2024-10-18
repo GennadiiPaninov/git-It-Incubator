@@ -6503,3 +6503,17 @@ function indexEqualsValue2(a) {
 }
 
 indexEqualsValue=(a,b=0,c=a.length-1,i=(b+c)>>1)=>b<c?i<=a[i]?indexEqualsValue(a,b,i):indexEqualsValue(a,++i,c):a[c]==c?c:-1
+
+function getState2(promise) {
+  return new Promise((resolve)=>{
+    const p = promise
+    try{
+      p.then(()=>resolve('fulfilled'), ()=>resolve('rejected'))
+    }catch{
+      resolve('pending')
+    }
+    setTimeout(()=>{
+      resolve('pending')
+    },0)
+  })
+}

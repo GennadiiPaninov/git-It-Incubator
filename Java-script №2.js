@@ -6523,3 +6523,22 @@ function getState(promise) {
       .then(v => (v === t)? "pending" : "fulfilled")
       .catch(err => "rejected");
 }
+function lineIntersections(start, end) {
+  let result = 0
+  for(let i = 0;i < start.length;i++){
+    for(let j = 0;j< start.length;j++){
+      if(i!==j){
+        if(start[i] >= start[j] && start[i]<= end[j]){
+          result++
+          break
+        }
+        if(end[i] >= start[j] && end[i] <= end[j]){
+          result++
+          break
+        }
+
+      }
+    }
+  }
+  return result > 1 ? result - 1 : result
+}

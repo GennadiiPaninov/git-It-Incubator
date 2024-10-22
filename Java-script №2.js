@@ -6542,3 +6542,18 @@ function lineIntersections(start, end) {
   }
   return result > 1 ? result - 1 : result
 }
+function thatUnitesUs(array1, array2, n) {
+  const lowercaseLetters = Array.from(Array(26)).map((_, i) => String.fromCharCode(i + 97));
+  const resArr = []
+  for(let i = 0;i<lowercaseLetters.length;i++){
+    if(resArr.length==n) return resArr
+    if(array1.includes(lowercaseLetters[i])){
+      resArr.push(lowercaseLetters[i])
+      continue;
+    } else if(array2.includes(lowercaseLetters[i])){
+      resArr.push(lowercaseLetters[i])
+      continue;
+    }
+  }
+
+}

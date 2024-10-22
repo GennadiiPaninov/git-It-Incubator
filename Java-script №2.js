@@ -6542,7 +6542,7 @@ function lineIntersections(start, end) {
   }
   return result > 1 ? result - 1 : result
 }
-function thatUnitesUs(array1, array2, n) {
+function thatUnitesUs2(array1, array2, n) {
   const lowercaseLetters = Array.from(Array(26)).map((_, i) => String.fromCharCode(i + 97));
   const resArr = []
   for(let i = 0;i<lowercaseLetters.length;i++){
@@ -6556,4 +6556,7 @@ function thatUnitesUs(array1, array2, n) {
     }
   }
 
+}
+function thatUnitesUs(arr1, arr2, n) {
+  return Array.from(new Set(arr1.concat(arr2).sort())).slice(0,n)
 }

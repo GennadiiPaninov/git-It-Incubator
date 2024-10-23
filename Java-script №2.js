@@ -6560,3 +6560,17 @@ function thatUnitesUs2(array1, array2, n) {
 function thatUnitesUs(arr1, arr2, n) {
   return Array.from(new Set(arr1.concat(arr2).sort())).slice(0,n)
 }
+
+function autocorrect2(input){
+  return input.split(' ').map(word=>{
+    if(word === 'youyouyou') return word
+    if(word === 'u') return `your sister`
+    if(word.includes('you') || word.includes('You')){
+      const set = new Set(word.replace(/[!?,.]/, ''))
+      if(set.size===3){
+        return /[!?,.]/.test(word) ? `your sister${word[word.length-1]}` : `your sister`
+      }
+    }
+    return word
+  }).join(" ")
+}

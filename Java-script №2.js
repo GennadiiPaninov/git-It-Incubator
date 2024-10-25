@@ -6577,3 +6577,18 @@ function autocorrect2(input){
 function autocorrect(input){
   return input.replace(/\b(you+|u)\b/gi, "your sister");
 }
+function fullScan(parts){
+  let s = parts[0].split`\n`
+  for(let i = 1; i < parts.length; i++){
+    let arr = parts[i].split`\n`
+    for(let j = 0; j < arr.length; j++){
+      for(let k = arr[j].length - 1; k > 0; k--){
+        if(s[j].endsWith(arr[j].slice(0, k))){
+          s[j] += arr[j].slice(k)
+          break
+        }
+      }
+    }
+  }
+  return s.join`\n`
+}

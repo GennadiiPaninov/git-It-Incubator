@@ -6592,3 +6592,12 @@ function fullScan(parts){
   }
   return s.join`\n`
 }
+function comes_after(str,l) {
+  let resStr = ''
+  for(let i = 0;i<str.length;i++){
+    if(str[i].toLowerCase()===l&&/[a-zA-Z]/.test(str[i+1])&&str[i+1]!==undefined){
+      resStr += str[i+1]
+    }
+  }
+  return resStr
+}

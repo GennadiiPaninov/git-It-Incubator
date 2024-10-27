@@ -6601,3 +6601,8 @@ function comes_after(str,l) {
   }
   return resStr
 }
+const comes_after = (str, l) => {
+  const reg = RegExp(l, 'i')
+  const arr = str.split('')
+  return arr.filter( (el, i) => i && reg.test(str[i-1]) && /[a-z]/i.test(el) ).join('')
+}

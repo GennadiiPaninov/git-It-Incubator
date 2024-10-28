@@ -6606,3 +6606,12 @@ const comes_after = (str, l) => {
   const arr = str.split('')
   return arr.filter( (el, i) => i && reg.test(str[i-1]) && /[a-z]/i.test(el) ).join('')
 }
+function sortTheInnerContent(words){
+  return words.split(" ").map((word)=>{
+    return word.length <= 3 ? word : `${word[0]}${word.substring(1, word.length-1).split("").sort((a,b)=>{
+      if(a>b) return -1
+      if(a<b) return 1
+      if(a==b) return 0
+    }).join("")}${word[word.length-1]}`
+  }).join(" ")
+}

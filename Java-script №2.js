@@ -6638,3 +6638,6 @@ function isPrimeHappy(n){
   }
   return sum % n === 0
 }
+function isPrimeHappy2(n){
+  return n>2? [...Array(n).keys()].slice(2).filter(e => [...Array(e+1).keys()].slice(2).filter(c => e%c==0).length==1).reduce((a,c) => a+c,0)%n==0 : false;
+}

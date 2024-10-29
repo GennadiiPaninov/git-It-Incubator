@@ -6618,3 +6618,23 @@ function sortTheInnerContent(words){
 function sortTheInnerContent2(words){
   return words.replace(/\B\w+(?=\w)/g, x => x.split('').sort().reverse().join(''));
 }
+function isPrimeHappy(n){
+  if (n <= 2) {
+    return false
+  }
+  function isPrime(num) {
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    return num > 1;
+  }
+  let sum = 0;
+  for (let i = 2; i < n; i++) {
+    if (isPrime(i)) {
+      sum += i;
+    }
+  }
+  return sum % n === 0
+}

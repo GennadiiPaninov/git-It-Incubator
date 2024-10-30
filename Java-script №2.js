@@ -6641,3 +6641,52 @@ function isPrimeHappy(n){
 function isPrimeHappy2(n){
   return n>2? [...Array(n).keys()].slice(2).filter(e => [...Array(e+1).keys()].slice(2).filter(c => e%c==0).length==1).reduce((a,c) => a+c,0)%n==0 : false;
 }
+function zozonacci (pat, len) {
+  const arr = [1,7,7,7,7]
+  arr.length = 2
+
+  if(len < 1 || pat.length < 1) return []
+
+  const zozonacciArr = pat[0] == "pad" ? [0, 1, 0, 0] : [0, 0, 0, 1]
+
+  if(len<=4) {
+    zozonacciArr.length = len
+    return zozonacciArr
+  }
+
+  let step = 0
+
+  for(let i = 4;i<len;i++){
+    if(step>=pat.length){
+      step = 0
+    }
+
+    switch(pat[step]){
+      case "fib":
+        zozonacciArr.push(zozonacciArr[i-1]+zozonacciArr[i-2])
+        step++
+        break;
+      case "jac":
+        zozonacciArr.push(zozonacciArr[i-1] + 2 * zozonacciArr[i-2])
+        step++
+        break;
+      case "pad":
+        zozonacciArr.push(zozonacciArr[i-2] + zozonacciArr[i-3])
+        step++
+        break;
+      case "pel":
+        zozonacciArr.push(2 * zozonacciArr[i-1] + zozonacciArr[i-2])
+        step++
+        break;
+      case "tet":
+        zozonacciArr.push(zozonacciArr[i-1] + zozonacciArr[i-2] + zozonacciArr[i-3] + zozonacciArr[i-4])
+        step++
+        break;
+      case "tri":
+        zozonacciArr.push(zozonacciArr[i-1] + zozonacciArr[i-2]+zozonacciArr[i-3])
+        step++
+        break;
+    }
+  }
+  return zozonacciArr
+}

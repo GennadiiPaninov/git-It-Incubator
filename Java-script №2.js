@@ -6709,3 +6709,31 @@ function zozonacci2(pattern, n) {
   }
   return seq;
 }
+function magicSquare(n) {
+  let magicSquare = []
+  for (let i = 0; i < n; i++) {
+    magicSquare.push([])
+    for (let j = 0; j < n; j++) {
+      magicSquare[i].push(0)
+    }
+  }
+
+  let num = 1
+  let i = 0
+  let j = Math.floor(n / 2)
+
+  while (num <= n * n) {
+    magicSquare[i][j] = num
+    num++;
+    let newi = (i - 1 < 0) ? n - 1 : i - 1
+    let newj = (j + 1 >= n) ? 0 : j + 1
+    if (magicSquare[newi][newj] !== 0) {
+      i = (i + 1) % n
+    } else {
+      i = newi
+      j = newj
+    }
+  }
+
+  return magicSquare
+}

@@ -6737,3 +6737,10 @@ function magicSquare(n) {
 
   return magicSquare
 }
+function magicSquare2(n) {
+  return Array.from({ length: n }, (_,i) =>
+      Array.from({ length: n }, (_,j) =>
+          (i + j + Math.ceil(n / 2)) % n * n + (n - (n ** 2 - i - j * 2 - 1) % n) % n + 1
+      )
+  )
+}

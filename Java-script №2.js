@@ -6764,3 +6764,10 @@ function markSpot2(n) {
   }
   return resArr.join("")
 }
+function markSpot(n) {
+  if(!(+n)||n<1||!(n&1)) return '?'
+  const arr = Array(n).fill().map(_=>Array(2*n-1).fill(" ")); let l = 0, r = 2*n-2;
+  for(let i = 0; i < n; i++)
+    arr[i][l]='X', arr[i][r]='X', l+=2, r-=2;
+  return arr.map(v=>v.join``.replace(/ +$/,'')).join`\n`+'\n';
+}

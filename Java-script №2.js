@@ -6744,3 +6744,23 @@ function magicSquare2(n) {
       )
   )
 }
+function markSpot2(n) {
+  if(typeof n !== "number"|| n<1 || n%2==0) return "?"
+  const resArr = []
+  let countSpace = n-1
+  let numberOfSpacesBetweenX = 3
+  const comX = new Array (countSpace+1).fill(".")
+  comX[comX.length-1] = 'X\n'
+  resArr.push(comX.join("").replace(/\./g, " "))
+  countSpace -= 2
+  for(let i =0;i<(n-1)/2;i++){
+    const comaX = new Array (countSpace+numberOfSpacesBetweenX+2).fill(".")
+    comaX[countSpace] = "X"
+    comaX[comaX.length-1] = "X\n"
+    resArr.push(comaX.join("").replace(/\./g, " "))
+    resArr.unshift(comaX.join("").replace(/\./g, " "))
+    countSpace -=2
+    numberOfSpacesBetweenX +=4
+  }
+  return resArr.join("")
+}

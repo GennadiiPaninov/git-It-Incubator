@@ -6771,3 +6771,12 @@ function markSpot(n) {
     arr[i][l]='X', arr[i][r]='X', l+=2, r-=2;
   return arr.map(v=>v.join``.replace(/ +$/,'')).join`\n`+'\n';
 }
+function findSpaceship1(map = "") {
+  if(map == "X") return [0, 0]
+  if(map.indexOf("X") == -1 || !map) return 'Spaceship lost forever.'
+  const reqMap = map.split("\n").reverse()
+  for(let i =0;i<reqMap.length;i++){
+    if(reqMap[i].indexOf("X") !== -1) return [reqMap[i].indexOf("X"), i]
+  }
+  return [7,2]
+}

@@ -6791,3 +6791,26 @@ const findSpaceship = (map = "") => {
 
   return "Spaceship lost forever."
 }
+function getSocks(name, socks) {
+  const socksSet = new Set(socks)
+  if(socksSet.size>=2&&name=='Punky'){
+    return [[...socksSet][0],[...socksSet][1]]
+  } else if(socksSet.size>=1&& name=="Henry"){
+    socks.sort((a,b)=>a>b)
+    for(let i = 0;i<socks.length;i++){
+      if(socks[i]==socks[i+1]){
+        return [socks[i],socks[i+1]]
+      }
+    }
+  }
+  return []
+}
+const getSocks2 = (name, socks) => {
+  if (name === 'Punky') {
+    const sockA = socks[0]
+    const sockB = socks.find(sock => sockA !== sock)
+    return sockA && sockB ? [sockA, sockB] : []
+  } else {
+    return socks.filter(sock => socks.indexOf(sock) !== socks.lastIndexOf(sock))
+  }
+}

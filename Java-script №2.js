@@ -6829,3 +6829,19 @@ function fight2(robot1, robot2, tactics) {
   if(robotFirst.health == robotSecond.health) return 'The fight was a draw.'
   return robotFirst.health > robotSecond.health ? robotFirst.name + " has won the fight." : robotSecond.name+ " has won the fight."
 }
+function fight(robot1, robot2, tactics) {
+
+  const robotFirst = robot1.speed >= robot2.speed ? robot1 : robot2
+  const robotSecond = robot1.speed < robot2.speed ? robot1 : robot2
+  const len = Math.max(robotFirst.tactics.length, robotSecond.tactics.length)
+  const won = " has won the fight."
+  for(let i = 0;i < len;i++){
+    robotSecond.health -= tactics[robotFirst.tactics[i]] ? tactics[robotFirst.tactics[i]] : 0
+    if(robotSecond.health<=0) return robotFirst.name + won
+    robotFirst.health -= tactics[robotSecond.tactics[i]] ? tactics[robotSecond.tactics[i]] : 0
+    if(robotFirst.health<=0) return robotSecond.name + won
+
+  }
+  if(robotFirst.health == robotSecond.health) return 'The fight was a draw.'
+  return robotFirst.health > robotSecond.health ? robotFirst.name + won : robotSecond.name + won
+}

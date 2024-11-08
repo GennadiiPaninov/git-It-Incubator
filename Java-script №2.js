@@ -6845,3 +6845,18 @@ function fight(robot1, robot2, tactics) {
   if(robotFirst.health == robotSecond.health) return 'The fight was a draw.'
   return robotFirst.health > robotSecond.health ? robotFirst.name + won : robotSecond.name + won
 }
+function findUnique(numbers) {
+  const obj = {}
+  numbers.forEach(el=>{
+    if(obj[el]){
+      obj[el]++
+    } else {
+      obj[el]=1
+    }
+  })
+  for (let key of Object.keys(obj)) {
+    if(obj[key]==1){
+      return Number(key)
+    }
+  }
+}

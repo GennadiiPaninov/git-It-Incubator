@@ -6900,3 +6900,9 @@ function hungrySeven(arr){
   }
   return resArr
 }
+const hungrySeven2 = array => {
+  let string = array.join('');
+  while (/789/.test(string))
+    string = string.replace(/789/g, '897');
+  return string.split('').map(Number);
+}

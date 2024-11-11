@@ -6863,3 +6863,40 @@ function findUnique(numbers) {
 function findUnique(numbers) {
   return numbers.reduce((a, b) => a ^ b);
 }
+function hungrySeven(arr){
+  const resArr = []
+  let count = 0
+  for(let i =0;i<arr.length;i++){
+    if(arr[i] == 7){
+      count++
+      if(arr[i+1]==7){
+        continue;
+      } else if(arr[i+1]==8 && arr[i+2] == 9){
+        resArr.push(8)
+        resArr.push(9)
+
+        for(let j = 0;j<count;j++){
+
+          resArr.push(7)
+
+        }
+        count = 0
+        i += 2
+      } else {
+        for(let j = 0;j<count;j++){
+          resArr.push(7)
+        }
+        count = 0
+      }
+
+    }else{
+      resArr.push(arr[i])
+    }
+  }
+  for(let i =0;i<arr.length;i++){
+    if(resArr[i]==7 && resArr[i+1] == 8 && resArr[i+2]==9){
+      return hungrySeven(resArr)
+    }
+  }
+  return resArr
+}

@@ -6906,3 +6906,15 @@ const hungrySeven2 = array => {
     string = string.replace(/789/g, '897');
   return string.split('').map(Number);
 }
+function foldTo(distance) {
+  if(distance<0) return null
+  let cost = 0.0001
+  let i = 0
+  while(true){
+    if(cost >= distance){
+      return i
+    }
+    cost += cost
+    i++
+  }
+}

@@ -6925,3 +6925,13 @@ function foldTo2(distance) {
   if (distance < THICKNESS) { return 0; }
   return Math.ceil(Math.log2(distance/THICKNESS));
 }
+function compare(s1, s2) {
+  function s(str) {
+    let sum = 0;
+    for (let i = 0; i < str.length; i++) {
+      sum += str.charCodeAt(i);
+    }
+    return sum;
+  }
+  return s(s1) == s(s2)
+}

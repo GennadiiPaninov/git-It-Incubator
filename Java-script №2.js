@@ -6935,3 +6935,9 @@ function compare(s1, s2) {
   }
   return s(s1) == s(s2)
 }
+function chain(input, fs) {
+  fs.forEach(el=>{
+    input = el(input)
+  })
+  return input
+}

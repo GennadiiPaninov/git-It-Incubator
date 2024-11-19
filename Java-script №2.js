@@ -6944,3 +6944,6 @@ function chain(input, fs) {
 function chain2(v, fns) {
   return fns.reduce(function(v, fn) { return fn(v) }, v);
 }
+function angle(n) {
+  return (n - 2) * 180
+}

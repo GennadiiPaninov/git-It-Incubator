@@ -6947,3 +6947,11 @@ function chain2(v, fns) {
 function angle(n) {
   return (n - 2) * 180
 }
+function reverse(arr) {
+  const n = arr.length;
+  for (let i = 0; i < Math.floor(n / 2); i++) {
+    const temp = arr[i];
+    arr[i] = arr[n - 1 - i];
+    arr[n - 1 - i] = temp;
+  }
+}

@@ -6965,3 +6965,6 @@ function SJF(jobs, index){
     }
   }).reduce((a,c)=> a+c,0)
 }
+function SJF2(jobs, index){
+  return jobs.reduce((a,b,i)=>a+(b<jobs[index]||(b==jobs[index]&&i<=index) ? b:0),0);
+}

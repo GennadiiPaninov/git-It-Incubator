@@ -6968,3 +6968,13 @@ function SJF(jobs, index){
 function SJF2(jobs, index){
   return jobs.reduce((a,b,i)=>a+(b<jobs[index]||(b==jobs[index]&&i<=index) ? b:0),0);
 }
+function makeChocolates(small, big, goal) {
+  for(let i =0;i<small+1;i++){
+    for(let j = 0;j<big+1;j++){
+      if((i*2)+(j*5) == goal){
+        return i
+      }
+    }
+  }
+  return -1;
+}

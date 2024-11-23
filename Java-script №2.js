@@ -6978,3 +6978,4 @@ function makeChocolates(small, big, goal) {
   }
   return -1;
 }
+const makeChocolates2=(s,b,g,m,n)=>s<(n=(g-(m=((m=Math.min(b,Math.floor(g/5)))-(g-m*5)%2))*5)>>1)||(m<0)?-1:n

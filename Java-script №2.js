@@ -6979,3 +6979,46 @@ function makeChocolates(small, big, goal) {
   return -1;
 }
 const makeChocolates2=(s,b,g,m,n)=>s<(n=(g-(m=((m=Math.min(b,Math.floor(g/5)))-(g-m*5)%2))*5)>>1)||(m<0)?-1:n
+
+function NamedOne(first, last) {
+  let _firstName = first
+  let _lastName = last
+
+  Object.defineProperty(this, 'firstName', {
+    get: function() {
+      return _firstName
+    },
+    set: function(value) {
+      _firstName = value
+      updateFullName()
+    }
+  });
+
+  Object.defineProperty(this, 'lastName', {
+    get: function() {
+      return _lastName
+    },
+    set: function(value) {
+      _lastName = value
+      updateFullName()
+    }
+  });
+
+  Object.defineProperty(this, 'fullName', {
+    get: function() {
+      return `${_firstName} ${_lastName}`;
+    },
+    set: function(value) {
+      const parts = value.split(' ')
+
+      if (parts.length === 2) {
+        _firstName = parts[0]
+        _lastName = parts[1]
+      }
+    }
+  });
+
+  function updateFullName() {
+    this.fullName
+  }
+}

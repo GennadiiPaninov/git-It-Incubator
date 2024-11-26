@@ -7069,3 +7069,5 @@ function solve(a,b){
   if(b>=2*a) return solve(a,b-2*a)
   return [a,b]
 }
+const solve2 = (a, b) =>
+    !a || !b ? [a, b] : a >= 2 * b ? solve(a - 2 * b, b) : b >= 2 * a ? solve(a, b - 2 * a) : [a, b];

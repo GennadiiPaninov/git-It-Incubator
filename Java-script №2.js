@@ -7087,3 +7087,5 @@ function longestRepetition(s) {
   }, []).sort((a,b)=> b[1]-a[1] )
   return arr[0];
 }
+const longestRepetition2 = s =>
+    s.match(/(.)\1*|$/g).reduce(([c, l], val) => val.length > l ? [val[0], val.length] : [c, l], [``, 0]);

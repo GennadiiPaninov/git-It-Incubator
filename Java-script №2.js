@@ -7075,3 +7075,15 @@ const solve2 = (a, b) =>
 Array.prototype.remove_ = function(integer_list, values_list){
   return integer_list.filter(el=>!values_list.includes(el))
 }
+function longestRepetition(s) {
+  if(s.length ===0) return ["",0]
+  const arr = s.split("").reduce((acc,cur, ind)=>{
+    if(ind === 0){
+      acc.push([cur, 1])
+    } else {
+      acc[acc.length-1][0] === cur ? acc[acc.length-1][1]++ : acc.push([cur, 1])
+    }
+    return acc
+  }, []).sort((a,b)=> b[1]-a[1] )
+  return arr[0];
+}

@@ -7089,3 +7089,41 @@ function longestRepetition(s) {
 }
 const longestRepetition2 = s =>
     s.match(/(.)\1*|$/g).reduce(([c, l], val) => val.length > l ? [val[0], val.length] : [c, l], [``, 0]);
+
+function abbreviate2(string) {
+  const regex = /^[A-Za-z\s]+$/
+  const result = string.split(" ").map(el=>{
+    if(el.includes("-")){
+      return el.split("-").map(el1=>{
+        if(el1.length > 3){
+          if(regex.test(el1)){
+            return `${el1[0]}${el1.length-2}${el1[el1.length-1]}`
+          } else {
+            if(el1.length==4){
+              return el1
+            } else {
+              return `${el1[0]}${el1.length-3}${el1[el1.length-2]}${el1[el1.length-1]}`
+            }
+          }
+        } else {
+          return el
+        }
+      }).join("-")
+    } else{
+      if(el.length > 3){
+        if(regex.test(el)){
+          return `${el[0]}${el.length-2}${el[el.length-1]}`
+        } else {
+          if(el.length==4){
+            return el
+          } else {
+            return `${el[0]}${el.length-3}${el[el.length-2]}${el[el.length-1]}`
+          }
+        }
+      } else {
+        return el
+      }
+    }
+  })
+  return result.join(" ")
+}

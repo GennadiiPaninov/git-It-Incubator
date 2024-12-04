@@ -7127,3 +7127,8 @@ function abbreviate2(string) {
   })
   return result.join(" ")
 }
+function abbreviate3(string) {
+  return string.replace(/\w{4,}/g, function(word) {
+    return word[0] + (word.length - 2) + word.slice(-1);
+  });
+}

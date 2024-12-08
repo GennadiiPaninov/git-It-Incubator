@@ -7139,3 +7139,6 @@ function solution(fullText, searchText, count = 0){
     return solution(fullText.substring(fullText.indexOf(searchText) + searchText.length), searchText, count += 1)
   }
 }
+function solution2(fullText, searchText){
+  return fullText.split(searchText).length - 1;
+}

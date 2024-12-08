@@ -7132,3 +7132,10 @@ function abbreviate3(string) {
     return word[0] + (word.length - 2) + word.slice(-1);
   });
 }
+function solution(fullText, searchText, count = 0){
+  if(fullText.indexOf(searchText) == -1){
+    return count
+  } else {
+    return solution(fullText.substring(fullText.indexOf(searchText) + searchText.length), searchText, count += 1)
+  }
+}

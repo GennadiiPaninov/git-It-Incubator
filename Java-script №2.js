@@ -7142,3 +7142,13 @@ function solution(fullText, searchText, count = 0){
 function solution2(fullText, searchText){
   return fullText.split(searchText).length - 1;
 }
+function containAllRots(s, a) {
+  let str = s
+  for(let i = 0;i<s.length;i++){
+    if(!a.includes(str)){
+      return false
+    }
+    str = `${str.substring(1)}${str[0]}`
+  }
+  return true
+}

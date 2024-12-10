@@ -7173,3 +7173,11 @@ function decipherThis(str) {
   })
   return arr.join(" ");
 }
+function decipherThis2(str) {
+  return str.split(" ")
+      .map(w =>
+          w.replace(/^\d+/, c => String.fromCharCode(c))
+              .replace(/^(.)(.)(.*)(.)$/, "$1$4$3$2")
+      )
+      .join(" ")
+}

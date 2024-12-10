@@ -7155,3 +7155,21 @@ function containAllRots(s, a) {
 function containAllRots2(strng, arr) {
   return [...strng].map((_,i) => strng.substr(i)+strng.slice(0,i)).every(x => arr.includes(x));
 }
+function decipherThis(str) {
+  const arr = str.split(" ").map(w=>{
+    const firstLetterNumber = w.match(/\d+/g)[0]
+    const firstLetter = String.fromCharCode(firstLetterNumber)
+    const resWord = w.substring(firstLetterNumber.length).split("").map((subWord,ind,elarr)=>{
+      if(ind === 0){
+
+        return w[w.length-1]
+      } if( ind === elarr.length-1){
+
+        return elarr[0]
+      }
+      return subWord
+    })
+    return `${firstLetter}${resWord.join("")}`
+  })
+  return arr.join(" ");
+}

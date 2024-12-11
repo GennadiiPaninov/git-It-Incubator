@@ -7187,3 +7187,8 @@ var whatTimeIsIt = function(angle) {
   const minutes = angle % 30 == 0 ? angle % 30 : Math.floor((angle % 30) / 0.5)
   return `${`${hours}`.length == 1 ? `0${hours}` : hours}:${`${minutes}`.length == 1 ? `0${minutes}` : minutes}`;
 }
+
+var whatTimeIsIt2 = function(angle) {
+  let h = ~~(angle/30), m = ~~((angle%30)*2);
+  return `${h==0?12:h>9?h:"0"+h}:${m>9?m:"0"+m}`
+}

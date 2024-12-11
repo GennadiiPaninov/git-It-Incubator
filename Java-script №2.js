@@ -7181,3 +7181,9 @@ function decipherThis2(str) {
       )
       .join(" ")
 }
+
+var whatTimeIsIt = function(angle) {
+  const hours = Math.floor(angle / 30) || 12
+  const minutes = angle % 30 == 0 ? angle % 30 : Math.floor((angle % 30) / 0.5)
+  return `${`${hours}`.length == 1 ? `0${hours}` : hours}:${`${minutes}`.length == 1 ? `0${minutes}` : minutes}`;
+}

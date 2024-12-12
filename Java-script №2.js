@@ -7192,3 +7192,12 @@ var whatTimeIsIt2 = function(angle) {
   let h = ~~(angle/30), m = ~~((angle%30)*2);
   return `${h==0?12:h>9?h:"0"+h}:${m>9?m:"0"+m}`
 }
+function pattern(n){
+  if(n == 1) return '1'
+  let output=""
+  for(let i = 0; i <n ; i++){
+    let str = `${i+1}`.repeat(i+1)
+    output = i === 0 ? `${output}${str}` : `${output}\n${str}`
+  }
+  return output
+}

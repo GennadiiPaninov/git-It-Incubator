@@ -7201,3 +7201,18 @@ function pattern(n){
   }
   return output
 }
+function scoreThrows(radii){
+  if(radii.length < 1) return 0
+  let score = 0
+  if(radii.every((el)=>el<5)){
+    score += 100
+  }
+  radii.forEach((el)=>{
+    if(el<5){
+      score += 10
+    } else if(el<=10){
+      score += 5
+    }
+  })
+  return score
+}

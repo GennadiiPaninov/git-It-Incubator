@@ -7216,3 +7216,6 @@ function scoreThrows(radii){
   })
   return score
 }
+function sevenAte9(str) {
+  return str.split("").filter((el, ind)=> !(el == "9" && str[ind-1] == "7" && str[ind+1] =="7")).join("")
+}

@@ -7231,3 +7231,14 @@ function alphabetWar(fight){
   if(l==r){return "Let's fight again!"}
   return l>r ? "Left side wins!" : "Right side wins!";
 }
+function avgArray(arr) {
+  var result=[];
+  for(var i in arr[0]){
+    var num=0;
+    for(var j in arr){
+      num+=arr[j][i];
+    }
+    result.push(num/arr.length);
+  }
+  return result;
+}

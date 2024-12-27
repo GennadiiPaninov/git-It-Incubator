@@ -7243,3 +7243,17 @@ function avgArray(arr) {
   return result;
 }
 const avgArray = a => a[0].map((_,i)=> a.reduce((s,n)=>s + n[i],0)/a.length);
+function findAdded(st1, st2){
+  const arr1 = st1.split("")
+  const arr2 = st2.split("")
+  const resArr = []
+  arr2.forEach((el)=>{
+    if(arr1.includes(el)){
+      arr1[arr1.indexOf(el)] = null
+    } else {
+      resArr.push(Number(el))
+    }
+  })
+
+  return resArr.sort((a,b)=>a-b).join("")
+}

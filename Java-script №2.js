@@ -7257,3 +7257,5 @@ function findAdded(st1, st2){
 
   return resArr.sort((a,b)=>a-b).join("")
 }
+const findAdded2 = (st1, st2) =>
+    [...st1].reduce((acc, ch) => (acc.splice(acc.indexOf(ch), 1), acc), [...st2]).sort().join``;

@@ -7259,3 +7259,35 @@ function findAdded(st1, st2){
 }
 const findAdded2 = (st1, st2) =>
     [...st1].reduce((acc, ch) => (acc.splice(acc.indexOf(ch), 1), acc), [...st2]).sort().join``;
+
+function codewarResult(codewarrior, opponent) {
+  let winScore = 0
+  let drawScore = 0
+  opponent.sort((a,b)=> a-b).reverse()
+
+  const newArr = codewarrior.sort((a,b)=> a-b).map((el)=>{
+    //   Отфильтровываем выигрыш
+    for(let i = 0 ; i < opponent.length; i++) {
+      if(opponent[i]!==null && el > opponent[i]){
+        opponent[i] = null
+        winScore++
+        return  null
+      }
+    }
+    return el
+  }).map((el)=>{
+    //   Отфильтровываем ничбю
+    if(el ==null) return null
+    for(let i = 0 ; i < opponent.length ; i++) {
+      if(opponent[i]!==null && el == opponent[i]){
+        opponent[i] = null
+        drawScore++
+        return  null
+      }
+    }
+    return el
+  })
+
+  let loseScore = opponent.filter(el=>el!==null).length
+  return winScore > loseScore ? "Victory" : loseScore == winScore ? "Stalemate" : "Defeat"
+}

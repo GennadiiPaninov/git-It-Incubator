@@ -7291,3 +7291,22 @@ function codewarResult(codewarrior, opponent) {
   let loseScore = opponent.filter(el=>el!==null).length
   return winScore > loseScore ? "Victory" : loseScore == winScore ? "Stalemate" : "Defeat"
 }
+
+function absentVowel(x){
+  const obj = {
+    "A": 0,
+    "E": 1,
+    "I": 2,
+    "O": 3,
+    "U": 4
+  }
+  for(let i = 0;i<x.length-1;i++){
+
+    if(obj[x[i].toUpperCase()]!==undefined){
+      delete obj[x[i].toUpperCase()]
+    }
+    if(Object.keys(obj).length == 1){
+      return obj[Object.keys(obj)[0]]
+    }
+  }
+}

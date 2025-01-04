@@ -7318,3 +7318,15 @@ function absentVowel2(x) {
     }
   }
 }
+function findMiddle(str){
+  if(!str) return -1
+  const arrNum = str.split("").filter(el=>el==Number(el))
+  if(arrNum.length<1) return -1
+  const num = arrNum.reduce((acc,cur)=>{
+    return acc * cur
+  },1)
+  if(`${num}`.length ==2) return num
+  const middle = `${num}`.length%2==0 ? `${num}`.substring(`${num}`.length%2+1, `${num}`.length%2+3) : `${num}`.substring(`${num}`.length%2, `${num}`.length%2+1)
+  if(middle == 0) return 0
+  return Number(middle)
+}

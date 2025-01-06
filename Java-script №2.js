@@ -7330,3 +7330,39 @@ function findMiddle(str){
   if(middle == 0) return 0
   return Number(middle)
 }
+
+
+
+function reserve(bookings) {
+  var forTwo = { name: "table for two", seats : 2, num: 4};
+  var forThree = { name: "table for three", seats : 3, num: 2};
+  var forFour = { name: "table for four", seats : 4, num: 2};
+  var forSix = { name: "table for six", seats : 6, num: 1};
+  var forEight = { name: "table for eight", seats : 8, num: 1};
+
+///start coding here:
+  const resArr = []
+  let notAccepted = "Bookings at the following indexes were not accepted:"
+  bookings.forEach((people,index)=>{
+    if((people == 1 || people == 2) && forTwo.num > 0){
+      resArr.push(forTwo.name)
+      forTwo.num--
+    } else if((people == 2 || people == 3) && forThree.num > 0){
+      resArr.push(forThree.name)
+      forThree.num--
+    } else if((people == 3 || people == 4) && forFour.num > 0){
+      resArr.push(forFour.name)
+      forFour.num--
+    } else if((people == 5 || people == 6) && forSix.num > 0){
+      resArr.push(forSix.name)
+      forSix.num--
+    } else if((people == 7 || people == 8) && forEight.num > 0){
+      resArr.push(forEight.name)
+      forEight.num--
+    } else {
+      notAccepted += ` ${index},`
+    }
+  })
+
+  return [resArr, notAccepted.length > 52 ? notAccepted.substring(0,notAccepted.length -1) : ""]
+}

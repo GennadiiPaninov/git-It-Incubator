@@ -7366,3 +7366,24 @@ function reserve(bookings) {
 
   return [resArr, notAccepted.length > 52 ? notAccepted.substring(0,notAccepted.length -1) : ""]
 }
+function reserve2(bookings) {
+  const tables = [
+    { name: "table for two", seats : 2, num: 4},
+    { name: "table for three", seats : 3, num: 2},
+    { name: "table for four", seats : 4, num: 2},
+    { name: "table for six", seats : 6, num: 1},
+    { name: "table for eight", seats : 8, num: 1},
+  ]
+  const accepted = [];
+  const notAccepted = [];
+  bookings.forEach((booking, key) => {
+    const table = tables.find((item) => (item.seats === booking || item.seats - 1 === booking) && item.num > 0);
+    if (table) {
+      table.num--;
+      accepted.push(table.name);
+    } else {
+      notAccepted.push(key);
+    }
+  })
+  return [accepted, notAccepted.length > 0 ? `Bookings at the following indexes were not accepted: ${notAccepted.join(', ')}` : '']
+}

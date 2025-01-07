@@ -7403,3 +7403,10 @@ function shortenNumber(suffixes, base) {
     return `${Math.floor(num)}${suffixes[i]}`
   }
 }
+function shortenNumber(suffixes, base) {
+  return function(n) {
+    if (isNaN(n) || n === '') return n.toString();
+    for (var i = 0; i < suffixes.length - 1 && n >= base; i++, n /= base);
+    return Math.trunc(n) + suffixes[i];
+  };
+}

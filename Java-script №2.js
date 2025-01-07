@@ -7387,3 +7387,19 @@ function reserve2(bookings) {
   })
   return [accepted, notAccepted.length > 0 ? `Bookings at the following indexes were not accepted: ${notAccepted.join(', ')}` : '']
 }
+function shortenNumber(suffixes, base) {
+  return (arg)=>{
+    let str = ``, num = arg, i = 0
+    if(typeof arg !== "string" || !/^\d+$/.test(arg)){
+      if(Array.isArray(arg)){
+        return arg.join(",")
+      }
+      return arg
+    }
+    while(num > base && i < suffixes.length -1){
+      num = num/base
+      i++
+    }
+    return `${Math.floor(num)}${suffixes[i]}`
+  }
+}

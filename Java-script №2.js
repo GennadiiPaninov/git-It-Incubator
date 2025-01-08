@@ -7440,3 +7440,10 @@ String.prototype.characterCount = function (charsToCount) {
   // your solution
   return undefined
 };
+String.prototype.characterCount2 = function (chars) {
+  return chars
+      ? [...chars]
+          .map(c => this.split(c).length - 1)
+          .reduce((acc, c) => [].concat(acc, c))
+      : void 0
+}

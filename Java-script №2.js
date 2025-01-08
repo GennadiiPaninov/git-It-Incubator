@@ -7410,3 +7410,33 @@ function shortenNumber(suffixes, base) {
     return Math.trunc(n) + suffixes[i];
   };
 }
+String.prototype.characterCount = function (charsToCount) {
+  if(charsToCount==undefined) return undefined
+  console.log(charsToCount, this)
+  if(!Array.isArray(charsToCount) && charsToCount.length == 1) {
+    return this.split("").reduce((ac,cur)=>{
+      cur==charsToCount? ac.push(cur) : ""
+      return ac
+    },[]).length
+  }
+  if(typeof charsToCount == 'string'){
+    return charsToCount.split("").reduce((ac,cur)=>{
+      ac.push(this.split("").reduce((ac1,cur1)=>{
+        cur1==cur? ac1.push(cur1) : ""
+        return ac1
+      },[]).length)
+      return ac
+    },[])
+  }
+  if(Array.isArray(charsToCount) ){
+    return charsToCount.reduce((ac,cur)=>{
+      ac.push(this.split("").reduce((ac1,cur1)=>{
+        cur1==cur? ac1.push(cur1) : ""
+        return ac1
+      },[]).length)
+      return ac
+    },[])
+  }
+  // your solution
+  return undefined
+};

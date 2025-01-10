@@ -7447,3 +7447,22 @@ String.prototype.characterCount2 = function (chars) {
           .reduce((acc, c) => [].concat(acc, c))
       : void 0
 }
+function solve1(sarr){
+  if(sarr.length == 1) return "23:59"
+  let dif = []
+  const marr = sarr.map(el=>{
+    const [time1, time2] = el.split(":")
+    return time1 * 60 + Number(time2)
+  }).sort((a,b)=>a-b)
+  marr.forEach((el,ind,arr)=>{
+    if(arr[ind+1]==undefined){
+      dif.push(1440-el + arr[0])
+    } else {
+      dif.push(arr[ind+1] - el)
+    }
+  })
+  const maxTime = Math.max(...dif) - 1
+  const h = `${Math.floor(maxTime/60)}`.length == 1 ? `0${Math.floor(maxTime/60)}` : Math.floor(maxTime/60)
+  const m = isNaN(Math.floor(maxTime/60)) ? "00" : `${maxTime - ( h * 60)}`.length == 1 ? `0${maxTime - ( h * 60)}` : maxTime - ( h * 60)
+  return `${h}:${m}`
+}

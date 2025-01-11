@@ -7496,3 +7496,14 @@ function solve(arr){
   }
   return findMaxProduct(0, 1);
 }
+
+function solve(a) {
+  let min = 1, max = 1;
+  for (let x of a) {
+    let cur = [];
+    for (let y of x) cur.push(y * min), cur.push(y * max);
+    min = Math.min(...cur);
+    max = Math.max(...cur);
+  }
+  return max;
+}

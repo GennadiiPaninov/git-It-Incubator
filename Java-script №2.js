@@ -7480,3 +7480,19 @@ function timeToMinutes(time) {
 function minutesToTime(minutes) {
   return ("" + Math.floor(minutes / 60)).padStart(2, "0") + ":" + ("" + minutes % 60).padStart(2, "0");
 }
+function solve(arr){
+  const findMaxProduct = (index, currentProduct) => {
+    if (index === arr.length) {
+      return currentProduct
+    }
+
+    let maxProduct = Number.NEGATIVE_INFINITY
+
+    for (let num of arr[index]) {
+      maxProduct = Math.max(maxProduct, findMaxProduct(index + 1, currentProduct * num))
+    }
+
+    return maxProduct
+  }
+  return findMaxProduct(0, 1);
+}

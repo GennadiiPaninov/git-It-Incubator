@@ -7507,3 +7507,18 @@ function solve(a) {
   }
   return max;
 }
+function solve(s) {
+  const n = s.length
+  let maxLength = 0
+
+  for (let length = 1; length <= Math.floor(n / 2); length++) {
+    const prefix = s.slice(0, length)
+    const suffix = s.slice(n - length)
+
+    if (prefix === suffix) {
+      maxLength = length
+    }
+  }
+
+  return maxLength
+}

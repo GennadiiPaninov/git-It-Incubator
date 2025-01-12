@@ -7522,3 +7522,5 @@ function solve(s) {
 
   return maxLength
 }
+
+const solve = (string) => string.match(/(.*).*\1$/)[1].length

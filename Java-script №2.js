@@ -7524,3 +7524,7 @@ function solve(s) {
 }
 
 const solve = (string) => string.match(/(.*).*\1$/)[1].length
+
+function clean(arr) {
+  return arr.filter(function () { return true })
+}

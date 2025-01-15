@@ -7528,3 +7528,22 @@ const solve = (string) => string.match(/(.*).*\1$/)[1].length
 function clean(arr) {
   return arr.filter(function () { return true })
 }
+function ranking(people) {
+
+  const sortArray = people.map(el=>el.points).sort((a,b)=> a-b).reverse()
+  const res = people.map(el=>{
+    el.position = sortArray.indexOf(el.points)+1
+    return el
+  }).sort((a,b)=>{
+    if(a.points == b.points){
+      if(a.name<b.name){
+        return -1
+      } else if(a.name>b.name) {
+        return 1
+      }
+      return 0
+    }
+    return b.points-a.points
+  })
+  return res
+}

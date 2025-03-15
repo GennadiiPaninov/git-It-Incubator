@@ -7566,3 +7566,23 @@ function countSubsequences(needle, haystack) {
   }
   return dp[n][m] % 100000000
 }
+function shortestArrang(n) {
+  let group = []
+  let stCount = n
+  for(let i = 1;i<=n;i++){
+    group.push([])
+    for(let j = i;;j++){
+      group[group.length - 1].push(j)
+      if(stCount - j < 0 ){
+        group.splice(group.length -1)
+        break;
+      } else if(stCount - j == 0 ){
+        break;
+      }
+      stCount-=j
+    }
+    stCount = n
+  }
+  group = group.filter(el=>el.length !== 1)
+  return group.length == 0 ? [-1] : group.sort((a,b)=>a.length-b.length)[0].reverse()
+}

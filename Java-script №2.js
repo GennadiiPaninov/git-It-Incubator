@@ -7586,3 +7586,7 @@ function shortestArrang(n) {
   group = group.filter(el=>el.length !== 1)
   return group.length == 0 ? [-1] : group.sort((a,b)=>a.length-b.length)[0].reverse()
 }
+function shortestArrang1(n){
+  for(let l=2; l*l<2*n; l++) if(2*(n/l%1)===(l+1)%2) return [...Array(l)].map((_,i)=>(n/l)+(l-1)/2-i)
+  return [-1];
+}

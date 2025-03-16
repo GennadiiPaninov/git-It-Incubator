@@ -7590,3 +7590,12 @@ function shortestArrang1(n){
   for(let l=2; l*l<2*n; l++) if(2*(n/l%1)===(l+1)%2) return [...Array(l)].map((_,i)=>(n/l)+(l-1)/2-i)
   return [-1];
 }
+function newAvg(arr, newavg) {
+  const val = (arr.length + 1) * newavg
+  const res = val - arr.reduce((acc,cur)=>acc+cur,0)
+  if (res > 0) {
+    return Math.ceil(res)
+  } else {
+    throw new Error("Expected New Average is too low")
+  }
+}

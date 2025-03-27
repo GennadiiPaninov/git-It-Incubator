@@ -7616,3 +7616,8 @@ function tacofy(word) {
   list.push("shell")
   return list
 }
+
+function tacofy2(word) {
+  var map = {t:'tomato',l:'lettuce',c: 'cheese',g: 'guacamole',s:'salsa',a:'beef',e:'beef',i:'beef',o:'beef',u:'beef'};
+  return ['shell',...[...word].map(x => map[x.toLowerCase()]).filter(x=>x),'shell'];
+}

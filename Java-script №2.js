@@ -7599,3 +7599,20 @@ function newAvg(arr, newavg) {
     throw new Error("Expected New Average is too low")
   }
 }
+function tacofy(word) {
+  const regEx = /[aeiou]/
+  const ingredients = {
+    t: "tomato",
+    l: "lettuce",
+    c: "cheese",
+    g: "guacamole",
+    s: "salsa"
+  }
+  const list = ["shell"]
+  for(let letter of word) {
+    if(regEx.test(letter.toLowerCase())) list.push("beef")
+    if(ingredients[letter.toLowerCase()]) list.push(ingredients[letter.toLowerCase()])
+  }
+  list.push("shell")
+  return list
+}

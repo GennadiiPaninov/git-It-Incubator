@@ -7621,3 +7621,33 @@ function tacofy2(word) {
   var map = {t:'tomato',l:'lettuce',c: 'cheese',g: 'guacamole',s:'salsa',a:'beef',e:'beef',i:'beef',o:'beef',u:'beef'};
   return ['shell',...[...word].map(x => map[x.toLowerCase()]).filter(x=>x),'shell'];
 }
+function mazeRunner(maze, directions) {
+  let coords
+  for(let i = 0;i<maze.length;i++){
+    if(maze[i].indexOf(2) !== -1){
+      coords = [i, maze[i].indexOf(2)]
+      break;
+    }
+  }
+  for(let i = 0;i<directions.length;i++){
+    switch(directions[i]){
+      case "N":
+        coords[0] -= 1
+        break;
+      case "S":
+        coords[0] += 1
+        break;
+      case "E":
+        coords[1] += 1
+        break;
+      case "W":
+        coords[1] -= 1
+        break;
+    }
+    if(maze[coords[0]] == undefined  || maze[coords[0]][coords[1]] == undefined) return "Dead"
+    if(maze[coords[0]][coords[1]] == 0) continue;
+    if(maze[coords[0]][coords[1]] == 1) return "Dead"
+    if(maze[coords[0]][coords[1]] == 3) return "Finish"
+  }
+  return "Lost"
+}

@@ -201,3 +201,13 @@ function mazeRunner(maze, directions) {
   }
   return "Lost"
 }
+function mazeRunner(maze, directions) {
+  var size=maze.length,i=-1,j=-1,di={N:-1,S:1,E:0,W:0},dj={W:-1,E:1,N:0,S:0}
+  while(!maze[++i].includes(2));while(maze[i][++j]!=2);
+  for(var s of directions){
+    i+=di[s],j+=dj[s]
+    if(i<0||j<0||i>=size||j>=size||maze[i][j]==1) return "Dead"
+    if(maze[i][j]==3) return "Finish"
+  }
+  return "Lost"
+}

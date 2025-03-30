@@ -211,3 +211,22 @@ function mazeRunner(maze, directions) {
   }
   return "Lost"
 }
+function findArr(arrA, arrB, rng, wanted) {
+  const filteredA = arrA.filter((el) => el >= rng[0] && el <= rng[1] && (wanted === 'odd' ? el % 2 : !(el % 2)))
+  const filteredB = arrB.filter((el) => el >= rng[0] && el <= rng[1] && (wanted === 'odd' ? el % 2 : !(el % 2)))
+  const tesrArr = [...new Set([...filteredA, ...filteredB])]
+  const res = []
+
+
+  for (let i = 0; i < tesrArr.length; i++) {
+    const moreOneA = filteredA.indexOf(tesrArr[i]) !== filteredA.lastIndexOf(tesrArr[i]);
+    const moreOneB = filteredB.indexOf(tesrArr[i]) !== filteredB.lastIndexOf(tesrArr[i]);
+    console.log(moreOneA, moreOneB);
+
+    if (moreOneA && moreOneB) {
+      res.push(tesrArr[i])
+    }
+  }
+  return res.sort((a, b) => a - b)
+
+}

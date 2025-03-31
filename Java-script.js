@@ -230,3 +230,10 @@ function findArr(arrA, arrB, rng, wanted) {
   return res.sort((a, b) => a - b)
 
 }
+const vowelOne= (s) => {
+  const regEx = /[aeiou]/
+  const result = s.split("").map(letter =>{
+    return regEx.test(letter.toLowerCase()) ? "1" : "0"
+  }).join("")
+  return result
+}

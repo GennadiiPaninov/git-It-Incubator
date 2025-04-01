@@ -237,3 +237,21 @@ const vowelOne= (s) => {
   }).join("")
   return result
 }
+function lamps(a) {
+  const n = a.length
+
+  function countSwitches(startWithZero) {
+    let switches = 0;
+    for (let i = 0; i < n; i++) {
+      const expected = startWithZero ? (i % 2 === 0 ? 0 : 1) : (i % 2 === 0 ? 1 : 0)
+      if (a[i] !== expected) {
+        switches++
+      }
+    }
+    return switches;
+  }
+  const switchesForZeroStart = countSwitches(true)
+  const switchesForOneStart = countSwitches(false)
+
+  return Math.min(switchesForZeroStart, switchesForOneStart)
+}

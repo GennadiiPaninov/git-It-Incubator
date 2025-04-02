@@ -255,3 +255,21 @@ function lamps(a) {
 
   return Math.min(switchesForZeroStart, switchesForOneStart)
 }
+
+function pizzaRewards(customers, minOrders, minPrice) {
+  const freePizza =[]
+  for(let key in customers){
+    let orders = 0
+
+    for(let i = 0;i<customers[key].length;i++){
+      if(customers[key][i]>= minPrice){
+        orders++
+      }
+      if(orders == minOrders){
+        freePizza.push(key)
+        break;
+      }
+    }
+  }
+  return freePizza
+}

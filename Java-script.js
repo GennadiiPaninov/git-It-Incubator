@@ -273,3 +273,7 @@ function pizzaRewards(customers, minOrders, minPrice) {
   }
   return freePizza
 }
+
+function pizzaRewards2(o, l, p) {
+  return Object.keys(o).map(x=>o[x].filter(x=>x>=p).length>=l?x:false).filter(x=>x)
+}
